@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="12.2">
+<diagram program="umlet" version="13.3">
   <zoom_level>10</zoom_level>
   <element>
-    <type>com.umlet.element.Class</type>
+    <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>500</x>
       <y>310</y>
@@ -18,10 +18,10 @@ password: string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Class</type>
+    <type>com.baselet.element.old.element.Class</type>
     <coordinates>
       <x>440</x>
-      <y>470</y>
+      <y>660</y>
       <w>110</w>
       <h>60</h>
     </coordinates>
@@ -31,9 +31,9 @@ subject: string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Class</type>
+    <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>580</x>
+      <x>660</x>
       <y>470</y>
       <w>110</w>
       <h>60</h>
@@ -44,31 +44,9 @@ grade: string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Relation</type>
+    <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>460</x>
-      <y>380</y>
-      <w>110</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>30;90;90;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>540</x>
-      <y>380</y>
-      <w>120</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100;90;30;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>430</x>
+      <x>200</x>
       <y>640</y>
       <w>120</w>
       <h>100</h>
@@ -82,10 +60,10 @@ deadline: Date</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Class</type>
+    <type>com.baselet.element.old.element.Class</type>
     <coordinates>
-      <x>580</x>
-      <y>640</y>
+      <x>660</x>
+      <y>650</y>
       <w>120</w>
       <h>100</h>
     </coordinates>
@@ -98,31 +76,67 @@ time: Time</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Relation</type>
+    <type>com.baselet.element.old.element.Relation</type>
     <coordinates>
-      <x>430</x>
+      <x>690</x>
       <y>500</y>
-      <w>112</w>
-      <h>160</h>
+      <w>50</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..*
-creates&gt;</panel_attributes>
-    <additional_attributes>60;30;60;140</additional_attributes>
+</panel_attributes>
+    <additional_attributes>30;30;30;150</additional_attributes>
   </element>
   <element>
-    <type>com.umlet.element.Relation</type>
+    <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>500</y>
-      <w>112</w>
-      <h>160</h>
+      <x>550</x>
+      <y>400</y>
+      <w>180</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;160.0;40.0;160.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>400</y>
+      <w>100</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;80.0;40.0;10.0;40.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>680</y>
+      <w>140</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..*
-creates&gt;</panel_attributes>
-    <additional_attributes>60;30;60;140</additional_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>680</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
 </diagram>
