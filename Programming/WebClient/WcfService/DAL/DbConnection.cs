@@ -25,7 +25,7 @@ namespace WcfService.DAL
             if (instance != null)
             {
                 instance = new DbConnection();
-                
+
             }
             return instance;
 
@@ -35,9 +35,5 @@ namespace WcfService.DAL
         {
             return conn;
         }
-
-       
-
-
     }
 }

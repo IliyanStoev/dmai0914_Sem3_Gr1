@@ -5,7 +5,8 @@ using System.Web;
 using WcfService.DAL;
 
 
-using WcfService.Model;namespace WcfService.BLL
+using WcfService.Model;
+namespace WcfService.BLL
 {
     public class UserCtrl
     {
@@ -13,10 +14,10 @@ using WcfService.Model;namespace WcfService.BLL
         {
             Person p = new Person();
             p.UserName = UserName;
-                p.Password = Password;
-                LoginDb logDb = new LoginDb();
-                bool Login = logDb.Login(p);
-                return Login;
+            p.Password = Password;
+            LoginDb logDb = new LoginDb();
+            bool Login = logDb.Login(p);
+            return Login;
         }
     }
 }

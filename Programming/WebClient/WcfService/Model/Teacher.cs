@@ -12,7 +12,7 @@ namespace WcfService.Model
         [DataMember]
         public string Subject { get; set; }
 
-        
+
         public Teacher()
         {
 

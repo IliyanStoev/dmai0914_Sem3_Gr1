@@ -11,7 +11,7 @@ namespace WcfService.DAL
     public class LoginDb
     {
         private SqlCommand comm;
-       
+
         public bool Login(Person p)
         {
 
@@ -31,7 +31,7 @@ namespace WcfService.DAL
             {
                 return false;
             }
-            
+
 
         }
     }

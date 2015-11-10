@@ -12,13 +12,13 @@ namespace WcfService.Model
         [DataMember]
         public string UserName { get; set; }
         public string Name { get; set; }
-         [DataMember]
+        [DataMember]
         public string Phone { get; set; }
-         [DataMember]
+        [DataMember]
         public string Email { get; set; }
-         [DataMember]
+        [DataMember]
         public string Password { get; set; }
-         [DataMember]
+        [DataMember]
         public int UserType { get; set; }
 
 
