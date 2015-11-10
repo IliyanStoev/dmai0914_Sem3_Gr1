@@ -106,6 +106,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HomeworkSubmit.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -198,6 +199,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomeworkSubmit.aspx.cs">
+      <DependentUpon>HomeworkSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeworkSubmit.aspx.designer.cs">
+      <DependentUpon>HomeworkSubmit.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
