@@ -22,7 +22,7 @@ namespace WcfService.DAL
         public static DbConnection GetInstance()
         {
 
-            if (instance != null)
+            if (instance == null)
             {
                 instance = new DbConnection();
 

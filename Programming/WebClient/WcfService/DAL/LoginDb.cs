@@ -14,23 +14,28 @@ namespace WcfService.DAL
 
         public bool Login(Person p)
         {
+            comm = new SqlCommand();
+            comm.CommandText = "SELECT * FROM Person WHERE userName=(@userName) AND password=(@password)";
+            comm.Parameters.AddWithValue("userName", p.UserName);
+            comm.Parameters.AddWithValue("password", p.Password);
 
-            comm.CommandText = "SELECT * FROM Person WHERE userName=(@User) AND password=(@Password)";
-            comm.Parameters.AddWithValue("User", p.UserName);
-            comm.Parameters.AddWithValue("Password", p.Password);
-
-            DbConnection.GetInstance().GetConnection().Open();
+            comm.Connection = DbConnection.GetInstance().GetConnection();
+            comm.Connection.Open();
 
             comm.CommandType = CommandType.Text;
 
             if (comm.ExecuteReader().HasRows)
             {
+                comm.Connection.Close();
                 return true;
+                
             }
             else
             {
+                comm.Connection.Close();
                 return false;
             }
+            
 
 
         }

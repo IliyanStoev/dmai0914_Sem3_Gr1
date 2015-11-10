@@ -1,0 +1,8 @@
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe.config
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.pdb
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Properties.Resources.resources
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csproj.GenerateResource.Cache
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.exe
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.pdb

@@ -40,3 +40,24 @@ C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WebCl
 C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
 C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
 C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.dll.config
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.pdb
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Antlr3.Runtime.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\AspNet.ScriptManager.bootstrap.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\AspNet.ScriptManager.jQuery.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.ScriptManager.MSAjax.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.ScriptManager.WebForms.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.Web.Infrastructure.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\System.Web.Optimization.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebGrease.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\System.Web.Optimization.xml
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Antlr3.Runtime.pdb
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.xml
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.xml
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
