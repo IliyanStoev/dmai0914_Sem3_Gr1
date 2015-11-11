@@ -112,6 +112,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Properties\DataSources\WcfService.Model.Person.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -164,6 +165,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WCFWebReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCFWebReference\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -247,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WCFWebReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WcfService\WcfService.csproj">
+      <Project>{5e90f8ba-36da-4b86-af9e-b1d99a2ece93}</Project>
+      <Name>WcfService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,7 +12,7 @@ namespace WcfService.DAL
     {
         private SqlCommand comm;
 
-        public bool Login(Person p)
+        public Person Login(Person p)
         {
             comm = new SqlCommand();
             comm.CommandText = "SELECT * FROM Person WHERE userName=(@userName) AND password=(@password)";
@@ -23,17 +23,25 @@ namespace WcfService.DAL
             comm.Connection.Open();
 
             comm.CommandType = CommandType.Text;
+            SqlDataReader dr = comm.ExecuteReader();
+       
 
-            if (comm.ExecuteReader().HasRows)
+            if (dr.Read()&&dr.HasRows)
             {
+                Person pers = new Person();
+                pers.Name = dr["name"].ToString();
+                pers.Email = dr["email"].ToString();
+                pers.Phone = dr["phone"].ToString();
+                pers.UserType = Convert.ToInt32(dr["userType"]);
+                pers.UserName = dr["userName"].ToString();
                 comm.Connection.Close();
-                return true;
+                return pers;
                 
             }
             else
             {
                 comm.Connection.Close();
-                return false;
+                return null;
             }
             
 

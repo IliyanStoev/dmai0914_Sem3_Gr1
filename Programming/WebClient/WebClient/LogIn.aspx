@@ -13,14 +13,14 @@
       
       <div style ="text-align: center">
         <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="UserNameTB" runat="server"></asp:TextBox>
     </div>
         <p>
 
         </p>
       <div style ="text-align: center">
          <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
-         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+         <asp:TextBox ID="UserPasswordTB" runat="server"></asp:TextBox>
     </div>
         <p>
 

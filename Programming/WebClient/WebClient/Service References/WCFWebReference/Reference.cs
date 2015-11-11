@@ -16,10 +16,10 @@ namespace WebClient.WCFWebReference {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        bool Login(string User, string Password);
+        WcfService.Model.Person Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string User, string Password);
+        System.Threading.Tasks.Task<WcfService.Model.Person> LoginAsync(string User, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,11 +49,11 @@ namespace WebClient.WCFWebReference {
                 base(binding, remoteAddress) {
         }
         
-        public bool Login(string User, string Password) {
+        public WcfService.Model.Person Login(string User, string Password) {
             return base.Channel.Login(User, Password);
         }
         
-        public System.Threading.Tasks.Task<bool> LoginAsync(string User, string Password) {
+        public System.Threading.Tasks.Task<WcfService.Model.Person> LoginAsync(string User, string Password) {
             return base.Channel.LoginAsync(User, Password);
         }
     }

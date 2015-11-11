@@ -7,10 +7,12 @@ using System.Web;
 namespace WcfService.Model
 {
     [DataContract]
+   // [Serializable]
     public class Person
     {
         [DataMember]
         public string UserName { get; set; }
+        [DataMember]
         public string Name { get; set; }
         [DataMember]
         public string Phone { get; set; }

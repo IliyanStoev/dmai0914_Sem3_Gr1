@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WcfService.Model;
 
 namespace WcfService
 {
@@ -14,7 +15,7 @@ namespace WcfService
     {
 
         [OperationContract]
-        bool Login(string User, string Password);
+        Person Login(string User, string Password);
 
      
     }

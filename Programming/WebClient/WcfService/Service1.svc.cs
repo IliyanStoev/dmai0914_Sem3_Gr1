@@ -6,19 +6,20 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using WcfService.BLL;
+using WcfService.Model;
 
 namespace WcfService
 {
    
     public class Service1 : IService1
     {
-        public bool Login(string User, string Password)
+        public Person Login(string User, string Password)
         {
             UserCtrl userCtrl = new UserCtrl();
             
-         bool Login = userCtrl.Login(User, Password);
+         Person pers = userCtrl.Login(User, Password);
 
-         return Login;
+         return pers;
             
         }
 

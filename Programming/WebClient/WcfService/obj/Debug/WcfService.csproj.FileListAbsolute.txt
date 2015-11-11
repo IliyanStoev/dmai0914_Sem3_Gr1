@@ -1,6 +1,6 @@
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll.config
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.pdb
-S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.pdb
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache

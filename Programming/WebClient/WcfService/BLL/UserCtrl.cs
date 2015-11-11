@@ -10,14 +10,14 @@ namespace WcfService.BLL
 {
     public class UserCtrl
     {
-        public bool Login(string UserName, string Password)
+        public Person Login(string UserName, string Password)
         {
             Person p = new Person();
             p.UserName = UserName;
             p.Password = Password;
             LoginDb logDb = new LoginDb();
-            bool Login = logDb.Login(p);
-            return Login;
+             Person pers = logDb.Login(p);
+            return pers;
         }
     }
 }
