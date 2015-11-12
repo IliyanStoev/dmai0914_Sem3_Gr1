@@ -3,3 +3,9 @@ S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.pdb
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.pdb
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll.config
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.pdb
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.dll
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.pdb

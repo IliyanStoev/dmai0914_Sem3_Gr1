@@ -22,15 +22,6 @@ namespace WebClient {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl topMenu;
         
         /// <summary>
-        /// logInLi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor logInLi;
-        
-        /// <summary>
         /// userNameLi control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace WebClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor userNameLi;
+        
+        /// <summary>
+        /// logInLi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor logInLi;
         
         /// <summary>
         /// MainContent control.
