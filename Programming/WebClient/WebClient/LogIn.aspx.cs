@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebClient.WCFWebReference;
-using WcfService.Model;
 
 
 namespace WebClient
@@ -15,15 +14,16 @@ namespace WebClient
     {
         public static Person pers;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             Service1Client service = new WCFWebReference.Service1Client();
+           
             
             string userName = UserNameTB.Text;
             string password = UserPasswordTB.Text.GetHashCode().ToString();

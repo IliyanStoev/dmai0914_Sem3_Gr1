@@ -58,8 +58,5 @@ S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\System.Web.Optimization
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Antlr3.Runtime.pdb
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.xml
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.xml
-S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
-S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WcfService.dll
-S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WcfService.pdb
