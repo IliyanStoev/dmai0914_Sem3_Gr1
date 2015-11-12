@@ -14,11 +14,23 @@ namespace WebClient
         {
             if (LogIn.pers != null)
             {
-
-                userNameLi.InnerText = "Logged in as:" + LogIn.pers.Name;
-                logInLi.InnerText = "Log Out";
-
+                userNameLi.InnerText = "Logged in as: " + LogIn.pers.Name;
+                loggingLi.InnerText = "Log out";
             }
         }
+
+        protected void loggingLi_ServerClick(object sender, EventArgs e)
+        {
+            if (loggingLi.InnerText.Equals("Log in"))
+            {
+                Response.Redirect("LogIn.aspx");
+            }
+            else if (loggingLi.InnerText.Equals("Log out"))
+            {
+                LogIn.pers = null;
+                Response.Redirect("Default.aspx");
+            }
+        }
+
     }
 }

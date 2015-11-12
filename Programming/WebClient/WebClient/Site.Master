@@ -59,7 +59,7 @@
                 <div class="navbar-collapse collapse" style="float:right">
                     <ul class="nav navbar-nav" runat="server">
                         <li><a runat="server" href="#" id="userNameLi"></a></li>
-                        <li><a runat="server" href="~/Login" id="logInLi">Login</a></li>
+                        <li><a runat="server" onServerClick="loggingLi_ServerClick" id="loggingLi">Log in</a></li>
                     </ul>
                 </div>
             </div>
