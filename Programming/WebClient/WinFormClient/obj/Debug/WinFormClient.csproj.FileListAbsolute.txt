@@ -9,8 +9,8 @@ S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe.config
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.pdb
-C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Properties.Resources.resources
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csproj.GenerateResource.Cache
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.exe
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.pdb
+C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache

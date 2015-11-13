@@ -16,8 +16,16 @@ namespace WcfService.BLL
             p.UserName = UserName;
             p.Password = Password;
             LoginDb logDb = new LoginDb();
-             Person pers = logDb.Login(p);
-            return pers;
+
+            return logDb.Login(p);
+        }
+
+        public Person GetPerson(int id)
+        {
+            Person p = new Person();
+            p.Id = id;
+            LoginDb logDb = new LoginDb();
+            return logDb.GetPerson(p);
         }
     }
 }

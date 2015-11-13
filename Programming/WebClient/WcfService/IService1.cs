@@ -17,6 +17,8 @@ namespace WcfService
         [OperationContract]
         Person Login(string User, string Password);
 
+        [OperationContract]
+        int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName);
      
     }
 

@@ -16,7 +16,6 @@ C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bi
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Antlr3.Runtime.pdb
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.xml
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
 C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.dll.config

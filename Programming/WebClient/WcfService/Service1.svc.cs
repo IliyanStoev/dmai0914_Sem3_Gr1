@@ -15,12 +15,16 @@ namespace WcfService
     {
         public Person Login(string User, string Password)
         {
-            UserCtrl userCtrl = new UserCtrl();
-            
-         Person pers = userCtrl.Login(User, Password);
+         UserCtrl userCtrl = new UserCtrl();
 
-         return pers;
-            
+         return userCtrl.Login(User, Password);
+        }
+
+        public int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName)
+        {
+            HomeworkCtrl hwCtrl = new HomeworkCtrl();
+
+            return hwCtrl.SubmitHomework(childId, assignmentId, date, diskName);
         }
 
     }
