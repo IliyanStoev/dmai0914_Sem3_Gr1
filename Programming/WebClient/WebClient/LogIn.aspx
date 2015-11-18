@@ -1,33 +1,25 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="WebClient.LogIn" %>
+﻿<%@ Page Title="Login Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="WebClient.LogIn" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<style type="text/css">
-  </style>
-  <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-      
-      <div style ="text-align: center">
-        <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
-        <asp:TextBox ID="UserNameTB" runat="server"></asp:TextBox>
-    </div>
-        <p>
-
-        </p>
-      <div style ="text-align: center">
-         <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
-         <asp:TextBox ID="UserPasswordTB" runat="server"></asp:TextBox>
-    </div>
-        <p>
-
-        </p>
-        <div style ="text-align: center">
-            <asp:Button ID="Button1" runat="server" Text="Log in" OnClick="Button1_Click"/>
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3" style="margin-top: 20px">
+            <div style="text-align: center">
+                <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
+                <asp:TextBox ID="UserNameTB" runat="server"></asp:TextBox>
+            </div>
+            <p>
+            </p>
+            <div style="text-align: center">
+                <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
+                <asp:TextBox ID="UserPasswordTB" runat="server"></asp:TextBox>
+            </div>
+            <p>
+            </p>
+            <div style="text-align: center">
+                <asp:Button ID="Button1" runat="server" Text="Log in" OnClick="Button1_Click" />
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</asp:Content>

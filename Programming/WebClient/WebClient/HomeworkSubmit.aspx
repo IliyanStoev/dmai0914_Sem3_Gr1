@@ -1,21 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomeworkSubmit.aspx.cs" Inherits="WebClient.HomeworkSubmit" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HomeworkSubmit.aspx.cs" Inherits="WebClient.HomeworkSubmit" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        Select homework file: 
-        <asp:FileUpload ID="FileUpload1" runat="server" />
-        
-    </div>
-        <div>
-            <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3" style="margin-top: 20px">
+            <div>
+                <p>Select homework file: </p>
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+            </div><br />
+
+            <div>
+                <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</asp:Content>
