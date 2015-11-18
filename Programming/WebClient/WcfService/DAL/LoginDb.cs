@@ -11,6 +11,7 @@ namespace WcfService.DAL
     public class LoginDb
     {
         private SqlCommand comm;
+        private DbConnection dbCon;
 
         public Person Login(Person p)
         {
@@ -18,8 +19,8 @@ namespace WcfService.DAL
             comm.CommandText = "SELECT * FROM Person WHERE userName=(@userName) AND password=(@password)";
             comm.Parameters.AddWithValue("userName", p.UserName);
             comm.Parameters.AddWithValue("password", p.Password);
-
-            comm.Connection = DbConnection.GetInstance().GetConnection();
+            dbCon = new DbConnection();
+            comm.Connection = dbCon.GetConnection();
             comm.Connection.Open();
 
             comm.CommandType = CommandType.Text;
@@ -50,8 +51,8 @@ namespace WcfService.DAL
             comm = new SqlCommand();
             comm.CommandText = "SELECT * FROM Person WHERE pid=(@personId)";
             comm.Parameters.AddWithValue("personId", p.Id);
-
-            comm.Connection = DbConnection.GetInstance().GetConnection();
+            dbCon = new DbConnection();
+            comm.Connection = dbCon.GetConnection();
             comm.Connection.Open();
 
             comm.CommandType = CommandType.Text;

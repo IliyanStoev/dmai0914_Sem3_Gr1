@@ -8,7 +8,7 @@ namespace UnitTestProject
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void LoginTest()
         {
             string userName = "Anna";
             string password = "2222".GetHashCode().ToString(); 
@@ -16,6 +16,21 @@ namespace UnitTestProject
             Service1Client client = new ServiceReference1.Service1Client();
 
             Assert.IsNotNull(client.Login(userName, password));
+        }
+
+        [TestMethod]
+
+        public void SubmitTest()
+        {
+            int childId = 1;
+            int assignmentId = 1;
+            DateTime date = DateTime.Now;
+            string diskName = "Test Assignment";
+
+            ServiceReference1.Service1Client testService = new Service1Client();
+
+            Assert.AreEqual(1, testService.SubmitHomework(childId, assignmentId, date, diskName));
+           
         }
     }
 }

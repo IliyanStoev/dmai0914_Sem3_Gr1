@@ -11,21 +11,39 @@ namespace WcfService.DAL
     public class HomeworkDb
     {
         private SqlCommand comm;
+        private DbConnection dbCon;
+        int result;
 
         public int SubmitHomework(Homework hw)
         {
-            comm = new SqlCommand();
-            comm.CommandText = "INSERT INTO Homework(childId, assignmentId, date, diskName) VALUES(@childId, @assignmentId, @date, @diskName)";
-            comm.Parameters.AddWithValue("childId", hw.Child.Id);
-            comm.Parameters.AddWithValue("assignmentId", hw.Assignment.Id);
-            comm.Parameters.AddWithValue("date", hw.Date);
-            comm.Parameters.AddWithValue("diskName", hw.DiskName);
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Homework(childId, assignmentId, date, diskName) VALUES(@childId, @assignmentId, @date, @diskName)";
+                comm.Parameters.AddWithValue("childId", hw.Child.Id);
+                comm.Parameters.AddWithValue("assignmentId", hw.Assignment.Id);
+                comm.Parameters.AddWithValue("date", hw.Date);
+                comm.Parameters.AddWithValue("diskName", hw.DiskName);
 
-            comm.Connection = DbConnection.GetInstance().GetConnection();
-            comm.Connection.Open();
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
 
-            comm.CommandType = CommandType.Text;
-            return comm.ExecuteNonQuery();
+                comm.CommandType = CommandType.Text;
+                result = comm.ExecuteNonQuery();
+              
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+            return result;
         }
     }
 }
