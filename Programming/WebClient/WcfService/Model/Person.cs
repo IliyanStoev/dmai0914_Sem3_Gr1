@@ -25,8 +25,5 @@ namespace WcfService.Model
         [DataMember]
         public int UserType { get; set; }
 
-
-
-
     }
 }

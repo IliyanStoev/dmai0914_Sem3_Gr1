@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebClient
 {
-    public partial class blabal : System.Web.UI.Page
+    public partial class blabal2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["test"] = "test";
+
         }
     }
 }
