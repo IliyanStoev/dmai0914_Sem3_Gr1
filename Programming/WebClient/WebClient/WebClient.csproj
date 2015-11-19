@@ -102,8 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="blabal.aspx" />
-    <Content Include="blabal2.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -199,20 +197,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="blabal.aspx.cs">
-      <DependentUpon>blabal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="blabal.aspx.designer.cs">
-      <DependentUpon>blabal.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="blabal2.aspx.cs">
-      <DependentUpon>blabal2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="blabal2.aspx.designer.cs">
-      <DependentUpon>blabal2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
