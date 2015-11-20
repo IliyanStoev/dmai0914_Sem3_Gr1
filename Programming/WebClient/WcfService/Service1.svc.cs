@@ -27,5 +27,12 @@ namespace WcfService
             return hwCtrl.SubmitHomework(childId, assignmentId, date, diskName);
         }
 
+        public int CreateAssignment(int teacherId, string subject, string title, string exercise, DateTime date, DateTime deadline)
+        {
+            AssignmentCtrl assCtrl = new AssignmentCtrl();
+
+            return assCtrl.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
+        }
+
     }
 }

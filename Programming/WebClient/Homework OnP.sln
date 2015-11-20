@@ -11,6 +11,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{5E90F8BA-36DA-4B86-AF9E-B1D99A2ECE93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormClient", "WinFormClient\WinFormClient.csproj", "{317B9D55-6EFC-43D3-B685-89E71F9B59C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E90F8BA-36DA-4B86-AF9E-B1D99A2ECE93} = {5E90F8BA-36DA-4B86-AF9E-B1D99A2ECE93}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{B7A7DF83-E7D0-4AC0-9D58-3D1F4455A6D3}"
 	ProjectSection(ProjectDependencies) = postProject

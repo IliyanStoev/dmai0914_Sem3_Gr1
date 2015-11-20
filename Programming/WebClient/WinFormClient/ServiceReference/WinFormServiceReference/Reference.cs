@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnitTestProject.ServiceReference1 {
+namespace WinFormClient.WinFormServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -155,14 +155,14 @@ namespace UnitTestProject.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinFormServiceReference.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        UnitTestProject.ServiceReference1.Person Login(string User, string Password);
+        WinFormClient.WinFormServiceReference.Person Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        System.Threading.Tasks.Task<UnitTestProject.ServiceReference1.Person> LoginAsync(string User, string Password);
+        System.Threading.Tasks.Task<WinFormClient.WinFormServiceReference.Person> LoginAsync(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SubmitHomework", ReplyAction="http://tempuri.org/IService1/SubmitHomeworkResponse")]
         int SubmitHomework(int childId, int assignmentId, System.DateTime date, string diskName);
@@ -178,12 +178,12 @@ namespace UnitTestProject.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : UnitTestProject.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : WinFormClient.WinFormServiceReference.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<UnitTestProject.ServiceReference1.IService1>, UnitTestProject.ServiceReference1.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<WinFormClient.WinFormServiceReference.IService1>, WinFormClient.WinFormServiceReference.IService1 {
         
         public Service1Client() {
         }
@@ -204,11 +204,11 @@ namespace UnitTestProject.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public UnitTestProject.ServiceReference1.Person Login(string User, string Password) {
+        public WinFormClient.WinFormServiceReference.Person Login(string User, string Password) {
             return base.Channel.Login(User, Password);
         }
         
-        public System.Threading.Tasks.Task<UnitTestProject.ServiceReference1.Person> LoginAsync(string User, string Password) {
+        public System.Threading.Tasks.Task<WinFormClient.WinFormServiceReference.Person> LoginAsync(string User, string Password) {
             return base.Channel.LoginAsync(User, Password);
         }
         
