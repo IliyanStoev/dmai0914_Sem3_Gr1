@@ -110,6 +110,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HomeworkSubmit.aspx" />
+    <Content Include="JustToTest.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="packages.config" />
     <Content Include="Properties\DataSources\WcfService.Model.Person.datasource" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="HomeworkSubmit.aspx.designer.cs">
       <DependentUpon>HomeworkSubmit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JustToTest.aspx.cs">
+      <DependentUpon>JustToTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JustToTest.aspx.designer.cs">
+      <DependentUpon>JustToTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>

@@ -169,6 +169,12 @@ namespace UnitTestProject.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SubmitHomework", ReplyAction="http://tempuri.org/IService1/SubmitHomeworkResponse")]
         System.Threading.Tasks.Task<int> SubmitHomeworkAsync(int childId, int assignmentId, System.DateTime date, string diskName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAssignment", ReplyAction="http://tempuri.org/IService1/CreateAssignmentResponse")]
+        int CreateAssignment(int teacherId, string subject, string title, string exercise, System.DateTime date, System.DateTime deadline);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAssignment", ReplyAction="http://tempuri.org/IService1/CreateAssignmentResponse")]
+        System.Threading.Tasks.Task<int> CreateAssignmentAsync(int teacherId, string subject, string title, string exercise, System.DateTime date, System.DateTime deadline);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -212,6 +218,14 @@ namespace UnitTestProject.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> SubmitHomeworkAsync(int childId, int assignmentId, System.DateTime date, string diskName) {
             return base.Channel.SubmitHomeworkAsync(childId, assignmentId, date, diskName);
+        }
+        
+        public int CreateAssignment(int teacherId, string subject, string title, string exercise, System.DateTime date, System.DateTime deadline) {
+            return base.Channel.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateAssignmentAsync(int teacherId, string subject, string title, string exercise, System.DateTime date, System.DateTime deadline) {
+            return base.Channel.CreateAssignmentAsync(teacherId, subject, title, exercise, date, deadline);
         }
     }
 }
