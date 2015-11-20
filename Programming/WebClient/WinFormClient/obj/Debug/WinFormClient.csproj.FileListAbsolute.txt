@@ -14,3 +14,12 @@ C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClien
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.pdb
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Form1.resources
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe.config
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.exe
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.pdb
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Form1.resources
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Properties.Resources.resources
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csproj.GenerateResource.Cache
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.pdb
