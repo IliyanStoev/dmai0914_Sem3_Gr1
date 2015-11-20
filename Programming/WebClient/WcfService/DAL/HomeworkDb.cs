@@ -45,5 +45,43 @@ namespace WcfService.DAL
             }
             return result;
         }
+
+        public List<Homework> getAllHomeworks()
+        {
+            List<Homework> hl = new List<Homework>();
+             try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "select * from Homework";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                result = comm.ExecuteNonQuery();
+
+                 while (myDataReader.Read())
+                 {
+                    Homework h = new Homework();
+                    h.myDataReader[“Make”].ToString(),
+                    myDataReader[“PetName”].ToString(),
+                    myDataReader.GetValue(2).ToString(),
+                    myDataReader.GetName(2));
+                  }
+              
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+            return result;
+        }
     }
 }

@@ -14,3 +14,12 @@ C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClien
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.pdb
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Form1.resources
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe.config
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.exe
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\bin\Debug\WinFormClient.pdb
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csprojResolveAssemblyReference.cache
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Form1.resources
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.Properties.Resources.resources
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.csproj.GenerateResource.Cache
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.exe
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WinFormClient\obj\Debug\WinFormClient.pdb

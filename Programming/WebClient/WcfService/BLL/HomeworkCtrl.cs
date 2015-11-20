@@ -23,5 +23,9 @@ namespace WcfService.BLL
 
             return hwDb.SubmitHomework(hw);
         }
+        public List<Homework> getAllHomework()
+        {
+            HomeworkDb hwDb = new HomeworkDb();
+        }
     }
 }

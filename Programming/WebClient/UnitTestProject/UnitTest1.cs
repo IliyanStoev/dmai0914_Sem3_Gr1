@@ -18,19 +18,31 @@ namespace UnitTestProject
             Assert.IsNotNull(client.Login(userName, password));
         }
 
-        [TestMethod]
+        //[TestMethod]
 
-        public void SubmitTest()
+        //public void SubmitTest()
+        //{
+        //    int childId = 1;
+        //    int assignmentId = 1;
+        //    DateTime date = DateTime.Now;
+        //    string diskName = "Test Assignment";
+
+        //    ServiceReference1.Service1Client testService = new Service1Client();
+
+        //    Assert.AreEqual(1, testService.SubmitHomework(childId, assignmentId, date, diskName));
+           
+        //}
+        [TestMethod]
+        public void SubmitHomeworkTest()
         {
-            int childId = 1;
+            int childId = 4;
             int assignmentId = 1;
             DateTime date = DateTime.Now;
-            string diskName = "Test Assignment";
+            string diskName = "testDiskName";
 
-            ServiceReference1.Service1Client testService = new Service1Client();
+            Service1Client client = new ServiceReference1.Service1Client();
 
-            Assert.AreEqual(1, testService.SubmitHomework(childId, assignmentId, date, diskName));
-           
+            Assert.AreEqual(1, client.SubmitHomework(childId, assignmentId, date, diskName));
         }
     }
 }

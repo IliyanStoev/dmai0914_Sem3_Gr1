@@ -1,4 +1,7 @@
-﻿namespace WinFormClient
+﻿using WinFormClient.ServiceReference1;
+using WinFormClient.WCFWeb
+
+namespace WinFormClient
 {
     partial class Form1
     {
