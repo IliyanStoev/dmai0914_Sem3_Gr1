@@ -59,4 +59,24 @@ S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.xml
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.xml
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
-S:\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.dll.config
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebClient.pdb
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Antlr3.Runtime.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\System.Web.Optimization.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\WebGrease.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\System.Web.Optimization.xml
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Antlr3.Runtime.pdb
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Newtonsoft.Json.xml
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
+C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
