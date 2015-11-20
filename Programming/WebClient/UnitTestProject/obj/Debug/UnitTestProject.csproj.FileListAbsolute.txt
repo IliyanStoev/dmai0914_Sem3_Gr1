@@ -9,3 +9,4 @@ S:\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\bin\Debug\UnitTestPro
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\bin\Debug\UnitTestProject.pdb
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.dll
 S:\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.pdb
+S:\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache

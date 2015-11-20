@@ -32,5 +32,24 @@ namespace UnitTestProject
             Assert.AreEqual(1, testService.SubmitHomework(childId, assignmentId, date, diskName));
            
         }
+
+        [TestMethod]
+
+        public void CreateAssignmentTest()
+        {
+            int teacherId = 1;
+            string subject = "Math";
+            string title = "TestAssignment";
+            string exercise = "2+2=?";
+            DateTime date = DateTime.Now;
+            DateTime deadline = DateTime.Now;
+
+            ServiceReference1.Service1Client testService = new Service1Client();
+
+            
+
+            Assert.AreEqual(1, testService.CreateAssignment(teacherId, subject, title, exercise, date, deadline));
+
+        }
     }
 }
