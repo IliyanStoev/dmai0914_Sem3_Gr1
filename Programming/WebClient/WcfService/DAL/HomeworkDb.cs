@@ -60,6 +60,8 @@ namespace WcfService.DAL
 
                 comm.CommandType = CommandType.Text;
                 result = comm.ExecuteNonQuery();
+                
+                SqlDataReader myDataReader = comm.ExecuteReader();
 
                  while (myDataReader.Read())
                  {
