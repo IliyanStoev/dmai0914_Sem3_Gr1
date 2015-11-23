@@ -28,173 +28,275 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabLogin = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.userNameLbl = new System.Windows.Forms.Label();
-            this.passLbl = new System.Windows.Forms.Label();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tabAssignments = new System.Windows.Forms.TabPage();
+            this.cbSubject = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.loginBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.AssignmentBtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.btnCreateAss = new System.Windows.Forms.Button();
+            this.tbExercise = new System.Windows.Forms.TextBox();
+            this.deadlineDate = new System.Windows.Forms.DateTimePicker();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.tabHomeworks = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabLogin.SuspendLayout();
+            this.tabAssignments.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabLogin);
+            this.tabControl1.Controls.Add(this.tabAssignments);
+            this.tabControl1.Controls.Add(this.tabHomeworks);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(384, 345);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabLogin
+            // 
+            this.tabLogin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabLogin.Controls.Add(this.label3);
+            this.tabLogin.Controls.Add(this.label2);
+            this.tabLogin.Controls.Add(this.label1);
+            this.tabLogin.Controls.Add(this.btnLogIn);
+            this.tabLogin.Controls.Add(this.tbPass);
+            this.tabLogin.Controls.Add(this.tbUsername);
+            this.tabLogin.Location = new System.Drawing.Point(4, 25);
+            this.tabLogin.Name = "tabLogin";
+            this.tabLogin.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLogin.Size = new System.Drawing.Size(376, 316);
+            this.tabLogin.TabIndex = 0;
+            this.tabLogin.Text = "Login";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(113, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(165, 50);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "HomeOnP";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(151, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(204, 30);
+            this.label1.Location = new System.Drawing.Point(151, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to HomeworkOnOp";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Username :";
             // 
-            // userNameLbl
+            // btnLogIn
             // 
-            this.userNameLbl.AutoSize = true;
-            this.userNameLbl.Location = new System.Drawing.Point(195, 83);
-            this.userNameLbl.Name = "userNameLbl";
-            this.userNameLbl.Size = new System.Drawing.Size(73, 17);
-            this.userNameLbl.TabIndex = 1;
-            this.userNameLbl.Text = "Username";
-            this.userNameLbl.Click += new System.EventHandler(this.userNameLbl_Click);
+            this.btnLogIn.Location = new System.Drawing.Point(149, 261);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 31);
+            this.btnLogIn.TabIndex = 2;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
-            // passLbl
+            // tbPass
             // 
-            this.passLbl.AutoSize = true;
-            this.passLbl.Location = new System.Drawing.Point(195, 116);
-            this.passLbl.Name = "passLbl";
-            this.passLbl.Size = new System.Drawing.Size(69, 17);
-            this.passLbl.TabIndex = 2;
-            this.passLbl.Text = "Password";
-            this.passLbl.Click += new System.EventHandler(this.passLbl_Click);
+            this.tbPass.Location = new System.Drawing.Point(138, 183);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.Size = new System.Drawing.Size(100, 22);
+            this.tbPass.TabIndex = 1;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(138, 105);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(100, 22);
+            this.tbUsername.TabIndex = 0;
+            // 
+            // tabAssignments
+            // 
+            this.tabAssignments.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabAssignments.Controls.Add(this.cbSubject);
+            this.tabAssignments.Controls.Add(this.label8);
+            this.tabAssignments.Controls.Add(this.label7);
+            this.tabAssignments.Controls.Add(this.label6);
+            this.tabAssignments.Controls.Add(this.label5);
+            this.tabAssignments.Controls.Add(this.label4);
+            this.tabAssignments.Controls.Add(this.btnCreateAss);
+            this.tabAssignments.Controls.Add(this.tbExercise);
+            this.tabAssignments.Controls.Add(this.deadlineDate);
+            this.tabAssignments.Controls.Add(this.startDate);
+            this.tabAssignments.Controls.Add(this.tbTitle);
+            this.tabAssignments.Location = new System.Drawing.Point(4, 25);
+            this.tabAssignments.Name = "tabAssignments";
+            this.tabAssignments.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAssignments.Size = new System.Drawing.Size(376, 316);
+            this.tabAssignments.TabIndex = 1;
+            this.tabAssignments.Text = "Assignments";
+            // 
+            // cbSubject
+            // 
+            this.cbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubject.FormattingEnabled = true;
+            this.cbSubject.Location = new System.Drawing.Point(267, 47);
+            this.cbSubject.Name = "cbSubject";
+            this.cbSubject.Size = new System.Drawing.Size(98, 24);
+            this.cbSubject.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(53, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 17);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Title :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Exercise : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(198, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Subject :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(128, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Deadline :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(289, 157);
+            this.label4.Location = new System.Drawing.Point(120, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Invalid user password";
-            this.label4.Visible = false;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Start Date :";
             // 
-            // textBox1
+            // btnCreateAss
             // 
-            this.textBox1.Location = new System.Drawing.Point(292, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.btnCreateAss.Location = new System.Drawing.Point(102, 285);
+            this.btnCreateAss.Name = "btnCreateAss";
+            this.btnCreateAss.Size = new System.Drawing.Size(169, 23);
+            this.btnCreateAss.TabIndex = 5;
+            this.btnCreateAss.Text = "Create Assignment";
+            this.btnCreateAss.UseVisualStyleBackColor = true;
+            this.btnCreateAss.Click += new System.EventHandler(this.btnCreateAss_Click);
             // 
-            // textBox2
+            // tbExercise
             // 
-            this.textBox2.Location = new System.Drawing.Point(292, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbExercise.Location = new System.Drawing.Point(8, 143);
+            this.tbExercise.Multiline = true;
+            this.tbExercise.Name = "tbExercise";
+            this.tbExercise.Size = new System.Drawing.Size(357, 136);
+            this.tbExercise.TabIndex = 4;
             // 
-            // loginBtn
+            // deadlineDate
             // 
-            this.loginBtn.Location = new System.Drawing.Point(317, 192);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(75, 23);
-            this.loginBtn.TabIndex = 6;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            this.deadlineDate.Location = new System.Drawing.Point(206, 115);
+            this.deadlineDate.Name = "deadlineDate";
+            this.deadlineDate.Size = new System.Drawing.Size(159, 22);
+            this.deadlineDate.TabIndex = 3;
             // 
-            // panel1
+            // startDate
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.AssignmentBtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(688, 457);
-            this.panel1.TabIndex = 7;
-            this.panel1.Visible = false;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.startDate.Location = new System.Drawing.Point(206, 77);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(159, 22);
+            this.startDate.TabIndex = 2;
             // 
-            // button2
+            // tbTitle
             // 
-            this.button2.Location = new System.Drawing.Point(285, 177);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Homeworks";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tbTitle.Location = new System.Drawing.Point(102, 17);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(159, 22);
+            this.tbTitle.TabIndex = 0;
             // 
-            // AssignmentBtn
+            // tabHomeworks
             // 
-            this.AssignmentBtn.Location = new System.Drawing.Point(285, 145);
-            this.AssignmentBtn.Name = "AssignmentBtn";
-            this.AssignmentBtn.Size = new System.Drawing.Size(107, 29);
-            this.AssignmentBtn.TabIndex = 0;
-            this.AssignmentBtn.Text = "Assignment";
-            this.AssignmentBtn.UseVisualStyleBackColor = true;
-            this.AssignmentBtn.Click += new System.EventHandler(this.AssignmentBtn_Click);
+            this.tabHomeworks.Location = new System.Drawing.Point(4, 25);
+            this.tabHomeworks.Name = "tabHomeworks";
+            this.tabHomeworks.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHomeworks.Size = new System.Drawing.Size(376, 316);
+            this.tabHomeworks.TabIndex = 2;
+            this.tabHomeworks.Text = "Homeworks";
+            this.tabHomeworks.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // HomeOnP
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(688, 457);
-            this.panel2.TabIndex = 2;
-            //
-            // label5
-            //
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            //
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 457);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.loginBtn);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.passLbl);
-            this.Controls.Add(this.userNameLbl);
-            this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
-            this.Text = "Dekstop App";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
+            this.ClientSize = new System.Drawing.Size(381, 345);
+            this.Controls.Add(this.tabControl1);
+            this.Name = "HomeOnP";
+            this.Text = "HomeOnP";
+            this.tabControl1.ResumeLayout(false);
+            this.tabLogin.ResumeLayout(false);
+            this.tabLogin.PerformLayout();
+            this.tabAssignments.ResumeLayout(false);
+            this.tabAssignments.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabLogin;
+        private System.Windows.Forms.TabPage tabAssignments;
+        private System.Windows.Forms.TabPage tabHomeworks;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label userNameLbl;
-        private System.Windows.Forms.Label passLbl;
+        private System.Windows.Forms.Button btnLogIn;
+        private System.Windows.Forms.TextBox tbPass;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button AssignmentBtn;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnCreateAss;
+        private System.Windows.Forms.TextBox tbExercise;
+        private System.Windows.Forms.DateTimePicker deadlineDate;
+        private System.Windows.Forms.DateTimePicker startDate;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.ComboBox cbSubject;
     }
 }
 

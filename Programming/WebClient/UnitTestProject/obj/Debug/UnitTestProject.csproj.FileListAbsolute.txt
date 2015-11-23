@@ -15,3 +15,8 @@ C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClie
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.dll
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.pdb
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\bin\Debug\UnitTestProject.dll.config
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.pdb

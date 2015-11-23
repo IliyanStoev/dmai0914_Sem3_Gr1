@@ -33,4 +33,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CreateAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherId" type="xs:int" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="exercise" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="deadline" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateAssignmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
