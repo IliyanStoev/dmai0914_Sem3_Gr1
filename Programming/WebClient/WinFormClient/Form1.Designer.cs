@@ -28,146 +28,275 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.datePick = new System.Windows.Forms.DateTimePicker();
-            this.tbAssTitle = new System.Windows.Forms.TextBox();
-            this.tbSubject = new System.Windows.Forms.TextBox();
-            this.tbExercise = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabLogin = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.deadlinePick = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tabAssignments = new System.Windows.Forms.TabPage();
+            this.cbSubject = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnCreateAss = new System.Windows.Forms.Button();
+            this.tbExercise = new System.Windows.Forms.TextBox();
+            this.deadlineDate = new System.Windows.Forms.DateTimePicker();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.tabHomeworks = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabLogin.SuspendLayout();
+            this.tabAssignments.SuspendLayout();
             this.SuspendLayout();
             // 
-            // datePick
+            // tabControl1
             // 
-            this.datePick.Location = new System.Drawing.Point(393, 125);
-            this.datePick.Name = "datePick";
-            this.datePick.Size = new System.Drawing.Size(200, 22);
-            this.datePick.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tabLogin);
+            this.tabControl1.Controls.Add(this.tabAssignments);
+            this.tabControl1.Controls.Add(this.tabHomeworks);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(384, 345);
+            this.tabControl1.TabIndex = 0;
             // 
-            // tbAssTitle
+            // tabLogin
             // 
-            this.tbAssTitle.Location = new System.Drawing.Point(201, 34);
-            this.tbAssTitle.Name = "tbAssTitle";
-            this.tbAssTitle.Size = new System.Drawing.Size(233, 22);
-            this.tbAssTitle.TabIndex = 1;
-            // 
-            // tbSubject
-            // 
-            this.tbSubject.Location = new System.Drawing.Point(493, 77);
-            this.tbSubject.Name = "tbSubject";
-            this.tbSubject.Size = new System.Drawing.Size(100, 22);
-            this.tbSubject.TabIndex = 2;
-            // 
-            // tbExercise
-            // 
-            this.tbExercise.Location = new System.Drawing.Point(42, 205);
-            this.tbExercise.Multiline = true;
-            this.tbExercise.Name = "tbExercise";
-            this.tbExercise.Size = new System.Drawing.Size(551, 140);
-            this.tbExercise.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(424, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Subject :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Assignment Title :";
+            this.tabLogin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabLogin.Controls.Add(this.label3);
+            this.tabLogin.Controls.Add(this.label2);
+            this.tabLogin.Controls.Add(this.label1);
+            this.tabLogin.Controls.Add(this.btnLogIn);
+            this.tabLogin.Controls.Add(this.tbPass);
+            this.tabLogin.Controls.Add(this.tbUsername);
+            this.tabLogin.Location = new System.Drawing.Point(4, 25);
+            this.tabLogin.Name = "tabLogin";
+            this.tabLogin.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLogin.Size = new System.Drawing.Size(376, 316);
+            this.tabLogin.TabIndex = 0;
+            this.tabLogin.Text = "Login";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 185);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(113, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Exercise : ";
+            this.label3.Size = new System.Drawing.Size(165, 50);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "HomeOnP";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Date : ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(151, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password :";
             // 
-            // deadlinePick
+            // label1
             // 
-            this.deadlinePick.Location = new System.Drawing.Point(393, 162);
-            this.deadlinePick.Name = "deadlinePick";
-            this.deadlinePick.Size = new System.Drawing.Size(200, 22);
-            this.deadlinePick.TabIndex = 8;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(151, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Username :";
+            // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(149, 261);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 31);
+            this.btnLogIn.TabIndex = 2;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            // 
+            // tbPass
+            // 
+            this.tbPass.Location = new System.Drawing.Point(138, 183);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.Size = new System.Drawing.Size(100, 22);
+            this.tbPass.TabIndex = 1;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(138, 105);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(100, 22);
+            this.tbUsername.TabIndex = 0;
+            // 
+            // tabAssignments
+            // 
+            this.tabAssignments.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabAssignments.Controls.Add(this.cbSubject);
+            this.tabAssignments.Controls.Add(this.label8);
+            this.tabAssignments.Controls.Add(this.label7);
+            this.tabAssignments.Controls.Add(this.label6);
+            this.tabAssignments.Controls.Add(this.label5);
+            this.tabAssignments.Controls.Add(this.label4);
+            this.tabAssignments.Controls.Add(this.btnCreateAss);
+            this.tabAssignments.Controls.Add(this.tbExercise);
+            this.tabAssignments.Controls.Add(this.deadlineDate);
+            this.tabAssignments.Controls.Add(this.startDate);
+            this.tabAssignments.Controls.Add(this.tbTitle);
+            this.tabAssignments.Location = new System.Drawing.Point(4, 25);
+            this.tabAssignments.Name = "tabAssignments";
+            this.tabAssignments.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAssignments.Size = new System.Drawing.Size(376, 316);
+            this.tabAssignments.TabIndex = 1;
+            this.tabAssignments.Text = "Assignments";
+            // 
+            // cbSubject
+            // 
+            this.cbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubject.FormattingEnabled = true;
+            this.cbSubject.Location = new System.Drawing.Point(267, 47);
+            this.cbSubject.Name = "cbSubject";
+            this.cbSubject.Size = new System.Drawing.Size(98, 24);
+            this.cbSubject.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(53, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 17);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Title :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Exercise : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(198, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Subject :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 162);
+            this.label5.Location = new System.Drawing.Point(128, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Deadline : ";
+            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Deadline :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(120, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Start Date :";
             // 
             // btnCreateAss
             // 
-            this.btnCreateAss.Location = new System.Drawing.Point(236, 387);
+            this.btnCreateAss.Location = new System.Drawing.Point(102, 285);
             this.btnCreateAss.Name = "btnCreateAss";
-            this.btnCreateAss.Size = new System.Drawing.Size(168, 23);
-            this.btnCreateAss.TabIndex = 10;
+            this.btnCreateAss.Size = new System.Drawing.Size(169, 23);
+            this.btnCreateAss.TabIndex = 5;
             this.btnCreateAss.Text = "Create Assignment";
             this.btnCreateAss.UseVisualStyleBackColor = true;
-            this.btnCreateAss.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreateAss.Click += new System.EventHandler(this.btnCreateAss_Click);
             // 
-            // Form1
+            // tbExercise
+            // 
+            this.tbExercise.Location = new System.Drawing.Point(8, 143);
+            this.tbExercise.Multiline = true;
+            this.tbExercise.Name = "tbExercise";
+            this.tbExercise.Size = new System.Drawing.Size(357, 136);
+            this.tbExercise.TabIndex = 4;
+            // 
+            // deadlineDate
+            // 
+            this.deadlineDate.Location = new System.Drawing.Point(206, 115);
+            this.deadlineDate.Name = "deadlineDate";
+            this.deadlineDate.Size = new System.Drawing.Size(159, 22);
+            this.deadlineDate.TabIndex = 3;
+            // 
+            // startDate
+            // 
+            this.startDate.Location = new System.Drawing.Point(206, 77);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(159, 22);
+            this.startDate.TabIndex = 2;
+            // 
+            // tbTitle
+            // 
+            this.tbTitle.Location = new System.Drawing.Point(102, 17);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(159, 22);
+            this.tbTitle.TabIndex = 0;
+            // 
+            // tabHomeworks
+            // 
+            this.tabHomeworks.Location = new System.Drawing.Point(4, 25);
+            this.tabHomeworks.Name = "tabHomeworks";
+            this.tabHomeworks.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHomeworks.Size = new System.Drawing.Size(376, 316);
+            this.tabHomeworks.TabIndex = 2;
+            this.tabHomeworks.Text = "Homeworks";
+            this.tabHomeworks.UseVisualStyleBackColor = true;
+            // 
+            // HomeOnP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 446);
-            this.Controls.Add(this.btnCreateAss);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.deadlinePick);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbExercise);
-            this.Controls.Add(this.tbSubject);
-            this.Controls.Add(this.tbAssTitle);
-            this.Controls.Add(this.datePick);
-            this.Name = "Form1";
-            this.Text = "Create Assignment";
+            this.ClientSize = new System.Drawing.Size(381, 345);
+            this.Controls.Add(this.tabControl1);
+            this.Name = "HomeOnP";
+            this.Text = "HomeOnP";
+            this.tabControl1.ResumeLayout(false);
+            this.tabLogin.ResumeLayout(false);
+            this.tabLogin.PerformLayout();
+            this.tabAssignments.ResumeLayout(false);
+            this.tabAssignments.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker datePick;
-        private System.Windows.Forms.TextBox tbAssTitle;
-        private System.Windows.Forms.TextBox tbSubject;
-        private System.Windows.Forms.TextBox tbExercise;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabLogin;
+        private System.Windows.Forms.TabPage tabAssignments;
+        private System.Windows.Forms.TabPage tabHomeworks;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker deadlinePick;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLogIn;
+        private System.Windows.Forms.TextBox tbPass;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCreateAss;
+        private System.Windows.Forms.TextBox tbExercise;
+        private System.Windows.Forms.DateTimePicker deadlineDate;
+        private System.Windows.Forms.DateTimePicker startDate;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.ComboBox cbSubject;
     }
 }
 

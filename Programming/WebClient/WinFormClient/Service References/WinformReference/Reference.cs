@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebClient.WCFWebReference {
+namespace WinFormClient.WinformReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -155,14 +155,14 @@ namespace WebClient.WCFWebReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFWebReference.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinformReference.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        WebClient.WCFWebReference.Person Login(string User, string Password);
+        WinFormClient.WinformReference.Person Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        System.Threading.Tasks.Task<WebClient.WCFWebReference.Person> LoginAsync(string User, string Password);
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.Person> LoginAsync(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SubmitHomework", ReplyAction="http://tempuri.org/IService1/SubmitHomeworkResponse")]
         int SubmitHomework(int childId, int assignmentId, System.DateTime date, string diskName);
@@ -178,12 +178,12 @@ namespace WebClient.WCFWebReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : WebClient.WCFWebReference.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : WinFormClient.WinformReference.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<WebClient.WCFWebReference.IService1>, WebClient.WCFWebReference.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<WinFormClient.WinformReference.IService1>, WinFormClient.WinformReference.IService1 {
         
         public Service1Client() {
         }
@@ -204,11 +204,11 @@ namespace WebClient.WCFWebReference {
                 base(binding, remoteAddress) {
         }
         
-        public WebClient.WCFWebReference.Person Login(string User, string Password) {
+        public WinFormClient.WinformReference.Person Login(string User, string Password) {
             return base.Channel.Login(User, Password);
         }
         
-        public System.Threading.Tasks.Task<WebClient.WCFWebReference.Person> LoginAsync(string User, string Password) {
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.Person> LoginAsync(string User, string Password) {
             return base.Channel.LoginAsync(User, Password);
         }
         

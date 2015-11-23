@@ -26,7 +26,7 @@ namespace WebClient
            
             
             string userName = UserNameTB.Text;
-            string password = UserPasswordTB.Text.GetHashCode().ToString();
+            string password = UserPasswordTB.Text;
             
             pers = service.Login(userName, password);
             
