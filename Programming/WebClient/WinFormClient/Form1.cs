@@ -7,96 +7,88 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using WinFormClient.WCFWebReference;
-
-
+using WinFormClient.WinformReference;
 
 namespace WinFormClient
 {
     public partial class Form1 : Form
     {
-        public static Person pers;
-       
-         public Form1()
+        private string[] subjects = { "Math", "Literature", "English" };
+        private Person person;
+        public Form1()
         {
             InitializeComponent();
+            tabControl1.TabPages.Remove(tabAssignments);
+            tabControl1.TabPages.Remove(tabHomeworks);
+            cbSubject.DataSource = subjects;
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnLogIn_Click(object sender, EventArgs e)
         {
-
+            LogIn();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private void LogIn()
         {
+            string userName = tbUsername.Text;
+            string password = tbPass.Text.GetHashCode().ToString();
 
+            Service1Client winService = new Service1Client();
 
-            Service1Client service = new WCFWebReference.Service1Client();
-            Person pers;
+            person = winService.Login(userName, password);
 
-            string userName = textBox1.Text;
-            string password = textBox2.Text;
-
-             pers = service.Login(userName, password);
-
-            if (pers != null)
+            if (person != null && person.Id == 1)
             {
-                panel1.Visible = true;
-                
+                tabControl1.TabPages.Remove(tabLogin);
+                tabControl1.TabPages.Add(tabAssignments);
+                tabControl1.TabPages.Add(tabHomeworks);
+            }
+
+            else
+            {
+                MessageBox.Show("Username or password is incorrect, please try again :)");
+            }
+        }
+
+        private void btnCreateAss_Click(object sender, EventArgs e)
+        {
+            CreateAssignment();
+        }
+
+        private void CreateAssignment()
+        {
+            int teacherId = person.Id;
+            string title = tbTitle.Text;
+            string subject = cbSubject.SelectedValue.ToString();
+            string exercise = tbExercise.Text;
+            DateTime date = startDate.Value;
+            DateTime deadline = deadlineDate.Value;
+            if (deadline < date)
+            {
+                MessageBox.Show("Deadline must be greater than Starting Date");
+
             }
             else
             {
-                label4.Visible = true;
+                Service1Client winService = new Service1Client();
+                int i = winService.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
+
+                if (i == 1)
+                {
+                    MessageBox.Show("Assignment Succesfully created");
+                    tbTitle.Text = "";
+                    cbSubject.ResetText();
+                    tbExercise.Text = "";
+                    startDate.ResetText();
+                    deadlineDate.ResetText();
+                }
+
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
             }
-
-
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userNameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AssignmentBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
