@@ -10,7 +10,7 @@ namespace UnitTestProject
         [TestMethod]
         public void LoginTest()
         {
-            string userName = "Anna";
+            string userName = "anna";
             string password = "2222".GetHashCode().ToString(); 
 
             Service1Client client = new ServiceReference1.Service1Client();
@@ -22,7 +22,7 @@ namespace UnitTestProject
 
         public void SubmitTest()
         {
-            int childId = 1;
+            int childId = 4;
             int assignmentId = 1;
             DateTime date = DateTime.Now;
             string diskName = "Test Assignment";

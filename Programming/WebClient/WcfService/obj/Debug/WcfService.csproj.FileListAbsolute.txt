@@ -15,3 +15,8 @@ C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClie
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.dll
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.pdb
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll.config
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.dll
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\bin\WcfService.pdb
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.dll
+C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WcfService\obj\Debug\WcfService.pdb
