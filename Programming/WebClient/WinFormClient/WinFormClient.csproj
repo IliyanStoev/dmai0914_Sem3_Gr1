@@ -99,6 +99,18 @@
     <None Include="Service References\WinformReference\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\WinformReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WinformReference\WinFormClient.WinformReference.Assignment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WinformReference\WinFormClient.WinformReference.Homework.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WinformReference\WinFormClient.WinformReference.ListForObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\WinformReference\WinFormClient.WinformReference.Person.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

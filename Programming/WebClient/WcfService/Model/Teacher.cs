@@ -6,6 +6,7 @@ using System.Web;
 
 namespace WcfService.Model
 {
+    [KnownType(typeof(Teacher))]
     [DataContract]
     public class Teacher : Person
     {

@@ -23,5 +23,26 @@ namespace WcfService.BLL
 
             return hwDb.SubmitHomework(hw);
         }
+        public ListForObjects GetAllHomeworksByID(int assignmentId)
+        {
+            HomeworkDb hwDb = new HomeworkDb();
+            UserCtrl userCtrl = new UserCtrl();
+            AssignmentCtrl assgnmentCtrl = new AssignmentCtrl();
+            ListForObjects l = hwDb.GetAllHomeworksById(assignmentId);
+            ListForObjects list = new ListForObjects();
+            foreach (Object o in l.Asl)
+            {
+                Homework hw = (Homework)o;
+                hw.Child = userCtrl.GetChild(hw.Child.Id);
+                hw.Assignment = assgnmentCtrl.GetAssignmentById(hw.Assignment.Id);
+                list.Asl.Add(hw);
+            }
+            return list;
+        }
+        public Homework GetHomeworkById(int id)
+        {
+            HomeworkDb hwDb = new HomeworkDb();
+            return hwDb.GetHomeworkById(id);
+        }
     }
 }

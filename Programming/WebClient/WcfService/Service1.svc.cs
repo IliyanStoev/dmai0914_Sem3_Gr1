@@ -33,6 +33,27 @@ namespace WcfService
 
             return assCtrl.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
         }
+        public ListForObjects GetAllHomeworksById(int assignmentId)
+        {
+            HomeworkCtrl hmwCtrl = new HomeworkCtrl();
+            return hmwCtrl.GetAllHomeworksByID(assignmentId);
+        }
+        public ListForObjects GetAllAssignmentsForTeacherById(int teacherId)
+        {
+            AssignmentCtrl asCtrl = new AssignmentCtrl();
+
+            return asCtrl.GetAllAssignmentsByTeacherId(teacherId);
+        }
+        public Assignment GetAssignmentById(int id)
+        {
+            AssignmentCtrl asCtrl = new AssignmentCtrl();
+            return asCtrl.GetAssignmentById(id);
+        }
+        public Homework GetHomeworkById(int id)
+        {
+            HomeworkCtrl hwCtrl = new HomeworkCtrl();
+            return hwCtrl.GetHomeworkById(id);
+        }
 
     }
 }
