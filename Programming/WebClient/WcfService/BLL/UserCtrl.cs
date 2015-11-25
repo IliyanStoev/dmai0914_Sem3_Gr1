@@ -10,7 +10,7 @@ namespace WcfService.BLL
 {
     public class UserCtrl
     {
-        public Person Login(string UserName, string Password)
+        public Object Login(string UserName, string Password)
         {
             Person p = new Person();
             p.UserName = UserName;
@@ -20,12 +20,23 @@ namespace WcfService.BLL
             return logDb.Login(p);
         }
 
-        public Person GetPerson(int id)
+        public Object GetPerson(int id)
         {
             Person p = new Person();
             p.Id = id;
             LoginDb logDb = new LoginDb();
             return logDb.GetPerson(p);
         }
+
+        //public Teacher GetTeacher(int id)
+        //{
+        //    PersonDb persDb = new PersonDb();
+        //    return persDb.GetTeacher(GetPerson(id));
+        //}
+        //public Child GetChild(int id)
+        //{
+        //    PersonDb persDb = new PersonDb();
+        //    return persDb.GetChild(GetPerson(id));
+        //}
     }
 }

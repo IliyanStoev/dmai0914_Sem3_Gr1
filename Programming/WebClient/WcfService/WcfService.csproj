@@ -87,9 +87,11 @@
     <Compile Include="DAL\DbConnection.cs" />
     <Compile Include="DAL\HomeworkDb.cs" />
     <Compile Include="DAL\LoginDb.cs" />
+    <Compile Include="DAL\PersonDb.cs" />
     <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\Child.cs" />
     <Compile Include="Model\Homework.cs" />
+    <Compile Include="Model\ListForObjects.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Teacher.cs" />
     <Compile Include="Service1.svc.cs">

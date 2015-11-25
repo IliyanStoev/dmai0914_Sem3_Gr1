@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebClient.WCFWebReference;
 
 namespace WebClient
 {
@@ -13,10 +14,14 @@ namespace WebClient
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (LogIn.pers == null)
+            if (LogIn.child == null)
             {
                 Response.Redirect("LogIn.aspx");
-            } 
+            }
+            if (!IsPostBack)
+            {
+                getAssignments();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -39,19 +44,47 @@ namespace WebClient
             //save user id in database
             FileUpload1.SaveAs(diskName);
 
-            SaveToDatabase();
+            if (SaveToDatabase() == 1)
+            {
+                Response.Write("<script>alert('The file has been successufully uploaded')</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert('An error occured. Your files has not been uploaded')</script>");
+            }
 
         }
 
         private int SaveToDatabase()
         {
-            int childId = LogIn.pers.Id;
-            int assignmentId = 1;
+            int childId = LogIn.child.Id;
+            int assignmentId = Convert.ToInt32(assignmentList.SelectedValue.Split(' ')[0]);
             DateTime date = DateTime.Now;
 
-            WCFWebReference.Service1Client client = new WCFWebReference.Service1Client();
+            Service1Client client = new Service1Client();
 
             return client.SubmitHomework(childId, assignmentId, date, diskName);
+        }
+
+        private void getAssignments()
+        {
+            Service1Client client = new Service1Client();
+            Assignment[] asgs = client.GetAllAssignments();
+            List<String> asgsList = new List<String>();
+            foreach (Assignment a in asgs)
+            {
+                asgsList.Add(a.Id + " . " + a.title);
+            }
+
+            if (asgs != null)
+            {
+                assignmentList.DataSource = asgsList;
+                assignmentList.DataBind();
+            }
+            else
+            {
+                Response.Write("<script>alert('is null')</script>");
+            }
         }
     }
 }

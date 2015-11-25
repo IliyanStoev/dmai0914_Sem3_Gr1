@@ -12,9 +12,9 @@ namespace WebClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (LogIn.pers != null)
+            if (LogIn.child != null)
             {
-                userNameLi.InnerText = "Logged in as: " + LogIn.pers.Name;
+                userNameLi.InnerText = "Logged in as: " + LogIn.child.Name;
                 loggingLi.InnerText = "Log out";
             }
         }
@@ -27,7 +27,7 @@ namespace WebClient
             }
             else if (loggingLi.InnerText.Equals("Log out"))
             {
-                LogIn.pers = null;
+                LogIn.child = null;
                 Response.Redirect("Default.aspx");
             }
         }

@@ -13,7 +13,7 @@ namespace WcfService
    
     public class Service1 : IService1
     {
-        public Person Login(string User, string Password)
+        public Object Login(string User, string Password)
         {
          UserCtrl userCtrl = new UserCtrl();
 
@@ -32,6 +32,32 @@ namespace WcfService
             AssignmentCtrl assCtrl = new AssignmentCtrl();
 
             return assCtrl.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
+        }
+        
+        public ListForObjects GetAllHomeworksById(int assignmentId)
+        {
+            HomeworkCtrl hmwCtrl = new HomeworkCtrl();
+
+            return hmwCtrl.GetAllHomeworksByID(assignmentId);
+        }
+
+        public ListForObjects GetAllAssignmentsForTeacherById(int teacherId)
+        {
+            AssignmentCtrl asCtrl = new AssignmentCtrl();
+
+            return asCtrl.GetAllAssignmentsByTeacherId(teacherId);
+        }
+
+        public List<Assignment> GetAllAssignments()
+        {
+            AssignmentCtrl asCtrl = new AssignmentCtrl();
+            return asCtrl.GetAllAssignments();
+        }
+
+        public Homework GetHomeworkById(int id)
+        {
+            HomeworkCtrl hwCtrl = new HomeworkCtrl();
+            return hwCtrl.GetHomeworkById(id);
         }
 
     }
