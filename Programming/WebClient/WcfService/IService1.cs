@@ -13,9 +13,8 @@ namespace WcfService
     [ServiceContract]
     public interface IService1
     {
-
         [OperationContract]
-        Person Login(string User, string Password);
+        Object Login(string User, string Password);
 
         [OperationContract]
         int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName);
@@ -30,7 +29,7 @@ namespace WcfService
         ListForObjects GetAllAssignmentsForTeacherById(int teacherId);
         
         [OperationContract]
-        Assignment GetAssignmentById(int id);
+        List<Assignment> GetAllAssignments();
 
         [OperationContract]
         Homework GetHomeworkById(int id);

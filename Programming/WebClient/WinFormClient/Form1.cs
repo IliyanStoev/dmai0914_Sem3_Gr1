@@ -14,8 +14,11 @@ namespace WinFormClient
     public partial class Form1 : Form
     {
         private string[] subjects = { "Math", "Literature", "English" };
-        private Person person;
+        //private Person person;
+        public static Teacher teacher;
         private ListForObjects list;
+        private List<String> strings;
+        
         public Form1()
         {
             InitializeComponent();
@@ -40,29 +43,24 @@ namespace WinFormClient
 
             Service1Client winService = new Service1Client();
 
-            person = winService.Login(userName, password);
+            Object obj = winService.Login(userName, password);
 
-            if (person != null && person.UserType == 1)
+            if (obj != null)
             {
-                tabControl1.TabPages.Remove(tabLogin);
-                tabControl1.TabPages.Add(tabAssignments);
-                tabControl1.TabPages.Add(tabHomeworks);
-                    List<String> strings = new List<string>();
-                    list = winService.GetAllAssignmentsForTeacherById(person.Id);
-                    foreach (Object o in list.Asl)
-                    {
-                        Assignment a = (Assignment)o;
-                        strings.Add(a.title);
+                if (obj.GetType() == typeof(Teacher))
+                {
+                    teacher = (Teacher)obj;
+                    tabControl1.TabPages.Remove(tabLogin);
+                    tabControl1.TabPages.Add(tabAssignments);
+                    tabControl1.TabPages.Add(tabHomeworks);
 
-                    }
-                //creates new data and replaces the data in drop down list
-                    DataSet ds = new DataSet();
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = strings;
-                    comboBox1.DataSource = bs;
+                    populateAssignmentCB();
                 }
-              
-
+                else
+                {
+                    MessageBox.Show("Children cannot log in using this platform. Please use the web platform");
+                }
+            }
             else
             {
                 MessageBox.Show("Username or password is incorrect, please try again :)");
@@ -76,7 +74,7 @@ namespace WinFormClient
 
         private void CreateAssignment()
         {
-            int teacherId = person.Id;
+            int teacherId = teacher.Id;
             string title = tbTitle.Text;
             string subject = cbSubject.SelectedValue.ToString();
             string exercise = tbExercise.Text;
@@ -100,6 +98,8 @@ namespace WinFormClient
                     tbExercise.Text = "";
                     startDate.ResetText();
                     deadlineDate.ResetText();
+
+                    populateAssignmentCB();
                 }
 
                 else
@@ -124,6 +124,7 @@ namespace WinFormClient
                 homeworks.Add(h);
                 
             }
+
             //makes a new List with two attributes of childs name and the path
             //To avoid makeing a new wrapper and instead of child objects address it displays its name
             List<Tuple<string, string>> nameList = new List<Tuple<string, string>>();
@@ -131,12 +132,14 @@ namespace WinFormClient
             {
                 nameList.Add(new Tuple<string, string>(hmw.Child.Name, hmw.DiskName));
             }
+
             //If there are columns it removes the last button column so that the other columns
             //don't lose their indexes after data change
             if (dataGridView1.Columns.Count > 0)
             {
                 dataGridView1.Columns.Remove("Download");
             }
+
             //Creates new data and replaces the data in the table
             DataSet ds = new DataSet();
             BindingSource bs = new BindingSource();
@@ -144,7 +147,6 @@ namespace WinFormClient
             dataGridView1.DataSource = bs;
             dataGridView1.Columns[0].HeaderText = "Name";
             dataGridView1.Columns[1].HeaderText = "Path";
-
 
             //Adds the button column as the last column
             DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
@@ -155,6 +157,28 @@ namespace WinFormClient
             btnCol.HeaderText = "Download";
             dataGridView1.Columns.Add(btnCol);
             
+        }
+
+        private List<String> populateAssignmentCB()
+        {
+            Service1Client winService = new Service1Client();
+
+            strings = new List<string>();
+            list = winService.GetAllAssignmentsForTeacherById(teacher.Id);
+            foreach (Object o in list.Asl)
+            {
+                Assignment a = (Assignment)o;
+                strings.Add(a.title);
+
+            }
+
+            //creates new data and replaces the data in drop down list
+            DataSet ds = new DataSet();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = strings;
+            comboBox1.DataSource = bs;
+
+            return strings;
         }
     }
 }

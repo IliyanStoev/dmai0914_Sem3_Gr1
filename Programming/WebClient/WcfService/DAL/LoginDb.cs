@@ -13,7 +13,7 @@ namespace WcfService.DAL
         private SqlCommand comm;
         private DbConnection dbCon;
 
-        public Person Login(Person p)
+        public Object Login(Person p)
         {
             comm = new SqlCommand();
             comm.CommandText = "SELECT * FROM Person WHERE userName=(@userName) AND password=(@password)";
@@ -25,19 +25,36 @@ namespace WcfService.DAL
 
             comm.CommandType = CommandType.Text;
             SqlDataReader dr = comm.ExecuteReader();
-       
 
-            if (dr.Read()&&dr.HasRows)
+
+            if (dr.Read() && dr.HasRows)
             {
                 Person pers = new Person();
-                pers.Id = Convert.ToInt32(dr["pid"]);
-                pers.Name = dr["name"].ToString();
-                pers.Email = dr["email"].ToString();
-                pers.Phone = dr["phone"].ToString();
                 pers.UserType = Convert.ToInt32(dr["userType"]);
-                pers.UserName = dr["userName"].ToString();
-                comm.Connection.Close();
-                return pers;              
+                if (pers.UserType == 1)
+                {
+                    Teacher teacher = new Teacher();
+                    teacher.Id = Convert.ToInt32(dr["pid"]);
+                    teacher.Name = dr["name"].ToString();
+                    teacher.Email = dr["email"].ToString();
+                    teacher.Phone = dr["phone"].ToString();
+                    teacher.Subject = dr["subject"].ToString();
+
+                    comm.Connection.Close();
+                    return teacher;
+                }
+                else
+                {
+                    Child child = new Child();
+                    child.Id = Convert.ToInt32(dr["pid"]);
+                    child.Name = dr["name"].ToString();
+                    child.Email = dr["email"].ToString();
+                    child.Phone = dr["phone"].ToString();
+                    child.Grade = Convert.ToInt32(dr["grade"].ToString());
+
+                    comm.Connection.Close();
+                    return child;
+                }
             }
             else
             {
@@ -46,7 +63,7 @@ namespace WcfService.DAL
             }
         }
 
-        public Person GetPerson(Person p)
+        public Object GetPerson(Person p)
         {
             comm = new SqlCommand();
             comm.CommandText = "SELECT * FROM Person WHERE pid=(@personId)";
@@ -58,18 +75,35 @@ namespace WcfService.DAL
             comm.CommandType = CommandType.Text;
             SqlDataReader dr = comm.ExecuteReader();
 
-
             if (dr.Read() && dr.HasRows)
             {
                 Person pers = new Person();
-                pers.Id = Convert.ToInt32(dr["pid"]);
-                pers.Name = dr["name"].ToString();
-                pers.Email = dr["email"].ToString();
-                pers.Phone = dr["phone"].ToString();
                 pers.UserType = Convert.ToInt32(dr["userType"]);
-                pers.UserName = dr["userName"].ToString();
-                comm.Connection.Close();
-                return pers;
+
+                if (pers.UserType == 1)
+                {
+                    Teacher teacher = new Teacher();
+                    teacher.Id = Convert.ToInt32(dr["pid"]);
+                    teacher.Name = dr["name"].ToString();
+                    teacher.Email = dr["email"].ToString();
+                    teacher.Phone = dr["phone"].ToString();
+                    teacher.Subject = dr["subject"].ToString();
+
+                    comm.Connection.Close();
+                    return teacher;
+                }
+                else
+                {
+                    Child child = new Child();
+                    child.Id = Convert.ToInt32(dr["pid"]);
+                    child.Name = dr["name"].ToString();
+                    child.Email = dr["email"].ToString();
+                    child.Phone = dr["phone"].ToString();
+                    child.Grade = Convert.ToInt32(dr["grade"].ToString());
+
+                    comm.Connection.Close();
+                    return child;
+                }
             }
             else
             {

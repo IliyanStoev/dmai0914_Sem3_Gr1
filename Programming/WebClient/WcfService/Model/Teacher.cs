@@ -19,6 +19,11 @@ namespace WcfService.Model
 
         }
 
+        public Teacher(int id)
+        {
+
+        }
+
         public Teacher(string UserName, string Name, string Phone, string Email, string Password, string Subject, int Type)
         {
             this.UserName = UserName;

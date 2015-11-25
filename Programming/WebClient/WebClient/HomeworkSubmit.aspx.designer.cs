@@ -13,6 +13,15 @@ namespace WebClient {
     public partial class HomeworkSubmit {
         
         /// <summary>
+        /// assignmentList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList assignmentList;
+        
+        /// <summary>
         /// FileUpload1 control.
         /// </summary>
         /// <remarks>
