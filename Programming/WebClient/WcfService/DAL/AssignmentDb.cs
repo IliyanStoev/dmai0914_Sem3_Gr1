@@ -52,44 +52,49 @@ namespace WcfService.DAL
             }
             return result;
         }
-        public Assignment GetAssignmentById(int id)
+
+        //Retrieving all the assignments
+        public List<Assignment> GetAllAssignments()
         {
-            Assignment a = new Assignment();
-            try { 
-            comm = new SqlCommand();
-            comm.CommandText = "SELECT * FROM Assignment WHERE aid = " + id;
+            List<Assignment> asgs = new List<Assignment>();
 
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Assignment";
 
-            dbCon = new DbConnection();
-            comm.Connection = dbCon.GetConnection();
-            comm.Connection.Open();
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
 
-            comm.CommandType = CommandType.Text;
-            SqlDataReader dr = comm.ExecuteReader();
+                comm.CommandType = CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
 
-             while (dr.Read())
-                {  
-                    a.Id = Convert.ToInt32(dr["aid"]);
-                    a.exercise = Convert.ToString(dr["exercise"]);
-                    a.date = Convert.ToDateTime(dr["date"]);
-                    a.deadline = Convert.ToDateTime(dr["deadLine"]);
-                    a.subject = Convert.ToString(dr["subject"]);
-                    Teacher t = new Teacher();
-                    t.Id = Convert.ToInt32(dr["pid"]);
-                    a.teacher = t;
-                    a.title = Convert.ToString(dr["title"]);
+                while (dr.Read())
+                {
+                    Assignment asg = new Assignment();
+                    asg.Id = Convert.ToInt32(dr["aid"]);
+                    asg.subject = dr["subject"].ToString();
+                    asg.title = dr["title"].ToString();
+                    asg.exercise = dr["exercise"].ToString();
+                    asg.teacher = new Teacher(Convert.ToInt32(dr["pid"].ToString()));
+
+                    asgs.Add(asg);
                 }
             }
             catch (Exception)
             {
                 throw;
             }
+
             finally
             {
                 comm.Connection.Close();
             }
-            return a;
+
+            return asgs;
         }
+
         public ListForObjects GetAllAssignmentsByTeacherId(int teacherId)
         {
             ListForObjects al = new ListForObjects();
@@ -97,7 +102,6 @@ namespace WcfService.DAL
             {
                 comm = new SqlCommand();
                 comm.CommandText = "SELECT * FROM Assignment WHERE pid = " + teacherId;
-
 
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();

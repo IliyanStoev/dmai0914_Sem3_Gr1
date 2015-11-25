@@ -176,7 +176,16 @@
     <None Include="Service References\WCFWebReference\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.Person.datasource">
+    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.Assignment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WCFWebReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.Homework.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.ListForObjects.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
