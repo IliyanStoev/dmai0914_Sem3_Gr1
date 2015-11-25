@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using System.Web.Services;
 
 namespace WcfService.Model
 {
+    [KnownType(typeof(Child))]
     [DataContract]
     public class Child : Person
     {

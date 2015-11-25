@@ -27,5 +27,15 @@ namespace WcfService.BLL
             LoginDb logDb = new LoginDb();
             return logDb.GetPerson(p);
         }
+        public Teacher GetTeacher(int id)
+        {
+            PersonDb persDb = new PersonDb();
+            return persDb.GetTeacher(GetPerson(id));
+        }
+        public Child GetChild(int id)
+        {
+            PersonDb persDb = new PersonDb();
+            return persDb.GetChild(GetPerson(id));
+        }
     }
 }

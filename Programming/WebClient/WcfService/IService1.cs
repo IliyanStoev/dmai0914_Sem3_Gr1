@@ -21,8 +21,19 @@ namespace WcfService
         int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName);
 
         [OperationContract]
-
         int CreateAssignment(int teacherId, string subject, string title, string exercise, DateTime date, DateTime deadline);
+
+        [OperationContract]
+        ListForObjects GetAllHomeworksById(int assignmentId);
+
+        [OperationContract]
+        ListForObjects GetAllAssignmentsForTeacherById(int teacherId);
+        
+        [OperationContract]
+        Assignment GetAssignmentById(int id);
+
+        [OperationContract]
+        Homework GetHomeworkById(int id);
      
     }
 

@@ -6,6 +6,7 @@ using System.Web;
 
 namespace WcfService.Model
 {
+    [KnownType(typeof(Assignment))]
     [DataContract]
     public class Assignment
     {
@@ -22,7 +23,7 @@ namespace WcfService.Model
         [DataMember]
         public DateTime deadline { get; set; }
         [DataMember]
-        public Person teacher { get; set; }
+        public Teacher teacher { get; set; }
 
 
         public Assignment(int id)
