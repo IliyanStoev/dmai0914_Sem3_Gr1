@@ -163,15 +163,15 @@ namespace WinFormClient.WinformReference {
     public partial class Child : WinFormClient.WinformReference.Person {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GradeField;
+        private string GradeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Grade {
+        public string Grade {
             get {
                 return this.GradeField;
             }
             set {
-                if ((this.GradeField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
                     this.GradeField = value;
                     this.RaisePropertyChanged("Grade");
                 }

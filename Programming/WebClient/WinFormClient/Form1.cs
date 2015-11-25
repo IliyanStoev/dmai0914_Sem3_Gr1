@@ -156,5 +156,18 @@ namespace WinFormClient
             dataGridView1.Columns.Add(btnCol);
             
         }
+        //Might work, couldn't test...
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var gridSender = (DataGridView)sender;
+
+            if (gridSender.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;
+                //Testing for index first, so i could see if the right row is pressed. 
+                MessageBox.Show("The file is downloaded. Path of download was : " + index);
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace WcfService.DAL
         public Teacher GetTeacher(Person p)
         {
             comm = new SqlCommand();
-            comm.CommandText = "SELECT * FROM Teacher WHERE pid=(@pid)";
+            comm.CommandText = "SELECT * FROM Person WHERE pid=(@pid)";
             comm.Parameters.AddWithValue("pid", p.Id);
             dbCon = new DbConnection();
             comm.Connection = dbCon.GetConnection();
@@ -48,7 +48,7 @@ namespace WcfService.DAL
         public Child GetChild(Person p)
         {
             comm = new SqlCommand();
-            comm.CommandText = "SELECT * FROM Child WHERE pid=(@pid)";
+            comm.CommandText = "SELECT * FROM Person WHERE pid=(@pid)";
             comm.Parameters.AddWithValue("pid", p.Id);
             dbCon = new DbConnection();
             comm.Connection = dbCon.GetConnection();
@@ -68,7 +68,7 @@ namespace WcfService.DAL
                 child.Phone = p.Phone;
                 child.UserName = p.UserName;
                 child.UserType = p.UserType;
-                child.Grade = Convert.ToInt32(dr["grade"]);
+                child.Grade = Convert.ToString(dr["grade"]);
                 return child;
             }
             else
