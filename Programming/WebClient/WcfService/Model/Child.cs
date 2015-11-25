@@ -12,14 +12,14 @@ namespace WcfService.Model
     public class Child : Person
     {
         [DataMember]
-        public int Grade { get; set; }
+        public string Grade { get; set; }
 
 
         public Child()
         {
 
         }
-        public Child(string UserName, string Name, string Phone, string Email, string Password, int Grade, int Type)
+        public Child(string UserName, string Name, string Phone, string Email, string Password, string Grade, int Type)
         {
             this.UserName = UserName;
             this.Name = Name;

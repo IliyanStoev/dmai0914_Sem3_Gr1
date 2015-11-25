@@ -50,7 +50,7 @@ namespace WcfService.DAL
                     child.Name = dr["name"].ToString();
                     child.Email = dr["email"].ToString();
                     child.Phone = dr["phone"].ToString();
-                    child.Grade = Convert.ToInt32(dr["grade"].ToString());
+                    child.Grade = dr["grade"].ToString();
 
                     comm.Connection.Close();
                     return child;
@@ -99,7 +99,7 @@ namespace WcfService.DAL
                     child.Name = dr["name"].ToString();
                     child.Email = dr["email"].ToString();
                     child.Phone = dr["phone"].ToString();
-                    child.Grade = Convert.ToInt32(dr["grade"].ToString());
+                    child.Grade = dr["grade"].ToString();
 
                     comm.Connection.Close();
                     return child;
