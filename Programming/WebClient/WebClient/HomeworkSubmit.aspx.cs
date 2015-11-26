@@ -86,10 +86,19 @@ namespace WebClient
 
         protected void assignmentList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Assignment selectedAssignment;
+
             int index = assignmentList.SelectedIndex;
             if (asgs != null)
             {
-                Assignment selectedAssignment = asgs[index-1];
+                if (index > 0)
+                {
+                    selectedAssignment = asgs[index - 1];
+                }
+                else
+                {
+                    selectedAssignment = asgs[index];
+                }
 
                 assignmentTB.Text = "Title: " + selectedAssignment.title + "\nAssignment: " + selectedAssignment.exercise;
             }

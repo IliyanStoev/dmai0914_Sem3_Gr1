@@ -80,31 +80,37 @@ namespace WinFormClient
             string exercise = tbExercise.Text;
             DateTime date = startDate.Value;
             DateTime deadline = deadlineDate.Value;
-            if (deadline < date)
-            {
-                MessageBox.Show("Deadline must be greater than Starting Date");
 
+            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(exercise)) 
+            {
+                MessageBox.Show("Please fill in all the fields.");
             }
-            else
+            else 
             {
-                Service1Client winService = new Service1Client();
-                int i = winService.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
-
-                if (i == 1)
+                if (deadline < date)
                 {
-                    MessageBox.Show("Assignment Succesfully created");
-                    tbTitle.Text = "";
-                    cbSubject.ResetText();
-                    tbExercise.Text = "";
-                    startDate.ResetText();
-                    deadlineDate.ResetText();
-
-                    populateAssignmentCB();
+                    MessageBox.Show("Deadline must be greater than Starting Date");
                 }
-
                 else
                 {
-                    MessageBox.Show("Something went wrong");
+                    Service1Client winService = new Service1Client();
+                    int i = winService.CreateAssignment(teacherId, subject, title, exercise, date, deadline);
+
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Assignment Succesfully created");
+                        tbTitle.Text = "";
+                        cbSubject.ResetText();
+                        tbExercise.Text = "";
+                        startDate.ResetText();
+                        deadlineDate.ResetText();
+
+                        populateAssignmentCB();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong");
+                    }
                 }
             }
         }
