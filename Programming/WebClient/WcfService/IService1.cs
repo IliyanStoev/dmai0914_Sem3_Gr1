@@ -26,6 +26,9 @@ namespace WcfService
         ListForObjects GetAllHomeworksById(int assignmentId);
 
         [OperationContract]
+        List<Homework> GetAllHomeworksByChildId(int childId);
+
+        [OperationContract]
         ListForObjects GetAllAssignmentsForTeacherById(int teacherId);
         
         [OperationContract]

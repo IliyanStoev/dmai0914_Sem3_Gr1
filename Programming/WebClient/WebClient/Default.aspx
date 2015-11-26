@@ -9,7 +9,7 @@
         <div class="col-md-6 col-lg-offset-3 margin-top-20" >
             <a href="#" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-folder-open"></span> Browse assignments</a>
             <a href="HomeworkSubmit.aspx" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-cloud-upload"></span> Submit assignment</a>
-            <a href="#" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-tags"></span> Assignments statistics</a>
+            <a href="SubmissionHistory.aspx" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-tags"></span> Submission History</a>
         </div>
         <div class="col-md-6 col-lg-offset-3 margin-top-20">
             <a href="#" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-education"></span> Browse tutors</a>

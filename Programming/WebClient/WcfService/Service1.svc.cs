@@ -60,5 +60,12 @@ namespace WcfService
             return hwCtrl.GetHomeworkById(id);
         }
 
+        public List<Homework> GetAllHomeworksByChildId(int childId)
+        {
+            HomeworkCtrl hwCtrl = new HomeworkCtrl();
+
+            return hwCtrl.GetAllHomeworksByChildId(childId);
+        }
+
     }
 }

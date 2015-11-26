@@ -132,5 +132,45 @@ namespace WcfService.DAL
             }
             return null;
         }
+        public List<Homework> GetAllHomeworksByChildId(int childId)
+        {
+            List<Homework> hwList = new List<Homework>();
+
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Homework WHERE childId = " + childId;
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Homework hw = new Homework();
+                    hw.DiskName = dr["diskName"].ToString();
+                    hw.Date = Convert.ToDateTime(dr["date"]);
+                    Child child = new Child();
+                    child.Id = Convert.ToInt32(dr["childId"]);
+                    hw.Child = child;
+
+                    hwList.Add(hw);
+                    }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+
+            return hwList;
+        }
     }
 }
