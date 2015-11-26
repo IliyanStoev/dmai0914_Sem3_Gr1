@@ -4,19 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebClient.WCFWebReference;
 
 namespace WebClient
 {
     public partial class HomeworkSubmit : System.Web.UI.Page
     {
-        string diskName = "";
+        private string diskName = "";
+        private Assignment[] asgs;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (LogIn.pers == null)
+            if (LogIn.child == null)
             {
                 Response.Redirect("LogIn.aspx");
-            } 
+            }
+                
+            getAssignments();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -39,19 +43,66 @@ namespace WebClient
             //save user id in database
             FileUpload1.SaveAs(diskName);
 
-            SaveToDatabase();
+            if (SaveToDatabase() == 1)
+            {
+                Response.Write("<script>alert('The file has been successufully uploaded')</script>");
+                assignmentTB.Text = "";
+            }
+            else
+            {
+                Response.Write("<script>alert('An error occured. Your files has not been uploaded')</script>");
+            }
 
         }
 
         private int SaveToDatabase()
         {
-            int childId = LogIn.pers.Id;
-            int assignmentId = 1;
+            int childId = LogIn.child.Id;
+            int assignmentId = Convert.ToInt32(assignmentList.SelectedValue.Split(' ')[0]);
             DateTime date = DateTime.Now;
 
-            WCFWebReference.Service1Client client = new WCFWebReference.Service1Client();
+            Service1Client client = new Service1Client();
 
             return client.SubmitHomework(childId, assignmentId, date, diskName);
+        }
+
+        private void getAssignments()
+        {
+            Service1Client client = new Service1Client();
+            asgs = client.GetAllAssignments();
+            List<String> asgsList = new List<String>();
+            foreach (Assignment a in asgs)
+            {
+                asgsList.Add(a.Id + " . " + a.title);
+            }
+
+            if (asgs != null && !IsPostBack)
+            {
+                assignmentList.DataSource = asgsList;
+                assignmentList.DataBind();
+                assignmentList.Items.Insert(0, new ListItem("--Select--", "0"));
+            }
+        }
+
+        protected void assignmentList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Assignment selectedAssignment;
+
+            int index = assignmentList.SelectedIndex;
+            if (asgs != null)
+            {
+                if (index > 0)
+                {
+                    selectedAssignment = asgs[index - 1];
+                }
+                else
+                {
+                    selectedAssignment = asgs[index];
+                }
+
+                assignmentTB.Text = "Title: " + selectedAssignment.title + "\nAssignment: " + selectedAssignment.exercise;
+            }
+
         }
     }
 }

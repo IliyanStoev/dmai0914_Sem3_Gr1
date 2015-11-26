@@ -15,7 +15,7 @@ namespace WcfService.BLL
             UserCtrl usCtrl = new UserCtrl();
 
             Assignment ass = new Assignment();
-            ass.teacher = usCtrl.GetPerson(teacherId);
+            ass.teacher = (Teacher)usCtrl.GetPerson(teacherId);
             ass.subject = subject;
             ass.title = title;
             ass.exercise = exercise;
@@ -25,6 +25,29 @@ namespace WcfService.BLL
             AssignmentDb assDb = new AssignmentDb();
 
             return assDb.CreateAssignment(ass);
+        }
+        
+        public ListForObjects GetAllAssignmentsByTeacherId(int teacherId)
+        {
+            AssignmentDb asDB = new AssignmentDb();
+            UserCtrl userCtrl = new UserCtrl();
+            ListForObjects list = new ListForObjects();
+            ListForObjects l = asDB.GetAllAssignmentsByTeacherId(teacherId);
+            foreach (Object o in l.Asl)
+            {
+                Assignment a = (Assignment)o;
+                a.teacher = (Teacher)userCtrl.GetPerson(a.teacher.Id);
+                list.Asl.Add(a);
+            }
+            return list;
+        }
+
+        public List<Assignment> GetAllAssignments()
+        {
+            AssignmentDb asDB = new AssignmentDb();
+            List<Assignment> asgs = asDB.GetAllAssignments();
+
+            return asgs;
         }
     }
 }

@@ -13,16 +13,26 @@ namespace WcfService
     [ServiceContract]
     public interface IService1
     {
-
         [OperationContract]
-        Person Login(string User, string Password);
+        Object Login(string User, string Password);
 
         [OperationContract]
         int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName);
 
         [OperationContract]
-
         int CreateAssignment(int teacherId, string subject, string title, string exercise, DateTime date, DateTime deadline);
+
+        [OperationContract]
+        ListForObjects GetAllHomeworksById(int assignmentId);
+
+        [OperationContract]
+        ListForObjects GetAllAssignmentsForTeacherById(int teacherId);
+        
+        [OperationContract]
+        List<Assignment> GetAllAssignments();
+
+        [OperationContract]
+        Homework GetHomeworkById(int id);
      
     }
 
