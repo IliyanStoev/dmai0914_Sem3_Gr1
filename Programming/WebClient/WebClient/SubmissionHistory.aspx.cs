@@ -30,8 +30,11 @@ namespace WebClient
             {
                     TableRow row = new TableRow();
                     TableCell cell = new TableCell();
-                    cell.Text = h.Date + h.DiskName;
+                    TableCell cell2 = new TableCell();
+                    cell.Text = h.Date.ToString();
+                    cell2.Text = h.DiskName;
                     row.Cells.Add(cell);
+                    row.Cells.Add(cell2);
                     hwTable.Rows.Add(row);
             }
                 /*if (hws != null && !IsPostBack) 
