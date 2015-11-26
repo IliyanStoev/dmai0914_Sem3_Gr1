@@ -18,6 +18,7 @@ namespace WinFormClient
         public static Teacher teacher;
         private ListForObjects list;
         private List<String> strings;
+        private int selectedIndexComB1;
         
         public Form1()
         {
@@ -117,8 +118,8 @@ namespace WinFormClient
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = comboBox1.SelectedIndex;
-            Object o = list.Asl.ElementAt(index);
+            selectedIndexComB1 = comboBox1.SelectedIndex;
+            Object o = list.Asl.ElementAt(selectedIndexComB1);
             Assignment a = (Assignment)o;
             int assignmentIndex = a.Id;
             Service1Client winService = new Service1Client();
@@ -185,6 +186,29 @@ namespace WinFormClient
             comboBox1.DataSource = bs;
 
             return strings;
+        }
+        //Need to clean up a code a bit for the method below
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedIndexComB1 = comboBox1.SelectedIndex;
+            Object o = list.Asl.ElementAt(selectedIndexComB1);
+            Assignment a = (Assignment)o;
+            int assignmentIndex = a.Id;
+
+            Service1Client winService = new Service1Client();
+            ListForObjects hl = winService.GetAllHomeworksById(assignmentIndex);
+
+            var gridSender = (DataGridView)sender;
+
+            if (gridSender.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;
+                Object ob = hl.Asl.ElementAt(index);
+                Homework homework = (Homework)ob;
+                //Simulating download by showing download path...
+                MessageBox.Show("The file is downloaded. Path of download was : " + homework.DiskName);
+            }
         }
     }
 }

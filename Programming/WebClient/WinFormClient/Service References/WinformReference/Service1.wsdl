@@ -38,11 +38,11 @@
   <wsdl:message name="IService1_GetAllAssignmentsForTeacherById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAssignmentsForTeacherByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetAssignmentById_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAssignmentById" />
+  <wsdl:message name="IService1_GetAllAssignments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssignments" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetAssignmentById_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAssignmentByIdResponse" />
+  <wsdl:message name="IService1_GetAllAssignments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssignmentsResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetHomeworkById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetHomeworkById" />
@@ -71,9 +71,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllAssignmentsForTeacherById" message="tns:IService1_GetAllAssignmentsForTeacherById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllAssignmentsForTeacherByIdResponse" message="tns:IService1_GetAllAssignmentsForTeacherById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAssignmentById">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAssignmentById" message="tns:IService1_GetAssignmentById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAssignmentByIdResponse" message="tns:IService1_GetAssignmentById_OutputMessage" />
+    <wsdl:operation name="GetAllAssignments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllAssignments" message="tns:IService1_GetAllAssignments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllAssignmentsResponse" message="tns:IService1_GetAllAssignments_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetHomeworkById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHomeworkById" message="tns:IService1_GetHomeworkById_InputMessage" />
@@ -127,8 +127,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAssignmentById">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetAssignmentById" style="document" />
+    <wsdl:operation name="GetAllAssignments">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllAssignments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
