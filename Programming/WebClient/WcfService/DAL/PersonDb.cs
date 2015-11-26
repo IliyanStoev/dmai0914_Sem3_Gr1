@@ -68,7 +68,7 @@ namespace WcfService.DAL
                 child.Phone = p.Phone;
                 child.UserName = p.UserName;
                 child.UserType = p.UserType;
-                child.Grade = Convert.ToInt32(dr["grade"]);
+                child.Grade = dr["grade"].ToString();
                 return child;
             }
             else

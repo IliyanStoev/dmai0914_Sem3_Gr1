@@ -10,7 +10,8 @@ namespace WebClient
 {
     public partial class HomeworkSubmit : System.Web.UI.Page
     {
-        string diskName = "";
+        private string diskName = "";
+        private Assignment[] asgs;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,10 +19,8 @@ namespace WebClient
             {
                 Response.Redirect("LogIn.aspx");
             }
-            if (!IsPostBack)
-            {
-                getAssignments();
-            }
+                
+            getAssignments();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -47,6 +46,7 @@ namespace WebClient
             if (SaveToDatabase() == 1)
             {
                 Response.Write("<script>alert('The file has been successufully uploaded')</script>");
+                assignmentTB.Text = "";
             }
             else
             {
@@ -69,22 +69,40 @@ namespace WebClient
         private void getAssignments()
         {
             Service1Client client = new Service1Client();
-            Assignment[] asgs = client.GetAllAssignments();
+            asgs = client.GetAllAssignments();
             List<String> asgsList = new List<String>();
             foreach (Assignment a in asgs)
             {
                 asgsList.Add(a.Id + " . " + a.title);
             }
 
-            if (asgs != null)
+            if (asgs != null && !IsPostBack)
             {
                 assignmentList.DataSource = asgsList;
                 assignmentList.DataBind();
+                assignmentList.Items.Insert(0, new ListItem("--Select--", "0"));
             }
-            else
+        }
+
+        protected void assignmentList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Assignment selectedAssignment;
+
+            int index = assignmentList.SelectedIndex;
+            if (asgs != null)
             {
-                Response.Write("<script>alert('is null')</script>");
+                if (index > 0)
+                {
+                    selectedAssignment = asgs[index - 1];
+                }
+                else
+                {
+                    selectedAssignment = asgs[index];
+                }
+
+                assignmentTB.Text = "Title: " + selectedAssignment.title + "\nAssignment: " + selectedAssignment.exercise;
             }
+
         }
     }
 }

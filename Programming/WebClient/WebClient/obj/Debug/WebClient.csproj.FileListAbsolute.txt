@@ -79,5 +79,4 @@ C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClie
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.dll
 C:\Users\Nikita\Desktop\Project 3 semester\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.pdb
-C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
