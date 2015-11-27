@@ -56,6 +56,7 @@
             this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.cbScTime = new System.Windows.Forms.ComboBox();
             this.calendar = new System.Windows.Forms.MonthCalendar();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
@@ -316,6 +317,7 @@
             // tabSchedule
             // 
             this.tabSchedule.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabSchedule.Controls.Add(this.label9);
             this.tabSchedule.Controls.Add(this.btnSaveSchedule);
             this.tabSchedule.Controls.Add(this.cbScTime);
             this.tabSchedule.Controls.Add(this.calendar);
@@ -328,7 +330,7 @@
             // 
             // btnSaveSchedule
             // 
-            this.btnSaveSchedule.Location = new System.Drawing.Point(155, 285);
+            this.btnSaveSchedule.Location = new System.Drawing.Point(154, 285);
             this.btnSaveSchedule.Name = "btnSaveSchedule";
             this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
             this.btnSaveSchedule.TabIndex = 2;
@@ -339,9 +341,10 @@
             // cbScTime
             // 
             this.cbScTime.FormattingEnabled = true;
-            this.cbScTime.Location = new System.Drawing.Point(64, 231);
+            this.cbScTime.Location = new System.Drawing.Point(154, 238);
             this.cbScTime.Name = "cbScTime";
-            this.cbScTime.Size = new System.Drawing.Size(262, 24);
+            this.cbScTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbScTime.Size = new System.Drawing.Size(172, 24);
             this.cbScTime.TabIndex = 1;
             // 
             // calendar
@@ -349,6 +352,15 @@
             this.calendar.Location = new System.Drawing.Point(64, 12);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(61, 241);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Select Time :";
             // 
             // Form1
             // 
@@ -366,6 +378,7 @@
             this.tabHomeworks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabSchedule.ResumeLayout(false);
+            this.tabSchedule.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,6 +413,7 @@
         private System.Windows.Forms.ComboBox cbScTime;
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Button btnSaveSchedule;
+        private System.Windows.Forms.Label label9;
     }
 }
 

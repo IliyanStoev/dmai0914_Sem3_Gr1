@@ -15,7 +15,7 @@ namespace WinFormClient
     public partial class Form1 : Form
     {
         private string[] subjects = { "Math", "Literature", "English" };
-        private string[] scTime = { "", "10:00", "12:00", "14:00", "16:00" };
+        private string[] scTime = { "10:00", "12:00", "14:00", "16:00" };
         public static Teacher teacher;
         private TutoringTime tt;
         private ListForObjects list;
@@ -30,6 +30,7 @@ namespace WinFormClient
             tabControl1.TabPages.Remove(tabSchedule);
             cbSubject.DataSource = subjects;
             cbScTime.DataSource = scTime;
+            
 
             
           
@@ -227,7 +228,7 @@ namespace WinFormClient
             string time = cbScTime.Text;
             bool availability = true;
             int teacherId = teacher.Id;
-            if (String.IsNullOrEmpty(time))
+            if (time == "--Select Time--")
             {
                 MessageBox.Show("Please select the time");
             }
@@ -271,6 +272,7 @@ namespace WinFormClient
         private void btnSaveSchedule_Click(object sender, EventArgs e)
         {
             CreateTutoringTime();
+            cbScTime.ResetText();
             
         }
     }
