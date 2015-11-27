@@ -7,13 +7,13 @@
             <div>
                <h3>Your Homework Submission History :</h3>
                 <asp:Table ID="hwTable" runat="server" BackColor="White" BorderColor="Black" 
-                         BorderWidth="1" ForeColor="Black" GridLines="Both" BorderStyle="Solid" CellSpacing="40" CellPadding="10">
+                         BorderWidth="1" ForeColor="Black" GridLines="Both" BorderStyle="Solid">
                     <asp:TableRow>
-                        <asp:TableHeaderCell Font-Italic="true">Date :</asp:TableHeaderCell>
-                        <asp:TableHeaderCell Font-Italic="true">File Name :</asp:TableHeaderCell>
+                        <asp:TableHeaderCell Font-Italic="true" ForeColor="white" BackColor="Black">Date :</asp:TableHeaderCell>
+                        <asp:TableHeaderCell Font-Italic="true" ForeColor="White" BackColor="Black">File Name :</asp:TableHeaderCell>
                     </asp:TableRow>
                 </asp:Table>
-            </div>
+             </div>
         </div>
     </div>
 

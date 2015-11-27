@@ -25,9 +25,10 @@ namespace WebClient
         {
             Service1Client client = new Service1Client();
             hws = client.GetAllHomeworksByChildId(LogIn.child.Id);
-           // List<String> hwStr = new List<String>();
-            foreach (Homework h in hws)
+            if (hws != null)
             {
+                foreach (Homework h in hws)
+                {
                     TableRow row = new TableRow();
                     TableCell cell = new TableCell();
                     TableCell cell2 = new TableCell();
@@ -36,17 +37,15 @@ namespace WebClient
                     row.Cells.Add(cell);
                     row.Cells.Add(cell2);
                     hwTable.Rows.Add(row);
+                }
             }
-                /*if (hws != null && !IsPostBack) 
-                {  
-                foreach (string s in hwStr)
-                {
-                    TableRow row = new TableRow();
-                    TableCell cell = new TableCell();
-                    cell.Text = s;
-                    row.Cells.Add(cell);
-                    hwTable.Rows.Add(row);
-                 }*/
-               }
-        }
+            else
+            {
+                Response.Write("<script>alert('No submitted homeworks')</script>");
+            }
+                
+          }
+
+        
+       }
     }
