@@ -26,6 +26,9 @@ namespace WcfService
         ListForObjects GetAllHomeworksById(int assignmentId);
 
         [OperationContract]
+        List<Homework> GetAllHomeworksByChildId(int childId);
+
+        [OperationContract]
         ListForObjects GetAllAssignmentsForTeacherById(int teacherId);
         
         [OperationContract]
@@ -33,7 +36,9 @@ namespace WcfService
 
         [OperationContract]
         Homework GetHomeworkById(int id);
-     
+
+        [OperationContract]
+        int CreateTutoringTime(DateTime date, bool availability, int teacherId, string time);
     }
 
 

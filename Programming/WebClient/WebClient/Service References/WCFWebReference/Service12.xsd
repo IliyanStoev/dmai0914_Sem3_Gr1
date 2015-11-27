@@ -66,6 +66,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllHomeworksByChildId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="childId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHomeworksByChildIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetAllHomeworksByChildIdResult" nillable="true" type="q2:ArrayOfHomework" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllAssignmentsForTeacherById">
     <xs:complexType>
       <xs:sequence>
@@ -76,7 +90,7 @@
   <xs:element name="GetAllAssignmentsForTeacherByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetAllAssignmentsForTeacherByIdResult" nillable="true" type="q2:ListForObjects" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetAllAssignmentsForTeacherByIdResult" nillable="true" type="q3:ListForObjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -88,7 +102,7 @@
   <xs:element name="GetAllAssignmentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetAllAssignmentsResult" nillable="true" type="q3:ArrayOfAssignment" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetAllAssignmentsResult" nillable="true" type="q4:ArrayOfAssignment" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -102,7 +116,7 @@
   <xs:element name="GetHomeworkByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetHomeworkByIdResult" nillable="true" type="q4:Homework" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetHomeworkByIdResult" nillable="true" type="q5:Homework" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

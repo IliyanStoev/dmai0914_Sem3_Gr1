@@ -14,7 +14,7 @@ namespace WinFormClient
     public partial class Form1 : Form
     {
         private string[] subjects = { "Math", "Literature", "English" };
-        //private Person person;
+        private string[] scTime = { "10:00", "12:00", "14:00", "16:00" };
         public static Teacher teacher;
         private ListForObjects list;
         private List<String> strings;
@@ -25,7 +25,10 @@ namespace WinFormClient
             InitializeComponent();
             tabControl1.TabPages.Remove(tabAssignments);
             tabControl1.TabPages.Remove(tabHomeworks);
+            tabControl1.TabPages.Remove(tabSchedule);
             cbSubject.DataSource = subjects;
+            cbScTime.DataSource = scTime;
+            
 
             //Removes the anoying first empty column in table
             dataGridView1.RowHeadersVisible = false;
@@ -54,6 +57,7 @@ namespace WinFormClient
                     tabControl1.TabPages.Remove(tabLogin);
                     tabControl1.TabPages.Add(tabAssignments);
                     tabControl1.TabPages.Add(tabHomeworks);
+                    tabControl1.TabPages.Add(tabSchedule);
 
                     populateAssignmentCB();
                 }
@@ -209,6 +213,25 @@ namespace WinFormClient
                 //Simulating download by showing download path...
                 MessageBox.Show("The file is downloaded. Path of download was : " + homework.DiskName);
             }
+        }
+
+        private void CreateTutoringTime()
+        {
+            DateTime date = calendar.SelectionRange.Start;
+            string time = cbScTime.Text;
+            bool availability = true;
+            int teacherId = teacher.Id;
+
+            Service1Client winService = new Service1Client();
+            winService.CreateTutoringTime(date, availability, teacherId, time);
+
+            
+            
+        }
+
+        private void btnSaveSchedule_Click(object sender, EventArgs e)
+        {
+            CreateTutoringTime();
         }
     }
 }
