@@ -73,4 +73,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAssignment" nillable="true" type="tns:ArrayOfAssignment" />
+  <xs:complexType name="TutoringTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Available" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Teacher" nillable="true" type="tns:Teacher" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TutoringTime" nillable="true" type="tns:TutoringTime" />
 </xs:schema>

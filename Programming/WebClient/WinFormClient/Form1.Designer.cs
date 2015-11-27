@@ -53,9 +53,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabSchedule = new System.Windows.Forms.TabPage();
+            this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.cbScTime = new System.Windows.Forms.ComboBox();
             this.calendar = new System.Windows.Forms.MonthCalendar();
-            this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
@@ -326,6 +326,16 @@
             this.tabSchedule.TabIndex = 3;
             this.tabSchedule.Text = "Schedule";
             // 
+            // btnSaveSchedule
+            // 
+            this.btnSaveSchedule.Location = new System.Drawing.Point(155, 285);
+            this.btnSaveSchedule.Name = "btnSaveSchedule";
+            this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveSchedule.TabIndex = 2;
+            this.btnSaveSchedule.Text = "Save";
+            this.btnSaveSchedule.UseVisualStyleBackColor = true;
+            this.btnSaveSchedule.Click += new System.EventHandler(this.btnSaveSchedule_Click);
+            // 
             // cbScTime
             // 
             this.cbScTime.FormattingEnabled = true;
@@ -339,16 +349,6 @@
             this.calendar.Location = new System.Drawing.Point(64, 12);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
-            // 
-            // btnSaveSchedule
-            // 
-            this.btnSaveSchedule.Location = new System.Drawing.Point(162, 276);
-            this.btnSaveSchedule.Name = "btnSaveSchedule";
-            this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveSchedule.TabIndex = 2;
-            this.btnSaveSchedule.Text = "Save";
-            this.btnSaveSchedule.UseVisualStyleBackColor = true;
-            this.btnSaveSchedule.Click += new System.EventHandler(this.btnSaveSchedule_Click);
             // 
             // Form1
             // 

@@ -25,6 +25,7 @@ namespace WinFormClient.WinformReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime))]
     public partial class ListForObjects : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -505,6 +506,99 @@ namespace WinFormClient.WinformReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TutoringTime", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    public partial class TutoringTime : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AvailableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WinFormClient.WinformReference.Teacher TeacherField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Available {
+            get {
+                return this.AvailableField;
+            }
+            set {
+                if ((this.AvailableField.Equals(value) != true)) {
+                    this.AvailableField = value;
+                    this.RaisePropertyChanged("Available");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WinFormClient.WinformReference.Teacher Teacher {
+            get {
+                return this.TeacherField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TeacherField, value) != true)) {
+                    this.TeacherField = value;
+                    this.RaisePropertyChanged("Teacher");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinformReference.IService1")]
     public interface IService1 {
@@ -519,6 +613,7 @@ namespace WinFormClient.WinformReference {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime))]
         object Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
@@ -571,6 +666,12 @@ namespace WinFormClient.WinformReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateTutoringTime", ReplyAction="http://tempuri.org/IService1/CreateTutoringTimeResponse")]
         System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
+        WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -670,6 +771,14 @@ namespace WinFormClient.WinformReference {
         
         public System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time) {
             return base.Channel.CreateTutoringTimeAsync(date, availability, teacherId, time);
+        }
+        
+        public WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date) {
+            return base.Channel.GetTtTimesByTime(date);
+        }
+        
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date) {
+            return base.Channel.GetTtTimesByTimeAsync(date);
         }
     }
 }

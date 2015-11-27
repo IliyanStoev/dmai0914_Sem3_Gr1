@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -72,6 +73,13 @@ namespace WcfService
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
 
             return ttCtrl.CreateTutoringTime(date, availability, teacherId, time);
+        }
+
+        public TutoringTime GetTtTimesByTime(DateTime date)
+        {
+            TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
+
+            return ttCtrl.GetTtTimesByTime(date);
         }
 
     }
