@@ -52,11 +52,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabSchedule = new System.Windows.Forms.TabPage();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.cbTime = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
             this.tabHomeworks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabSchedule.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -67,6 +71,7 @@
             this.tabControl1.Controls.Add(this.tabLogin);
             this.tabControl1.Controls.Add(this.tabAssignments);
             this.tabControl1.Controls.Add(this.tabHomeworks);
+            this.tabControl1.Controls.Add(this.tabSchedule);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -131,6 +136,7 @@
             // 
             this.tbPass.Location = new System.Drawing.Point(138, 183);
             this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(100, 22);
             this.tbPass.TabIndex = 1;
             // 
@@ -306,6 +312,32 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // tabSchedule
+            // 
+            this.tabSchedule.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabSchedule.Controls.Add(this.cbTime);
+            this.tabSchedule.Controls.Add(this.monthCalendar1);
+            this.tabSchedule.Location = new System.Drawing.Point(4, 25);
+            this.tabSchedule.Name = "tabSchedule";
+            this.tabSchedule.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSchedule.Size = new System.Drawing.Size(376, 316);
+            this.tabSchedule.TabIndex = 3;
+            this.tabSchedule.Text = "Schedule";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(64, 12);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
+            // cbTime
+            // 
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Location = new System.Drawing.Point(64, 231);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(262, 24);
+            this.cbTime.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,6 +353,7 @@
             this.tabAssignments.PerformLayout();
             this.tabHomeworks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabSchedule.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,6 +384,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TabPage tabSchedule;
+        private System.Windows.Forms.ComboBox cbTime;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
 
