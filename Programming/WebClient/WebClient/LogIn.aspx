@@ -21,7 +21,7 @@
             </p>
             <div style="text-align: center">
                 <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
-                <asp:TextBox ID="UserPasswordTB" runat="server"></asp:TextBox>
+                <asp:TextBox ID="UserPasswordTB" runat="server" type="password"></asp:TextBox>
                 <asp:RequiredFieldValidator id="RequiredFieldValidator1"
                     ControlToValidate="UserPasswordTB"
                     Display="Static"

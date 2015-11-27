@@ -45,5 +45,12 @@ namespace WcfService.BLL
             HomeworkDb hwDb = new HomeworkDb();
             return hwDb.GetHomeworkById(id);
         }
+
+        public List<Homework> GetAllHomeworksByChildId(int childId)
+        {
+            HomeworkDb hwDb = new HomeworkDb();
+
+            return hwDb.GetAllHomeworksByChildId(childId);
+        }
     }
 }
