@@ -47,14 +47,14 @@ namespace WcfService.DAL
             return result;
         }
 
-        public TutoringTime GetTtTimesByTime(DateTime date)
+        public TutoringTime GetTtTimesByTime(DateTime date, string time)
         {
             
             try
             {
                 comm = new SqlCommand();
                 string testDate = date.ToString("yyyy/MM/dd");
-                comm.CommandText = "SELECT * FROM TutoringTime WHERE date = '" + testDate + "'";
+                comm.CommandText = "SELECT * FROM TutoringTime WHERE date  = '" + testDate + "'" + "AND time= '" + time + "'";
 
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();

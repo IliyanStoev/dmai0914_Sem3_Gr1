@@ -236,7 +236,7 @@ namespace WinFormClient
 
                 Service1Client winService = new Service1Client();
                
-                tt = winService.GetTtTimesByTime(date);
+                tt = winService.GetTtTimesByTime(date, time);
 
                 if (tt != null)
                 {

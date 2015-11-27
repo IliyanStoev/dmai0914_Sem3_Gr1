@@ -75,11 +75,11 @@ namespace WcfService
             return ttCtrl.CreateTutoringTime(date, availability, teacherId, time);
         }
 
-        public TutoringTime GetTtTimesByTime(DateTime date)
+        public TutoringTime GetTtTimesByTime(DateTime date, string time)
         {
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
 
-            return ttCtrl.GetTtTimesByTime(date);
+            return ttCtrl.GetTtTimesByTime(date, time);
         }
 
     }

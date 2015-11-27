@@ -42,7 +42,7 @@ namespace WcfService
         int CreateTutoringTime(DateTime date, bool availability, int teacherId, string time);
 
         [OperationContract]
-        TutoringTime GetTtTimesByTime(DateTime date);
+        TutoringTime GetTtTimesByTime(DateTime date, string time);
     }
 
 

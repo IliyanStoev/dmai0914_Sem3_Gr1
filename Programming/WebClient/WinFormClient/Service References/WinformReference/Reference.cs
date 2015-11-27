@@ -668,10 +668,10 @@ namespace WinFormClient.WinformReference {
         System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
-        WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date);
+        WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
-        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date);
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -773,12 +773,12 @@ namespace WinFormClient.WinformReference {
             return base.Channel.CreateTutoringTimeAsync(date, availability, teacherId, time);
         }
         
-        public WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date) {
-            return base.Channel.GetTtTimesByTime(date);
+        public WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time) {
+            return base.Channel.GetTtTimesByTime(date, time);
         }
         
-        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date) {
-            return base.Channel.GetTtTimesByTimeAsync(date);
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time) {
+            return base.Channel.GetTtTimesByTimeAsync(date, time);
         }
     }
 }
