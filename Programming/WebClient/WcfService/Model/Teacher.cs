@@ -21,7 +21,7 @@ namespace WcfService.Model
 
         public Teacher(int id)
         {
-
+            this.Id = id;
         }
 
         public Teacher(string UserName, string Name, string Phone, string Email, string Password, string Subject, int Type)
