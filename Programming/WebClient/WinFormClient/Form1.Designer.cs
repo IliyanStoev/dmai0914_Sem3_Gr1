@@ -53,8 +53,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabSchedule = new System.Windows.Forms.TabPage();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.cbTime = new System.Windows.Forms.ComboBox();
+            this.cbScTime = new System.Windows.Forms.ComboBox();
+            this.calendar = new System.Windows.Forms.MonthCalendar();
+            this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
@@ -315,8 +316,9 @@
             // tabSchedule
             // 
             this.tabSchedule.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabSchedule.Controls.Add(this.cbTime);
-            this.tabSchedule.Controls.Add(this.monthCalendar1);
+            this.tabSchedule.Controls.Add(this.btnSaveSchedule);
+            this.tabSchedule.Controls.Add(this.cbScTime);
+            this.tabSchedule.Controls.Add(this.calendar);
             this.tabSchedule.Location = new System.Drawing.Point(4, 25);
             this.tabSchedule.Name = "tabSchedule";
             this.tabSchedule.Padding = new System.Windows.Forms.Padding(3);
@@ -324,19 +326,29 @@
             this.tabSchedule.TabIndex = 3;
             this.tabSchedule.Text = "Schedule";
             // 
-            // monthCalendar1
+            // cbScTime
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(64, 12);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.cbScTime.FormattingEnabled = true;
+            this.cbScTime.Location = new System.Drawing.Point(64, 231);
+            this.cbScTime.Name = "cbScTime";
+            this.cbScTime.Size = new System.Drawing.Size(262, 24);
+            this.cbScTime.TabIndex = 1;
             // 
-            // cbTime
+            // calendar
             // 
-            this.cbTime.FormattingEnabled = true;
-            this.cbTime.Location = new System.Drawing.Point(64, 231);
-            this.cbTime.Name = "cbTime";
-            this.cbTime.Size = new System.Drawing.Size(262, 24);
-            this.cbTime.TabIndex = 1;
+            this.calendar.Location = new System.Drawing.Point(64, 12);
+            this.calendar.Name = "calendar";
+            this.calendar.TabIndex = 0;
+            // 
+            // btnSaveSchedule
+            // 
+            this.btnSaveSchedule.Location = new System.Drawing.Point(162, 276);
+            this.btnSaveSchedule.Name = "btnSaveSchedule";
+            this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveSchedule.TabIndex = 2;
+            this.btnSaveSchedule.Text = "Save";
+            this.btnSaveSchedule.UseVisualStyleBackColor = true;
+            this.btnSaveSchedule.Click += new System.EventHandler(this.btnSaveSchedule_Click);
             // 
             // Form1
             // 
@@ -385,8 +397,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TabPage tabSchedule;
-        private System.Windows.Forms.ComboBox cbTime;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ComboBox cbScTime;
+        private System.Windows.Forms.MonthCalendar calendar;
+        private System.Windows.Forms.Button btnSaveSchedule;
     }
 }
 
