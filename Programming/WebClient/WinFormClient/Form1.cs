@@ -15,7 +15,7 @@ namespace WinFormClient
     public partial class Form1 : Form
     {
         private string[] subjects = { "Math", "Literature", "English" };
-        private string[] scTime = { "10:00", "12:00", "14:00", "16:00" };
+        private string[] scTime = { "", "10:00", "12:00", "14:00", "16:00" };
         public static Teacher teacher;
         private TutoringTime tt;
         private ListForObjects list;
@@ -228,7 +228,7 @@ namespace WinFormClient
             string time = cbScTime.Text;
             bool availability = true;
             int teacherId = teacher.Id;
-            if (time == "--Select Time--")
+            if (string.IsNullOrEmpty(time))
             {
                 MessageBox.Show("Please select the time");
             }

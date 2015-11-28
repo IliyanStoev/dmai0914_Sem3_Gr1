@@ -53,10 +53,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabSchedule = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.cbScTime = new System.Windows.Forms.ComboBox();
             this.calendar = new System.Windows.Forms.MonthCalendar();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
@@ -328,6 +328,15 @@
             this.tabSchedule.TabIndex = 3;
             this.tabSchedule.Text = "Schedule";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(61, 241);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Select Time :";
+            // 
             // btnSaveSchedule
             // 
             this.btnSaveSchedule.Location = new System.Drawing.Point(154, 285);
@@ -340,6 +349,7 @@
             // 
             // cbScTime
             // 
+            this.cbScTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbScTime.FormattingEnabled = true;
             this.cbScTime.Location = new System.Drawing.Point(154, 238);
             this.cbScTime.Name = "cbScTime";
@@ -352,15 +362,6 @@
             this.calendar.Location = new System.Drawing.Point(64, 12);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 241);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 17);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Select Time :";
             // 
             // Form1
             // 
