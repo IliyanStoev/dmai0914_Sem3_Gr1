@@ -10,26 +10,19 @@ namespace UnitTestProject
         [TestMethod]
         public void LoginTest()
         {
-            string userName = "anna";
-            string password = "2222".GetHashCode().ToString(); 
-
             Service1Client client = new ServiceReference1.Service1Client();
 
-            Assert.IsNotNull(client.Login(userName, password));
+            Assert.IsNotNull(client.Login("Anna", "2222".GetHashCode().ToString()));
         }
 
         [TestMethod]
 
-        public void SubmitTest()
+        public void SubmitHomeworkTest()
         {
-            int childId = 4;
-            int assignmentId = 1;
-            DateTime date = DateTime.Now;
-            string diskName = "Test Assignment";
 
             ServiceReference1.Service1Client testService = new Service1Client();
 
-            Assert.AreEqual(1, testService.SubmitHomework(childId, assignmentId, date, diskName));
+            Assert.AreEqual(1, testService.SubmitHomework(3, 2, DateTime.Now, "Test Assignment"));
            
         }
 
@@ -37,19 +30,19 @@ namespace UnitTestProject
 
         public void CreateAssignmentTest()
         {
-            int teacherId = 1;
-            string subject = "Math";
-            string title = "TestAssignment";
-            string exercise = "2+2=?";
-            DateTime date = DateTime.Now;
-            DateTime deadline = DateTime.Now;
-
+           
             ServiceReference1.Service1Client testService = new Service1Client();
 
-            
+            Assert.AreEqual(1, testService.CreateAssignment(1, "Math", "TestAssignment", "2+2=?", DateTime.Now, DateTime.Now));
 
-            Assert.AreEqual(1, testService.CreateAssignment(teacherId, subject, title, exercise, date, deadline));
+        }
 
+        [TestMethod]
+        public void CreateTutoringTime()
+        {
+            ServiceReference1.Service1Client testService = new Service1Client();
+
+            Assert.AreEqual(1, testService.CreateTutoringTime(DateTime.Now, true, 1, "10:00"));
         }
     }
 }
