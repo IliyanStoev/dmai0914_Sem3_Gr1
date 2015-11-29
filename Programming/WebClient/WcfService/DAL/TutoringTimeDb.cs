@@ -49,7 +49,7 @@ namespace WcfService.DAL
 
         public TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId)
         {
-            
+
             try
             {
                 comm = new SqlCommand();
@@ -74,7 +74,7 @@ namespace WcfService.DAL
 
                     return tt;
 
-                    
+
                 }
             }
             catch (Exception)
@@ -96,7 +96,7 @@ namespace WcfService.DAL
             try
             {
                 comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM TutoringTime WHERE teacherId = '" + teacherId + "'"; 
+                comm.CommandText = "SELECT * FROM TutoringTime WHERE teacherId = '" + teacherId + "'";
 
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();
@@ -129,5 +129,40 @@ namespace WcfService.DAL
 
             return ttTimes;
         }
+
+        public int RemoveTutoringTime(int teacherId, DateTime date, string time)
+        {
+            string testDate = date.ToString("yyyy/MM/dd");
+
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "DELETE FROM TutoringTime WHERE date  = '" + testDate + "'" + "AND teacherId= '" + teacherId + "'" + "AND time= '" + time + "'";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+
+                result = comm.ExecuteNonQuery();
+
+            }
+
+            catch(Exception)
+            {
+                throw;
+            }
+
+            finally
+            { 
+                comm.Connection.Close();
+                
+            }
+
+            return result;
+
+            
+            }
+        }
     }
-}

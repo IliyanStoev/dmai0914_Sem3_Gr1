@@ -20,7 +20,6 @@ namespace WinFormClient
         private TutoringTime tt;
         private ListForObjects list;
         private List<String> strings;
-        //private List<DateTime> ttDates;
         private int selectedIndexComB1;
         
         public Form1()
@@ -231,43 +230,52 @@ namespace WinFormClient
             string time = cbScTime.Text;
             bool availability = true;
             int teacherId = teacher.Id;
-            if (string.IsNullOrEmpty(time))
+            if (date < DateTime.Today)
             {
-                MessageBox.Show("Please select the time");
+                MessageBox.Show("Not possible to set available date and time");
             }
             else
             {
-
-                Service1Client winService = new Service1Client();
-               
-                tt = winService.GetTtTimesByTime(date, time, teacherId);
-
-                if (tt != null)
+                if (string.IsNullOrEmpty(time))
                 {
-
-                    if (tt.Date == date)
-                    {
-                        if (String.Equals(tt.Time, time))
-                        {
-
-                            MessageBox.Show("Selected time is already in use");
-                           
-
-                        }
-                        else
-                        {
-                            winService.CreateTutoringTime(date, availability, teacherId, time);
-                            MessageBox.Show("Tutor time succesfully inserted");
-                        }
-                    }
+                    MessageBox.Show("Please select the time");
                 }
+
 
                 else
                 {
-                   
-                    winService.CreateTutoringTime(date, availability, teacherId, time);
-                    MessageBox.Show("Tutor time succesfully inserted");
 
+                    Service1Client winService = new Service1Client();
+
+                    tt = winService.GetTtTimesByTime(date, time, teacherId);
+
+                    if (tt != null)
+                    {
+
+                        if (tt.Date == date)
+                        {
+                            if (String.Equals(tt.Time, time))
+                            {
+
+                                MessageBox.Show("Selected time is already in use");
+
+
+                            }
+                            else
+                            {
+                                winService.CreateTutoringTime(date, availability, teacherId, time);
+                                MessageBox.Show("Tutor time succesfully inserted");
+                            }
+                        }
+                    }
+
+                    else
+                    {
+
+                        winService.CreateTutoringTime(date, availability, teacherId, time);
+                        MessageBox.Show("Tutor time succesfully inserted");
+
+                    }
                 }
             }
         }
@@ -288,11 +296,42 @@ namespace WinFormClient
             foreach (TutoringTime tt in ttTimeObj)
             {
                 DateTime ttDate = tt.Date;
-                ttDates.Add(ttDate);
+                if (tt.Date==DateTime.Today || tt.Date>DateTime.Today)
+                {
+                    ttDates.Add(ttDate);
+                }
+                else
+                {
+
+                }
 
                 calendar.BoldedDates = ttDates.ToArray();
             }
 
           }
+
+        private void RemoveTutoringTime()
+        {
+            int teacherId = teacher.Id;
+            DateTime date = calendar.SelectionRange.Start;
+            string time = cbScTime.Text;
+
+            Service1Client winService = new Service1Client();
+
+            if (winService.RemoveTutoringTime(teacherId, date, time) == 1)
+            {
+                MessageBox.Show("Selected time was removed from your schedule");
+            }
+            else
+            {
+                MessageBox.Show("Selected time does not exist in the database");
+            }
+        }
+
+        private void btnRemoveTT_Click(object sender, EventArgs e)
+        {
+            RemoveTutoringTime();
+            cbScTime.ResetText();
+         }
     }
 }

@@ -57,6 +57,7 @@
             this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.cbScTime = new System.Windows.Forms.ComboBox();
             this.calendar = new System.Windows.Forms.MonthCalendar();
+            this.btnRemoveTT = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
@@ -317,6 +318,7 @@
             // tabSchedule
             // 
             this.tabSchedule.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabSchedule.Controls.Add(this.btnRemoveTT);
             this.tabSchedule.Controls.Add(this.label9);
             this.tabSchedule.Controls.Add(this.btnSaveSchedule);
             this.tabSchedule.Controls.Add(this.cbScTime);
@@ -339,7 +341,7 @@
             // 
             // btnSaveSchedule
             // 
-            this.btnSaveSchedule.Location = new System.Drawing.Point(154, 285);
+            this.btnSaveSchedule.Location = new System.Drawing.Point(213, 285);
             this.btnSaveSchedule.Name = "btnSaveSchedule";
             this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
             this.btnSaveSchedule.TabIndex = 2;
@@ -362,6 +364,16 @@
             this.calendar.Location = new System.Drawing.Point(64, 12);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
+            // 
+            // btnRemoveTT
+            // 
+            this.btnRemoveTT.Location = new System.Drawing.Point(99, 285);
+            this.btnRemoveTT.Name = "btnRemoveTT";
+            this.btnRemoveTT.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveTT.TabIndex = 4;
+            this.btnRemoveTT.Text = "Remove";
+            this.btnRemoveTT.UseVisualStyleBackColor = true;
+            this.btnRemoveTT.Click += new System.EventHandler(this.btnRemoveTT_Click);
             // 
             // Form1
             // 
@@ -415,6 +427,7 @@
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Button btnSaveSchedule;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnRemoveTT;
     }
 }
 

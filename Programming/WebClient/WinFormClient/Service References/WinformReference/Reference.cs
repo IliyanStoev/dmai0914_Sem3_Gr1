@@ -680,6 +680,12 @@ namespace WinFormClient.WinformReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTeacherId", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse")]
         System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveTutoringTime", ReplyAction="http://tempuri.org/IService1/RemoveTutoringTimeResponse")]
+        int RemoveTutoringTime(int teacherId, System.DateTime date, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveTutoringTime", ReplyAction="http://tempuri.org/IService1/RemoveTutoringTimeResponse")]
+        System.Threading.Tasks.Task<int> RemoveTutoringTimeAsync(int teacherId, System.DateTime date, string time);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -795,6 +801,14 @@ namespace WinFormClient.WinformReference {
         
         public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId) {
             return base.Channel.GetTtTimesByTeacherIdAsync(teacherId);
+        }
+        
+        public int RemoveTutoringTime(int teacherId, System.DateTime date, string time) {
+            return base.Channel.RemoveTutoringTime(teacherId, date, time);
+        }
+        
+        public System.Threading.Tasks.Task<int> RemoveTutoringTimeAsync(int teacherId, System.DateTime date, string time) {
+            return base.Channel.RemoveTutoringTimeAsync(teacherId, date, time);
         }
     }
 }
