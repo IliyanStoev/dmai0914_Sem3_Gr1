@@ -23,11 +23,18 @@ namespace WcfService.BLL
             return ttDb.CreateTutoringTime(tt);
         }
 
-        public TutoringTime GetTtTimesByTime(DateTime date, string time)
+        public TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId)
         {
             TutoringTimeDb ttDb = new TutoringTimeDb();
 
-            return ttDb.GetTtTimesByTime(date, time);
+            return ttDb.GetTtTimesByTime(date, time, teacherId);
+        }
+
+        public List<TutoringTime> GetTtTimesByTeacherId(int teacherId)
+        {
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+
+            return ttDb.GetTtTimesByTeacherId(teacherId);
         }
     }
 }

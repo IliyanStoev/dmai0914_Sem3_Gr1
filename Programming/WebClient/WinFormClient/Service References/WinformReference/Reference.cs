@@ -26,6 +26,7 @@ namespace WinFormClient.WinformReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime[]))]
     public partial class ListForObjects : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -614,6 +615,7 @@ namespace WinFormClient.WinformReference {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime[]))]
         object Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
@@ -668,10 +670,16 @@ namespace WinFormClient.WinformReference {
         System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
-        WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time);
+        WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time, int teacherId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
-        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time);
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time, int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTeacherId", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse")]
+        WinFormClient.WinformReference.TutoringTime[] GetTtTimesByTeacherId(int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTeacherId", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse")]
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -773,12 +781,20 @@ namespace WinFormClient.WinformReference {
             return base.Channel.CreateTutoringTimeAsync(date, availability, teacherId, time);
         }
         
-        public WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time) {
-            return base.Channel.GetTtTimesByTime(date, time);
+        public WinFormClient.WinformReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time, int teacherId) {
+            return base.Channel.GetTtTimesByTime(date, time, teacherId);
         }
         
-        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time) {
-            return base.Channel.GetTtTimesByTimeAsync(date, time);
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time, int teacherId) {
+            return base.Channel.GetTtTimesByTimeAsync(date, time, teacherId);
+        }
+        
+        public WinFormClient.WinformReference.TutoringTime[] GetTtTimesByTeacherId(int teacherId) {
+            return base.Channel.GetTtTimesByTeacherId(teacherId);
+        }
+        
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId) {
+            return base.Channel.GetTtTimesByTeacherIdAsync(teacherId);
         }
     }
 }

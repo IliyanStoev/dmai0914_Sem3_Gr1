@@ -20,6 +20,7 @@ namespace WinFormClient
         private TutoringTime tt;
         private ListForObjects list;
         private List<String> strings;
+        //private List<DateTime> ttDates;
         private int selectedIndexComB1;
         
         public Form1()
@@ -30,6 +31,7 @@ namespace WinFormClient
             tabControl1.TabPages.Remove(tabSchedule);
             cbSubject.DataSource = subjects;
             cbScTime.DataSource = scTime;
+            
             
 
             
@@ -44,6 +46,7 @@ namespace WinFormClient
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             LogIn();
+            fillBoldDates();
         }
 
         private void LogIn()
@@ -237,7 +240,7 @@ namespace WinFormClient
 
                 Service1Client winService = new Service1Client();
                
-                tt = winService.GetTtTimesByTime(date, time);
+                tt = winService.GetTtTimesByTime(date, time, teacherId);
 
                 if (tt != null)
                 {
@@ -275,5 +278,21 @@ namespace WinFormClient
             cbScTime.ResetText();
             
         }
+
+        private void fillBoldDates()
+        {
+            Service1Client winService = new Service1Client();
+            TutoringTime[] ttTimeObj = winService.GetTtTimesByTeacherId(teacher.Id);
+            List<DateTime> ttDates = new List<DateTime>();
+
+            foreach (TutoringTime tt in ttTimeObj)
+            {
+                DateTime ttDate = tt.Date;
+                ttDates.Add(ttDate);
+
+                calendar.BoldedDates = ttDates.ToArray();
+            }
+
+          }
     }
 }

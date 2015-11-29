@@ -142,6 +142,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="date" type="xs:dateTime" />
         <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="teacherId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -149,6 +150,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetTtTimesByTimeResult" nillable="true" type="q6:TutoringTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTtTimesByTeacherId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTtTimesByTeacherIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService.Model" minOccurs="0" name="GetTtTimesByTeacherIdResult" nillable="true" type="q7:ArrayOfTutoringTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

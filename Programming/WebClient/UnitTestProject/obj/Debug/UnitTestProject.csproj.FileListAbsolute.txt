@@ -20,4 +20,3 @@ C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitT
 C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.dll
 C:\Users\Janix\Desktop\My projects\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.pdb
 C:\Users\Coms\Desktop\3 Sem\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
-S:\dmai0914_Sem3_Gr1\Programming\WebClient\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
