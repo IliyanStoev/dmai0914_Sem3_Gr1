@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using WcfService.DAL;
@@ -20,6 +21,27 @@ namespace WcfService.BLL
             TutoringTimeDb ttDb = new TutoringTimeDb();
 
             return ttDb.CreateTutoringTime(tt);
+        }
+
+        public TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId)
+        {
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+
+            return ttDb.GetTtTimesByTime(date, time, teacherId);
+        }
+
+        public List<TutoringTime> GetTtTimesByTeacherId(int teacherId)
+        {
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+
+            return ttDb.GetTtTimesByTeacherId(teacherId);
+        }
+
+        public int RemoveTutoringTime(int teacherId, DateTime date, string time)
+        {
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+
+            return ttDb.RemoveTutoringTime(teacherId, date, time);
         }
     }
 }

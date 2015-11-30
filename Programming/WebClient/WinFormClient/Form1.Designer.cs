@@ -53,9 +53,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabSchedule = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnSaveSchedule = new System.Windows.Forms.Button();
             this.cbScTime = new System.Windows.Forms.ComboBox();
             this.calendar = new System.Windows.Forms.MonthCalendar();
-            this.btnSaveSchedule = new System.Windows.Forms.Button();
+            this.btnRemoveTT = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabLogin.SuspendLayout();
             this.tabAssignments.SuspendLayout();
@@ -316,6 +318,8 @@
             // tabSchedule
             // 
             this.tabSchedule.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabSchedule.Controls.Add(this.btnRemoveTT);
+            this.tabSchedule.Controls.Add(this.label9);
             this.tabSchedule.Controls.Add(this.btnSaveSchedule);
             this.tabSchedule.Controls.Add(this.cbScTime);
             this.tabSchedule.Controls.Add(this.calendar);
@@ -326,12 +330,33 @@
             this.tabSchedule.TabIndex = 3;
             this.tabSchedule.Text = "Schedule";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(61, 241);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Select Time :";
+            // 
+            // btnSaveSchedule
+            // 
+            this.btnSaveSchedule.Location = new System.Drawing.Point(213, 285);
+            this.btnSaveSchedule.Name = "btnSaveSchedule";
+            this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveSchedule.TabIndex = 2;
+            this.btnSaveSchedule.Text = "Save";
+            this.btnSaveSchedule.UseVisualStyleBackColor = true;
+            this.btnSaveSchedule.Click += new System.EventHandler(this.btnSaveSchedule_Click);
+            // 
             // cbScTime
             // 
+            this.cbScTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbScTime.FormattingEnabled = true;
-            this.cbScTime.Location = new System.Drawing.Point(64, 231);
+            this.cbScTime.Location = new System.Drawing.Point(154, 238);
             this.cbScTime.Name = "cbScTime";
-            this.cbScTime.Size = new System.Drawing.Size(262, 24);
+            this.cbScTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbScTime.Size = new System.Drawing.Size(172, 24);
             this.cbScTime.TabIndex = 1;
             // 
             // calendar
@@ -340,15 +365,15 @@
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
             // 
-            // btnSaveSchedule
+            // btnRemoveTT
             // 
-            this.btnSaveSchedule.Location = new System.Drawing.Point(162, 276);
-            this.btnSaveSchedule.Name = "btnSaveSchedule";
-            this.btnSaveSchedule.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveSchedule.TabIndex = 2;
-            this.btnSaveSchedule.Text = "Save";
-            this.btnSaveSchedule.UseVisualStyleBackColor = true;
-            this.btnSaveSchedule.Click += new System.EventHandler(this.btnSaveSchedule_Click);
+            this.btnRemoveTT.Location = new System.Drawing.Point(99, 285);
+            this.btnRemoveTT.Name = "btnRemoveTT";
+            this.btnRemoveTT.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveTT.TabIndex = 4;
+            this.btnRemoveTT.Text = "Remove";
+            this.btnRemoveTT.UseVisualStyleBackColor = true;
+            this.btnRemoveTT.Click += new System.EventHandler(this.btnRemoveTT_Click);
             // 
             // Form1
             // 
@@ -366,6 +391,7 @@
             this.tabHomeworks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabSchedule.ResumeLayout(false);
+            this.tabSchedule.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,6 +426,8 @@
         private System.Windows.Forms.ComboBox cbScTime;
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Button btnSaveSchedule;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnRemoveTT;
     }
 }
 

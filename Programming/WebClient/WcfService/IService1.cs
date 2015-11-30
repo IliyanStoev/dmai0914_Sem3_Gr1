@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -39,6 +40,15 @@ namespace WcfService
 
         [OperationContract]
         int CreateTutoringTime(DateTime date, bool availability, int teacherId, string time);
+
+        [OperationContract]
+        TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId);
+
+        [OperationContract]
+        List<TutoringTime> GetTtTimesByTeacherId(int teacherId);
+
+        [OperationContract]
+        int RemoveTutoringTime(int teacherId, DateTime date, string time);
     }
 
 

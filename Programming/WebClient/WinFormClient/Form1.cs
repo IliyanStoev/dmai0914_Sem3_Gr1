@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,9 @@ namespace WinFormClient
     public partial class Form1 : Form
     {
         private string[] subjects = { "Math", "Literature", "English" };
-        private string[] scTime = { "10:00", "12:00", "14:00", "16:00" };
+        private string[] scTime = { "", "10:00", "12:00", "14:00", "16:00" };
         public static Teacher teacher;
+        private TutoringTime tt;
         private ListForObjects list;
         private List<String> strings;
         private int selectedIndexComB1;
@@ -29,6 +31,11 @@ namespace WinFormClient
             cbSubject.DataSource = subjects;
             cbScTime.DataSource = scTime;
             
+            
+
+            
+          
+            
 
             //Removes the anoying first empty column in table
             dataGridView1.RowHeadersVisible = false;
@@ -38,6 +45,7 @@ namespace WinFormClient
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             LogIn();
+            fillBoldDates();
         }
 
         private void LogIn()
@@ -85,7 +93,7 @@ namespace WinFormClient
             string exercise = tbExercise.Text;
             DateTime date = startDate.Value;
             DateTime deadline = deadlineDate.Value;
-
+            
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(exercise)) 
             {
                 MessageBox.Show("Please fill in all the fields.");
@@ -217,21 +225,111 @@ namespace WinFormClient
 
         private void CreateTutoringTime()
         {
+
             DateTime date = calendar.SelectionRange.Start;
             string time = cbScTime.Text;
             bool availability = true;
             int teacherId = teacher.Id;
+            if (date < DateTime.Today)
+            {
+                MessageBox.Show("Not possible to set available date and time");
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(time))
+                {
+                    MessageBox.Show("Please select the time");
+                }
 
-            Service1Client winService = new Service1Client();
-            winService.CreateTutoringTime(date, availability, teacherId, time);
 
-            
-            
+                else
+                {
+
+                    Service1Client winService = new Service1Client();
+
+                    tt = winService.GetTtTimesByTime(date, time, teacherId);
+
+                    if (tt != null)
+                    {
+
+                        if (tt.Date == date)
+                        {
+                            if (String.Equals(tt.Time, time))
+                            {
+
+                                MessageBox.Show("Selected time is already in use");
+
+
+                            }
+                            else
+                            {
+                                winService.CreateTutoringTime(date, availability, teacherId, time);
+                                MessageBox.Show("Tutor time succesfully inserted");
+                            }
+                        }
+                    }
+
+                    else
+                    {
+
+                        winService.CreateTutoringTime(date, availability, teacherId, time);
+                        MessageBox.Show("Tutor time succesfully inserted");
+
+                    }
+                }
+            }
         }
-
+                 
         private void btnSaveSchedule_Click(object sender, EventArgs e)
         {
             CreateTutoringTime();
+            cbScTime.ResetText();
+            
         }
+
+        private void fillBoldDates()
+        {
+            Service1Client winService = new Service1Client();
+            if (teacher != null) 
+            {  
+            List<DateTime> ttDates = new List<DateTime>();
+            TutoringTime[] ttTimeObj = winService.GetTtTimesByTeacherId(teacher.Id);
+            foreach (TutoringTime tt in ttTimeObj)
+            {
+                DateTime ttDate = tt.Date;
+                if (tt.Date == DateTime.Today || tt.Date > DateTime.Today)
+                {
+                    ttDates.Add(ttDate);
+
+                    calendar.BoldedDates = ttDates.ToArray();
+                }
+            }
+            }
+
+          }
+
+        private void RemoveTutoringTime()
+        {
+            int teacherId = teacher.Id;
+            DateTime date = calendar.SelectionRange.Start;
+            string time = cbScTime.Text;
+
+            Service1Client winService = new Service1Client();
+
+            if (winService.RemoveTutoringTime(teacherId, date, time) == 1)
+            {
+                MessageBox.Show("Selected time was removed from your schedule");
+            }
+            else
+            {
+                MessageBox.Show("Selected time does not exist in the database");
+            }
+        }
+
+        private void btnRemoveTT_Click(object sender, EventArgs e)
+        {
+            RemoveTutoringTime();
+            cbScTime.ResetText();
+         }
     }
 }
