@@ -48,6 +48,9 @@ namespace WcfService
         List<TutoringTime> GetTtTimesByTeacherId(int teacherId);
 
         [OperationContract]
+        List<TutoringTime> GetTtTimesByDate(DateTime date);
+
+        [OperationContract]
         int RemoveTutoringTime(int teacherId, DateTime date, string time);
     }
 
