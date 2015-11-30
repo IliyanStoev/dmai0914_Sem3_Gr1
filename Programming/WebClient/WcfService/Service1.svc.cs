@@ -16,9 +16,16 @@ namespace WcfService
     {
         public Object Login(string User, string Password)
         {
-         UserCtrl userCtrl = new UserCtrl();
+         PersonCtrl userCtrl = new PersonCtrl();
 
          return userCtrl.Login(User, Password);
+        }
+
+        public List<Teacher> GetAllTeachers()
+        {
+            PersonCtrl pCtrl = new PersonCtrl();
+
+            return pCtrl.GetAllTeachers();
         }
 
         public int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName)
@@ -101,6 +108,13 @@ namespace WcfService
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
 
             return ttCtrl.RemoveTutoringTime(teacherId, date, time);
+        }
+
+        public int RegisterBooking(int childId, int tutoringTimeId)
+        {
+            TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
+
+            return ttCtrl.RegisterBooking(childId, tutoringTimeId);
         }
     }
 }

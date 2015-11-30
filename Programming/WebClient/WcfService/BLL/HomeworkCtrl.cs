@@ -11,7 +11,7 @@ namespace WcfService.BLL
     {
         public int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName)
         {
-            UserCtrl userCtrl = new UserCtrl();
+            PersonCtrl userCtrl = new PersonCtrl();
 
             Homework hw = new Homework();
             hw.Child = (Child)userCtrl.GetPerson(childId);
@@ -27,7 +27,7 @@ namespace WcfService.BLL
         public ListForObjects GetAllHomeworksByID(int assignmentId)
         {
             HomeworkDb hwDb = new HomeworkDb();
-            UserCtrl userCtrl = new UserCtrl();
+            PersonCtrl userCtrl = new PersonCtrl();
             AssignmentCtrl assgnmentCtrl = new AssignmentCtrl();
             ListForObjects l = hwDb.GetAllHomeworksById(assignmentId);
             ListForObjects list = new ListForObjects();

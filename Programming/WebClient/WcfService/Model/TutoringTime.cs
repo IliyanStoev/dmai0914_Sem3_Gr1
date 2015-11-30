@@ -10,7 +10,8 @@ namespace WcfService.Model
     [DataContract]
     public class TutoringTime
     {
-        
+        [DataMember]
+        public int Id { get; set; }
         [DataMember]
         public DateTime Date { get; set; }
         [DataMember]

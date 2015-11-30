@@ -50,5 +50,17 @@ namespace WcfService.BLL
 
             return ttDb.RemoveTutoringTime(teacherId, date, time);
         }
+
+        public int RegisterBooking(int childId, int tutoringTimeId)
+        {
+            TutoringTime tt = new TutoringTime();
+            tt.Id = tutoringTimeId;
+            tt.Child = new Child(childId);
+            tt.Available = false;
+
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+
+            return ttDb.RegisterBooking(tt);
+        }
     }
 }
