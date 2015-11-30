@@ -19,5 +19,7 @@ namespace WcfService.Model
         public bool Available { get; set; }
         [DataMember]
         public Teacher Teacher { get; set; }
+        [DataMember]
+        public Child Child { get; set; }
     }
 }
