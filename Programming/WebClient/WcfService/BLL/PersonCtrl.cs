@@ -8,14 +8,14 @@ using WcfService.DAL;
 using WcfService.Model;
 namespace WcfService.BLL
 {
-    public class UserCtrl
+    public class PersonCtrl
     {
         public Object Login(string UserName, string Password)
         {
             Person p = new Person();
             p.UserName = UserName;
             p.Password = Password;
-            LoginDb logDb = new LoginDb();
+            PersonDb logDb = new PersonDb();
 
             return logDb.Login(p);
         }
@@ -24,19 +24,14 @@ namespace WcfService.BLL
         {
             Person p = new Person();
             p.Id = id;
-            LoginDb logDb = new LoginDb();
+            PersonDb logDb = new PersonDb();
             return logDb.GetPerson(p);
         }
 
-        //public Teacher GetTeacher(int id)
-        //{
-        //    PersonDb persDb = new PersonDb();
-        //    return persDb.GetTeacher(GetPerson(id));
-        //}
-        //public Child GetChild(int id)
-        //{
-        //    PersonDb persDb = new PersonDb();
-        //    return persDb.GetChild(GetPerson(id));
-        //}
+        public List<Teacher> GetAllTeachers()
+        {
+            PersonDb pDb = new PersonDb();
+            return pDb.GetAllTeachers();
+        }
     }
 }

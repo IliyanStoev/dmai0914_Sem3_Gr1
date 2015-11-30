@@ -18,6 +18,9 @@ namespace WcfService
         Object Login(string User, string Password);
 
         [OperationContract]
+        List<Teacher> GetAllTeachers();
+
+        [OperationContract]
         int SubmitHomework(int childId, int assignmentId, DateTime date, string diskName);
 
         [OperationContract]
@@ -48,7 +51,13 @@ namespace WcfService
         List<TutoringTime> GetTtTimesByTeacherId(int teacherId);
 
         [OperationContract]
+        List<TutoringTime> GetTtTimesByDate(DateTime date);
+
+        [OperationContract]
         int RemoveTutoringTime(int teacherId, DateTime date, string time);
+
+        [OperationContract]
+        int RegisterBooking(int childId, int tutoringTimeId);
     }
 
 

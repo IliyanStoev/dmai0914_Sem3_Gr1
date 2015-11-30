@@ -19,6 +19,12 @@ namespace WcfService.Model
         {
 
         }
+
+        public Child(int id)
+        {
+            this.Id = id;
+        }
+
         public Child(string UserName, string Name, string Phone, string Email, string Password, string Grade, int Type)
         {
             this.UserName = UserName;

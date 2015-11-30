@@ -12,7 +12,7 @@ namespace WcfService.BLL
 
         public int CreateAssignment(int teacherId, string subject, string title, string exercise, DateTime date, DateTime deadline)
         {
-            UserCtrl usCtrl = new UserCtrl();
+            PersonCtrl usCtrl = new PersonCtrl();
 
             Assignment ass = new Assignment();
             ass.teacher = (Teacher)usCtrl.GetPerson(teacherId);
@@ -30,7 +30,7 @@ namespace WcfService.BLL
         public ListForObjects GetAllAssignmentsByTeacherId(int teacherId)
         {
             AssignmentDb asDB = new AssignmentDb();
-            UserCtrl userCtrl = new UserCtrl();
+            PersonCtrl userCtrl = new PersonCtrl();
             ListForObjects list = new ListForObjects();
             ListForObjects l = asDB.GetAllAssignmentsByTeacherId(teacherId);
             foreach (Object o in l.Asl)
