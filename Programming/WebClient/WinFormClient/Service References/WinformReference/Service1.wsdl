@@ -32,6 +32,12 @@
   <wsdl:message name="IService1_GetAllHomeworksById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllHomeworksByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetAllHomeworksByChildId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHomeworksByChildId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllHomeworksByChildId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHomeworksByChildIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetAllAssignmentsForTeacherById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAssignmentsForTeacherById" />
   </wsdl:message>
@@ -66,6 +72,10 @@
     <wsdl:operation name="GetAllHomeworksById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllHomeworksById" message="tns:IService1_GetAllHomeworksById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllHomeworksByIdResponse" message="tns:IService1_GetAllHomeworksById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHomeworksByChildId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllHomeworksByChildId" message="tns:IService1_GetAllHomeworksByChildId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllHomeworksByChildIdResponse" message="tns:IService1_GetAllHomeworksByChildId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllAssignmentsForTeacherById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllAssignmentsForTeacherById" message="tns:IService1_GetAllAssignmentsForTeacherById_InputMessage" />
@@ -111,6 +121,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllHomeworksById">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllHomeworksById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHomeworksByChildId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllHomeworksByChildId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

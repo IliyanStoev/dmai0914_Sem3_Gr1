@@ -18,12 +18,13 @@ namespace WinFormClient.WinformReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="ListForObjects", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
     public partial class ListForObjects : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -51,6 +52,115 @@ namespace WinFormClient.WinformReference {
                 if ((object.ReferenceEquals(this.AslField, value) != true)) {
                     this.AslField = value;
                     this.RaisePropertyChanged("Asl");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Homework", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    public partial class Homework : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WinFormClient.WinformReference.Assignment AssignmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WinFormClient.WinformReference.Person ChildField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DiskNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WinFormClient.WinformReference.Assignment Assignment {
+            get {
+                return this.AssignmentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AssignmentField, value) != true)) {
+                    this.AssignmentField = value;
+                    this.RaisePropertyChanged("Assignment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WinFormClient.WinformReference.Person Child {
+            get {
+                return this.ChildField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildField, value) != true)) {
+                    this.ChildField = value;
+                    this.RaisePropertyChanged("Child");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DiskName {
+            get {
+                return this.DiskNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DiskNameField, value) != true)) {
+                    this.DiskNameField = value;
+                    this.RaisePropertyChanged("DiskName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -395,115 +505,6 @@ namespace WinFormClient.WinformReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Homework", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
-    [System.SerializableAttribute()]
-    public partial class Homework : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WinFormClient.WinformReference.Assignment AssignmentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WinFormClient.WinformReference.Person ChildField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DiskNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WinFormClient.WinformReference.Assignment Assignment {
-            get {
-                return this.AssignmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AssignmentField, value) != true)) {
-                    this.AssignmentField = value;
-                    this.RaisePropertyChanged("Assignment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WinFormClient.WinformReference.Person Child {
-            get {
-                return this.ChildField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChildField, value) != true)) {
-                    this.ChildField = value;
-                    this.RaisePropertyChanged("Child");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Date {
-            get {
-                return this.DateField;
-            }
-            set {
-                if ((this.DateField.Equals(value) != true)) {
-                    this.DateField = value;
-                    this.RaisePropertyChanged("Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DiskName {
-            get {
-                return this.DiskNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DiskNameField, value) != true)) {
-                    this.DiskNameField = value;
-                    this.RaisePropertyChanged("DiskName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WinformReference.IService1")]
     public interface IService1 {
@@ -511,12 +512,13 @@ namespace WinFormClient.WinformReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.ListForObjects))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
         object Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
@@ -539,6 +541,12 @@ namespace WinFormClient.WinformReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllHomeworksById", ReplyAction="http://tempuri.org/IService1/GetAllHomeworksByIdResponse")]
         System.Threading.Tasks.Task<WinFormClient.WinformReference.ListForObjects> GetAllHomeworksByIdAsync(int assignmentId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllHomeworksByChildId", ReplyAction="http://tempuri.org/IService1/GetAllHomeworksByChildIdResponse")]
+        WinFormClient.WinformReference.Homework[] GetAllHomeworksByChildId(int childId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllHomeworksByChildId", ReplyAction="http://tempuri.org/IService1/GetAllHomeworksByChildIdResponse")]
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.Homework[]> GetAllHomeworksByChildIdAsync(int childId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllAssignmentsForTeacherById", ReplyAction="http://tempuri.org/IService1/GetAllAssignmentsForTeacherByIdResponse")]
         WinFormClient.WinformReference.ListForObjects GetAllAssignmentsForTeacherById(int teacherId);
@@ -616,6 +624,14 @@ namespace WinFormClient.WinformReference {
         
         public System.Threading.Tasks.Task<WinFormClient.WinformReference.ListForObjects> GetAllHomeworksByIdAsync(int assignmentId) {
             return base.Channel.GetAllHomeworksByIdAsync(assignmentId);
+        }
+        
+        public WinFormClient.WinformReference.Homework[] GetAllHomeworksByChildId(int childId) {
+            return base.Channel.GetAllHomeworksByChildId(childId);
+        }
+        
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.Homework[]> GetAllHomeworksByChildIdAsync(int childId) {
+            return base.Channel.GetAllHomeworksByChildIdAsync(childId);
         }
         
         public WinFormClient.WinformReference.ListForObjects GetAllAssignmentsForTeacherById(int teacherId) {
