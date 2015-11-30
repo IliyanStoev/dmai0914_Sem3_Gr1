@@ -15,15 +15,205 @@ namespace WinFormClient.WinformReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Teacher", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    public partial class Teacher : WinFormClient.WinformReference.Person {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubjectField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subject {
+            get {
+                return this.SubjectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubjectField, value) != true)) {
+                    this.SubjectField = value;
+                    this.RaisePropertyChanged("Subject");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserTypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserType {
+            get {
+                return this.UserTypeField;
+            }
+            set {
+                if ((this.UserTypeField.Equals(value) != true)) {
+                    this.UserTypeField = value;
+                    this.RaisePropertyChanged("UserType");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Child", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    public partial class Child : WinFormClient.WinformReference.Person {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GradeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Grade {
+            get {
+                return this.GradeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
+                    this.GradeField = value;
+                    this.RaisePropertyChanged("Grade");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ListForObjects", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime[]))]
@@ -320,195 +510,6 @@ namespace WinFormClient.WinformReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Teacher", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
-    [System.SerializableAttribute()]
-    public partial class Teacher : WinFormClient.WinformReference.Person {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SubjectField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Subject {
-            get {
-                return this.SubjectField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubjectField, value) != true)) {
-                    this.SubjectField = value;
-                    this.RaisePropertyChanged("Subject");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserTypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserName {
-            get {
-                return this.UserNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
-                    this.UserNameField = value;
-                    this.RaisePropertyChanged("UserName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserType {
-            get {
-                return this.UserTypeField;
-            }
-            set {
-                if ((this.UserTypeField.Equals(value) != true)) {
-                    this.UserTypeField = value;
-                    this.RaisePropertyChanged("UserType");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Child", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
-    [System.SerializableAttribute()]
-    public partial class Child : WinFormClient.WinformReference.Person {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GradeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Grade {
-            get {
-                return this.GradeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
-                    this.GradeField = value;
-                    this.RaisePropertyChanged("Grade");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TutoringTime", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
     [System.SerializableAttribute()]
     public partial class TutoringTime : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -520,7 +521,13 @@ namespace WinFormClient.WinformReference {
         private bool AvailableField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WinFormClient.WinformReference.Child ChildField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WinFormClient.WinformReference.Teacher TeacherField;
@@ -552,6 +559,19 @@ namespace WinFormClient.WinformReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WinFormClient.WinformReference.Child Child {
+            get {
+                return this.ChildField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildField, value) != true)) {
+                    this.ChildField = value;
+                    this.RaisePropertyChanged("Child");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime Date {
             get {
                 return this.DateField;
@@ -560,6 +580,19 @@ namespace WinFormClient.WinformReference {
                 if ((this.DateField.Equals(value) != true)) {
                     this.DateField = value;
                     this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -606,13 +639,14 @@ namespace WinFormClient.WinformReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.ListForObjects))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Homework))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Teacher))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Person))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Child))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.Assignment[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WinFormClient.WinformReference.TutoringTime[]))]
@@ -620,6 +654,12 @@ namespace WinFormClient.WinformReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
         System.Threading.Tasks.Task<object> LoginAsync(string User, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTeachers", ReplyAction="http://tempuri.org/IService1/GetAllTeachersResponse")]
+        WinFormClient.WinformReference.Teacher[] GetAllTeachers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTeachers", ReplyAction="http://tempuri.org/IService1/GetAllTeachersResponse")]
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.Teacher[]> GetAllTeachersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SubmitHomework", ReplyAction="http://tempuri.org/IService1/SubmitHomeworkResponse")]
         int SubmitHomework(int childId, int assignmentId, System.DateTime date, string diskName);
@@ -681,11 +721,23 @@ namespace WinFormClient.WinformReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTeacherId", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse")]
         System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByDate", ReplyAction="http://tempuri.org/IService1/GetTtTimesByDateResponse")]
+        WinFormClient.WinformReference.TutoringTime[] GetTtTimesByDate(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByDate", ReplyAction="http://tempuri.org/IService1/GetTtTimesByDateResponse")]
+        System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByDateAsync(System.DateTime date);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveTutoringTime", ReplyAction="http://tempuri.org/IService1/RemoveTutoringTimeResponse")]
         int RemoveTutoringTime(int teacherId, System.DateTime date, string time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveTutoringTime", ReplyAction="http://tempuri.org/IService1/RemoveTutoringTimeResponse")]
         System.Threading.Tasks.Task<int> RemoveTutoringTimeAsync(int teacherId, System.DateTime date, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterBooking", ReplyAction="http://tempuri.org/IService1/RegisterBookingResponse")]
+        int RegisterBooking(int childId, int tutoringTimeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterBooking", ReplyAction="http://tempuri.org/IService1/RegisterBookingResponse")]
+        System.Threading.Tasks.Task<int> RegisterBookingAsync(int childId, int tutoringTimeId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -721,6 +773,14 @@ namespace WinFormClient.WinformReference {
         
         public System.Threading.Tasks.Task<object> LoginAsync(string User, string Password) {
             return base.Channel.LoginAsync(User, Password);
+        }
+        
+        public WinFormClient.WinformReference.Teacher[] GetAllTeachers() {
+            return base.Channel.GetAllTeachers();
+        }
+        
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.Teacher[]> GetAllTeachersAsync() {
+            return base.Channel.GetAllTeachersAsync();
         }
         
         public int SubmitHomework(int childId, int assignmentId, System.DateTime date, string diskName) {
@@ -803,12 +863,28 @@ namespace WinFormClient.WinformReference {
             return base.Channel.GetTtTimesByTeacherIdAsync(teacherId);
         }
         
+        public WinFormClient.WinformReference.TutoringTime[] GetTtTimesByDate(System.DateTime date) {
+            return base.Channel.GetTtTimesByDate(date);
+        }
+        
+        public System.Threading.Tasks.Task<WinFormClient.WinformReference.TutoringTime[]> GetTtTimesByDateAsync(System.DateTime date) {
+            return base.Channel.GetTtTimesByDateAsync(date);
+        }
+        
         public int RemoveTutoringTime(int teacherId, System.DateTime date, string time) {
             return base.Channel.RemoveTutoringTime(teacherId, date, time);
         }
         
         public System.Threading.Tasks.Task<int> RemoveTutoringTimeAsync(int teacherId, System.DateTime date, string time) {
             return base.Channel.RemoveTutoringTimeAsync(teacherId, date, time);
+        }
+        
+        public int RegisterBooking(int childId, int tutoringTimeId) {
+            return base.Channel.RegisterBooking(childId, tutoringTimeId);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegisterBookingAsync(int childId, int tutoringTimeId) {
+            return base.Channel.RegisterBookingAsync(childId, tutoringTimeId);
         }
     }
 }

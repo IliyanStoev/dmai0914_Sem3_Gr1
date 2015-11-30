@@ -33,7 +33,7 @@ namespace UnitTestProject
            
             ServiceReference1.Service1Client testService = new Service1Client();
 
-            Assert.AreEqual(1, testService.CreateAssignment(1, "Math", "TestAssignment", "2+2=?", DateTime.Now, DateTime.Now));
+            Assert.AreEqual(1, testService.CreateAssignment(2, "Math", "TestAssignment", "2+2=?", DateTime.Now, DateTime.Now));
 
         }
 
@@ -43,6 +43,28 @@ namespace UnitTestProject
             ServiceReference1.Service1Client testService = new Service1Client();
 
             Assert.AreEqual(1, testService.CreateTutoringTime(DateTime.Now, true, 1, "10:00"));
+        }
+
+        [TestMethod]
+        public void GetTtTimesByDate()
+        {
+            DateTime date = new DateTime(2016, 01, 20);
+
+            Service1Client client = new Service1Client();
+
+            TutoringTime[] tutoringTimes = client.GetTtTimesByDate(date);
+
+            int items = tutoringTimes.Length;
+
+            Assert.IsTrue(items > 0, "The returned list is empty.");
+        }
+
+        [TestMethod]
+        public void RegisterBooking()
+        {
+            Service1Client client = new Service1Client();
+
+            Assert.AreEqual(1, client.RegisterBooking(3, 4));
         }
     }
 }

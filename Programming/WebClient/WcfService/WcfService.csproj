@@ -83,11 +83,10 @@
     <Compile Include="BLL\AssignmentCtrl.cs" />
     <Compile Include="BLL\HomeworkCtrl.cs" />
     <Compile Include="BLL\TutoringTimeCtrl.cs" />
-    <Compile Include="BLL\UserCtrl.cs" />
+    <Compile Include="BLL\PersonCtrl.cs" />
     <Compile Include="DAL\AssignmentDb.cs" />
     <Compile Include="DAL\DbConnection.cs" />
     <Compile Include="DAL\HomeworkDb.cs" />
-    <Compile Include="DAL\LoginDb.cs" />
     <Compile Include="DAL\PersonDb.cs" />
     <Compile Include="DAL\TutoringTimeDb.cs" />
     <Compile Include="Model\Assignment.cs" />

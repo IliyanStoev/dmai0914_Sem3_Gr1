@@ -66,6 +66,7 @@ namespace WcfService.DAL
                 while (dr.Read())
                 {
                     TutoringTime tt = new TutoringTime();
+                    tt.Id = Convert.ToInt32(dr["tid"]);
                     tt.Time = Convert.ToString(dr["time"]);
                     tt.Date = Convert.ToDateTime(dr["date"]);
                     Teacher teacher = new Teacher();
@@ -108,6 +109,7 @@ namespace WcfService.DAL
                 while (dr.Read())
                 {
                     TutoringTime tt = new TutoringTime();
+                    tt.Id = Convert.ToInt32(dr["tid"]);
                     tt.Time = Convert.ToString(dr["time"]);
                     tt.Date = Convert.ToDateTime(dr["date"]);
                     Teacher teacher = new Teacher();
@@ -184,6 +186,7 @@ namespace WcfService.DAL
                 while (dr.Read())
                 {
                     TutoringTime tt = new TutoringTime();
+                    tt.Id = Convert.ToInt32(dr["tid"]);
                     tt.Time = Convert.ToString(dr["time"]);
                     tt.Date = Convert.ToDateTime(dr["date"]);
                     Teacher teacher = new Teacher();
@@ -204,6 +207,37 @@ namespace WcfService.DAL
             }
 
             return ttTimes;
+        }
+
+        public int RegisterBooking(TutoringTime tt) 
+        {
+             try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "UPDATE TutoringTime set childId=(@childId), availability=(@availability) WHERE tid =(@tutoringTimeId)";
+
+                comm.Parameters.AddWithValue("childId", tt.Child.Id);
+                comm.Parameters.AddWithValue("availability", tt.Available);
+                comm.Parameters.AddWithValue("tutoringTimeId", tt.Id);
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                result = comm.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+
+            return result;
         }
 
         }
