@@ -89,6 +89,13 @@ namespace WcfService
             return ttCtrl.GetTtTimesByTeacherId(teacherId);
         }
 
+        public List<TutoringTime> GetTtTimesByDate(DateTime date)
+        {
+            TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
+
+            return ttCtrl.GetTtTimesByDate(date);
+        }
+
         public int RemoveTutoringTime(int teacherId, DateTime date, string time)
         {
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();

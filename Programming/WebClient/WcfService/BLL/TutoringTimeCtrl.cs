@@ -37,6 +37,13 @@ namespace WcfService.BLL
             return ttDb.GetTtTimesByTeacherId(teacherId);
         }
 
+        public List<TutoringTime> GetTtTimesByDate(DateTime date)
+        {
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+
+            return ttDb.GetTtByDate(date);
+        }
+
         public int RemoveTutoringTime(int teacherId, DateTime date, string time)
         {
             TutoringTimeDb ttDb = new TutoringTimeDb();

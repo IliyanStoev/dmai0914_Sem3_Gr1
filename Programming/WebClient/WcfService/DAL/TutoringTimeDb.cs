@@ -164,5 +164,47 @@ namespace WcfService.DAL
 
             
             }
+
+        public List<TutoringTime> GetTtByDate(DateTime date)
+        {
+            List<TutoringTime> ttTimes = new List<TutoringTime>();
+            string testDate = date.ToString("yyyy/MM/dd");
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM TutoringTime WHERE date = '" + testDate + "'";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    TutoringTime tt = new TutoringTime();
+                    tt.Time = Convert.ToString(dr["time"]);
+                    tt.Date = Convert.ToDateTime(dr["date"]);
+                    Teacher teacher = new Teacher();
+                    teacher.Id = Convert.ToInt32(dr["teacherId"]);
+                    tt.Teacher = teacher;
+
+                    ttTimes.Add(tt);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+
+            return ttTimes;
+        }
+
         }
     }
