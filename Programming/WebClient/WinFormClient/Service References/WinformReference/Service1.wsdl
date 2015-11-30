@@ -62,6 +62,24 @@
   <wsdl:message name="IService1_CreateTutoringTime_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateTutoringTimeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetTtTimesByTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTtTimesByTime" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTtTimesByTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTtTimesByTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTtTimesByTeacherId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTtTimesByTeacherId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTtTimesByTeacherId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTtTimesByTeacherIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveTutoringTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTutoringTime" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveTutoringTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTutoringTimeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
@@ -98,6 +116,18 @@
     <wsdl:operation name="CreateTutoringTime">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateTutoringTime" message="tns:IService1_CreateTutoringTime_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateTutoringTimeResponse" message="tns:IService1_CreateTutoringTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTtTimesByTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTtTimesByTime" message="tns:IService1_GetTtTimesByTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTtTimesByTimeResponse" message="tns:IService1_GetTtTimesByTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTtTimesByTeacherId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTtTimesByTeacherId" message="tns:IService1_GetTtTimesByTeacherId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse" message="tns:IService1_GetTtTimesByTeacherId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTutoringTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveTutoringTime" message="tns:IService1_RemoveTutoringTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveTutoringTimeResponse" message="tns:IService1_RemoveTutoringTime_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -176,6 +206,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateTutoringTime">
       <soap:operation soapAction="http://tempuri.org/IService1/CreateTutoringTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTtTimesByTime">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTtTimesByTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTtTimesByTeacherId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTtTimesByTeacherId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTutoringTime">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveTutoringTime" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

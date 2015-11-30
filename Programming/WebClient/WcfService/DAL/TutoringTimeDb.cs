@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using WcfService.Model;
@@ -45,5 +46,123 @@ namespace WcfService.DAL
             }
             return result;
         }
+
+        public TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId)
+        {
+
+            try
+            {
+                comm = new SqlCommand();
+                string testDate = date.ToString("yyyy/MM/dd");
+                comm.CommandText = "SELECT * FROM TutoringTime WHERE date  = '" + testDate + "'" + "AND time= '" + time + "'" + "AND teacherId= '" + teacherId + "'";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    TutoringTime tt = new TutoringTime();
+                    tt.Time = Convert.ToString(dr["time"]);
+                    tt.Date = Convert.ToDateTime(dr["date"]);
+                    Teacher teacher = new Teacher();
+                    teacher.Id = Convert.ToInt32(dr["teacherId"]);
+                    tt.Teacher = teacher;
+
+                    return tt;
+
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+
+            return null;
+        }
+
+        public List<TutoringTime> GetTtTimesByTeacherId(int teacherId)
+        {
+            List<TutoringTime> ttTimes = new List<TutoringTime>();
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM TutoringTime WHERE teacherId = '" + teacherId + "'";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    TutoringTime tt = new TutoringTime();
+                    tt.Time = Convert.ToString(dr["time"]);
+                    tt.Date = Convert.ToDateTime(dr["date"]);
+                    Teacher teacher = new Teacher();
+                    teacher.Id = Convert.ToInt32(dr["teacherId"]);
+                    tt.Teacher = teacher;
+
+                    ttTimes.Add(tt);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+
+            return ttTimes;
+        }
+
+        public int RemoveTutoringTime(int teacherId, DateTime date, string time)
+        {
+            string testDate = date.ToString("yyyy/MM/dd");
+
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "DELETE FROM TutoringTime WHERE date  = '" + testDate + "'" + "AND teacherId= '" + teacherId + "'" + "AND time= '" + time + "'";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+
+                result = comm.ExecuteNonQuery();
+
+            }
+
+            catch(Exception)
+            {
+                throw;
+            }
+
+            finally
+            { 
+                comm.Connection.Close();
+                
+            }
+
+            return result;
+
+            
+            }
+        }
     }
-}

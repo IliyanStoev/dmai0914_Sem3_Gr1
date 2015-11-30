@@ -111,6 +111,9 @@
     <None Include="Service References\WinformReference\WinFormClient.WinformReference.ListForObjects.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\WinformReference\WinFormClient.WinformReference.TutoringTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
