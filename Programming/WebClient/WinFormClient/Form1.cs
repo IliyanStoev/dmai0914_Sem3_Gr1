@@ -290,22 +290,20 @@ namespace WinFormClient
         private void fillBoldDates()
         {
             Service1Client winService = new Service1Client();
-            TutoringTime[] ttTimeObj = winService.GetTtTimesByTeacherId(teacher.Id);
+            if (teacher != null) 
+            {  
             List<DateTime> ttDates = new List<DateTime>();
-
+            TutoringTime[] ttTimeObj = winService.GetTtTimesByTeacherId(teacher.Id);
             foreach (TutoringTime tt in ttTimeObj)
             {
                 DateTime ttDate = tt.Date;
-                if (tt.Date==DateTime.Today || tt.Date>DateTime.Today)
+                if (tt.Date == DateTime.Today || tt.Date > DateTime.Today)
                 {
                     ttDates.Add(ttDate);
-                }
-                else
-                {
 
+                    calendar.BoldedDates = ttDates.ToArray();
                 }
-
-                calendar.BoldedDates = ttDates.ToArray();
+            }
             }
 
           }
