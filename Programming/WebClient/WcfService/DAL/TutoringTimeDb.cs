@@ -209,26 +209,82 @@ namespace WcfService.DAL
             return ttTimes;
         }
 
-        public int RegisterBooking(TutoringTime tt) 
+        public TutoringTime GetTtByTtId(int ttId)
         {
-             try
+            SqlTransaction sqlTrans = null;
+            try
             {
                 comm = new SqlCommand();
-                comm.CommandText = "UPDATE TutoringTime set childId=(@childId), availability=(@availability) WHERE tid =(@tutoringTimeId)";
-
-                comm.Parameters.AddWithValue("childId", tt.Child.Id);
-                comm.Parameters.AddWithValue("availability", tt.Available);
-                comm.Parameters.AddWithValue("tutoringTimeId", tt.Id);
-
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();
                 comm.Connection.Open();
 
-                comm.CommandType = CommandType.Text;
-                result = comm.ExecuteNonQuery();
+                sqlTrans = comm.Connection.BeginTransaction(IsolationLevel.Serializable);
+
+                using (comm)
+                {
+
+                    comm.CommandText = "SELECT * FROM TutoringTime WHERE tid  = '" + ttId + "'";
+                    comm.CommandType = CommandType.Text;
+                    SqlDataReader dr = comm.ExecuteReader();
+                    TutoringTime tt = new TutoringTime();
+
+                    while (dr.Read())
+                    {
+                        
+                        tt.Id = Convert.ToInt32(dr["tid"]);
+                        tt.Available = Convert.ToBoolean(dr["available"]);
+                    }
+                    return tt;
+                }
             }
             catch (Exception)
             {
+
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+            
+        }
+
+        public int RegisterBooking(TutoringTime tt)
+        {
+            SqlTransaction sqlTrans = null;
+
+            try
+            {
+                comm = new SqlCommand();
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                sqlTrans = comm.Connection.BeginTransaction(IsolationLevel.Serializable);
+
+                using (comm)
+                {
+                    comm.CommandText = "UPDATE TutoringTime set childId=(@childId), availability=(@availability) WHERE tid =(@tutoringTimeId)";
+
+                    comm.Parameters.AddWithValue("childId", tt.Child.Id);
+                    comm.Parameters.AddWithValue("availability", tt.Available);
+                    comm.Parameters.AddWithValue("tutoringTimeId", tt.Id);
+
+                    comm.CommandType = CommandType.Text;
+
+                    comm.Transaction = sqlTrans;
+                    result = comm.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        sqlTrans.Commit();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                sqlTrans.Rollback();
                 throw;
             }
 

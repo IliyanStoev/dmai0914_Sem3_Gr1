@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="BLL\AssignmentCtrl.cs" />
     <Compile Include="BLL\HomeworkCtrl.cs" />
+    <Compile Include="BLL\PassHash.cs" />
     <Compile Include="BLL\TutoringTimeCtrl.cs" />
     <Compile Include="BLL\PersonCtrl.cs" />
     <Compile Include="DAL\AssignmentDb.cs" />

@@ -24,9 +24,8 @@ namespace WebClient
             Service1Client service = new WCFWebReference.Service1Client();
             
             string userName = UserNameTB.Text;
-            string password = UserPasswordTB.Text.GetHashCode().ToString();
-
-            Object obj = service.Login(userName, password);
+            string password = service.GetHashedPassword(UserPasswordTB.Text);
+            Person obj = service.Login(userName, password);
 
             if (obj != null)
             {

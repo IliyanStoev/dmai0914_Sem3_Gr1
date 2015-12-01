@@ -15,7 +15,7 @@ namespace WcfService
     public interface IService1
     {
         [OperationContract]
-        Object Login(string User, string Password);
+        Person Login(string User, string Password);
 
         [OperationContract]
         List<Teacher> GetAllTeachers();
@@ -58,6 +58,9 @@ namespace WcfService
 
         [OperationContract]
         int RegisterBooking(int childId, int tutoringTimeId);
+
+        [OperationContract]
+        string GetHashedPassword(string password);
     }
 
 

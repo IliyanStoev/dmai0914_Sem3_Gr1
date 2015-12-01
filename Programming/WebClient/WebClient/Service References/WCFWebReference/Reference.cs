@@ -15,16 +15,208 @@ namespace WebClient.WCFWebReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Teacher))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Child))]
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserTypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserType {
+            get {
+                return this.UserTypeField;
+            }
+            set {
+                if ((this.UserTypeField.Equals(value) != true)) {
+                    this.UserTypeField = value;
+                    this.RaisePropertyChanged("UserType");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Teacher", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    public partial class Teacher : WebClient.WCFWebReference.Person {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubjectField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subject {
+            get {
+                return this.SubjectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubjectField, value) != true)) {
+                    this.SubjectField = value;
+                    this.RaisePropertyChanged("Subject");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Child", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.SerializableAttribute()]
+    public partial class Child : WebClient.WCFWebReference.Person {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GradeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Grade {
+            get {
+                return this.GradeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
+                    this.GradeField = value;
+                    this.RaisePropertyChanged("Grade");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ListForObjects", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Teacher))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Child))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Teacher[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Homework[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Homework))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Assignment))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Teacher))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Child))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Assignment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.TutoringTime))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.TutoringTime[]))]
     public partial class ListForObjects : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -318,58 +510,30 @@ namespace WebClient.WCFWebReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Teacher", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TutoringTime", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
     [System.SerializableAttribute()]
-    public partial class Teacher : WebClient.WCFWebReference.Person {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SubjectField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Subject {
-            get {
-                return this.SubjectField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubjectField, value) != true)) {
-                    this.SubjectField = value;
-                    this.RaisePropertyChanged("Subject");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Child))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebClient.WCFWebReference.Teacher))]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TutoringTime : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
+        private bool AvailableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebClient.WCFWebReference.Child ChildField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private WebClient.WCFWebReference.Teacher TeacherField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserTypeField;
+        private string TimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -382,14 +546,40 @@ namespace WebClient.WCFWebReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
+        public bool Available {
             get {
-                return this.EmailField;
+                return this.AvailableField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
+                if ((this.AvailableField.Equals(value) != true)) {
+                    this.AvailableField = value;
+                    this.RaisePropertyChanged("Available");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebClient.WCFWebReference.Child Child {
+            get {
+                return this.ChildField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChildField, value) != true)) {
+                    this.ChildField = value;
+                    this.RaisePropertyChanged("Child");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
                 }
             }
         }
@@ -408,66 +598,27 @@ namespace WebClient.WCFWebReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public WebClient.WCFWebReference.Teacher Teacher {
             get {
-                return this.NameField;
+                return this.TeacherField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.TeacherField, value) != true)) {
+                    this.TeacherField = value;
+                    this.RaisePropertyChanged("Teacher");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
+        public string Time {
             get {
-                return this.PasswordField;
+                return this.TimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserName {
-            get {
-                return this.UserNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
-                    this.UserNameField = value;
-                    this.RaisePropertyChanged("UserName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserType {
-            get {
-                return this.UserTypeField;
-            }
-            set {
-                if ((this.UserTypeField.Equals(value) != true)) {
-                    this.UserTypeField = value;
-                    this.RaisePropertyChanged("UserType");
+                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
                 }
             }
         }
@@ -482,47 +633,21 @@ namespace WebClient.WCFWebReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Child", Namespace="http://schemas.datacontract.org/2004/07/WcfService.Model")]
-    [System.SerializableAttribute()]
-    public partial class Child : WebClient.WCFWebReference.Person {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GradeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Grade {
-            get {
-                return this.GradeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
-                    this.GradeField = value;
-                    this.RaisePropertyChanged("Grade");
-                }
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFWebReference.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.ListForObjects))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Homework[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Homework))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Assignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Teacher))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Person))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Child))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WebClient.WCFWebReference.Assignment[]))]
-        object Login(string User, string Password);
+        WebClient.WCFWebReference.Person Login(string User, string Password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Login", ReplyAction="http://tempuri.org/IService1/LoginResponse")]
-        System.Threading.Tasks.Task<object> LoginAsync(string User, string Password);
+        System.Threading.Tasks.Task<WebClient.WCFWebReference.Person> LoginAsync(string User, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTeachers", ReplyAction="http://tempuri.org/IService1/GetAllTeachersResponse")]
+        WebClient.WCFWebReference.Teacher[] GetAllTeachers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllTeachers", ReplyAction="http://tempuri.org/IService1/GetAllTeachersResponse")]
+        System.Threading.Tasks.Task<WebClient.WCFWebReference.Teacher[]> GetAllTeachersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SubmitHomework", ReplyAction="http://tempuri.org/IService1/SubmitHomeworkResponse")]
         int SubmitHomework(int childId, int assignmentId, System.DateTime date, string diskName);
@@ -565,6 +690,48 @@ namespace WebClient.WCFWebReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHomeworkById", ReplyAction="http://tempuri.org/IService1/GetHomeworkByIdResponse")]
         System.Threading.Tasks.Task<WebClient.WCFWebReference.Homework> GetHomeworkByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateTutoringTime", ReplyAction="http://tempuri.org/IService1/CreateTutoringTimeResponse")]
+        int CreateTutoringTime(System.DateTime date, bool availability, int teacherId, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateTutoringTime", ReplyAction="http://tempuri.org/IService1/CreateTutoringTimeResponse")]
+        System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
+        WebClient.WCFWebReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time, int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
+        System.Threading.Tasks.Task<WebClient.WCFWebReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time, int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTeacherId", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse")]
+        WebClient.WCFWebReference.TutoringTime[] GetTtTimesByTeacherId(int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTeacherId", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTeacherIdResponse")]
+        System.Threading.Tasks.Task<WebClient.WCFWebReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByDate", ReplyAction="http://tempuri.org/IService1/GetTtTimesByDateResponse")]
+        WebClient.WCFWebReference.TutoringTime[] GetTtTimesByDate(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByDate", ReplyAction="http://tempuri.org/IService1/GetTtTimesByDateResponse")]
+        System.Threading.Tasks.Task<WebClient.WCFWebReference.TutoringTime[]> GetTtTimesByDateAsync(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveTutoringTime", ReplyAction="http://tempuri.org/IService1/RemoveTutoringTimeResponse")]
+        int RemoveTutoringTime(int teacherId, System.DateTime date, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveTutoringTime", ReplyAction="http://tempuri.org/IService1/RemoveTutoringTimeResponse")]
+        System.Threading.Tasks.Task<int> RemoveTutoringTimeAsync(int teacherId, System.DateTime date, string time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterBooking", ReplyAction="http://tempuri.org/IService1/RegisterBookingResponse")]
+        int RegisterBooking(int childId, int tutoringTimeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterBooking", ReplyAction="http://tempuri.org/IService1/RegisterBookingResponse")]
+        System.Threading.Tasks.Task<int> RegisterBookingAsync(int childId, int tutoringTimeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHashedPassword", ReplyAction="http://tempuri.org/IService1/GetHashedPasswordResponse")]
+        string GetHashedPassword(string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetHashedPassword", ReplyAction="http://tempuri.org/IService1/GetHashedPasswordResponse")]
+        System.Threading.Tasks.Task<string> GetHashedPasswordAsync(string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -594,12 +761,20 @@ namespace WebClient.WCFWebReference {
                 base(binding, remoteAddress) {
         }
         
-        public object Login(string User, string Password) {
+        public WebClient.WCFWebReference.Person Login(string User, string Password) {
             return base.Channel.Login(User, Password);
         }
         
-        public System.Threading.Tasks.Task<object> LoginAsync(string User, string Password) {
+        public System.Threading.Tasks.Task<WebClient.WCFWebReference.Person> LoginAsync(string User, string Password) {
             return base.Channel.LoginAsync(User, Password);
+        }
+        
+        public WebClient.WCFWebReference.Teacher[] GetAllTeachers() {
+            return base.Channel.GetAllTeachers();
+        }
+        
+        public System.Threading.Tasks.Task<WebClient.WCFWebReference.Teacher[]> GetAllTeachersAsync() {
+            return base.Channel.GetAllTeachersAsync();
         }
         
         public int SubmitHomework(int childId, int assignmentId, System.DateTime date, string diskName) {
@@ -656,6 +831,62 @@ namespace WebClient.WCFWebReference {
         
         public System.Threading.Tasks.Task<WebClient.WCFWebReference.Homework> GetHomeworkByIdAsync(int id) {
             return base.Channel.GetHomeworkByIdAsync(id);
+        }
+        
+        public int CreateTutoringTime(System.DateTime date, bool availability, int teacherId, string time) {
+            return base.Channel.CreateTutoringTime(date, availability, teacherId, time);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time) {
+            return base.Channel.CreateTutoringTimeAsync(date, availability, teacherId, time);
+        }
+        
+        public WebClient.WCFWebReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time, int teacherId) {
+            return base.Channel.GetTtTimesByTime(date, time, teacherId);
+        }
+        
+        public System.Threading.Tasks.Task<WebClient.WCFWebReference.TutoringTime> GetTtTimesByTimeAsync(System.DateTime date, string time, int teacherId) {
+            return base.Channel.GetTtTimesByTimeAsync(date, time, teacherId);
+        }
+        
+        public WebClient.WCFWebReference.TutoringTime[] GetTtTimesByTeacherId(int teacherId) {
+            return base.Channel.GetTtTimesByTeacherId(teacherId);
+        }
+        
+        public System.Threading.Tasks.Task<WebClient.WCFWebReference.TutoringTime[]> GetTtTimesByTeacherIdAsync(int teacherId) {
+            return base.Channel.GetTtTimesByTeacherIdAsync(teacherId);
+        }
+        
+        public WebClient.WCFWebReference.TutoringTime[] GetTtTimesByDate(System.DateTime date) {
+            return base.Channel.GetTtTimesByDate(date);
+        }
+        
+        public System.Threading.Tasks.Task<WebClient.WCFWebReference.TutoringTime[]> GetTtTimesByDateAsync(System.DateTime date) {
+            return base.Channel.GetTtTimesByDateAsync(date);
+        }
+        
+        public int RemoveTutoringTime(int teacherId, System.DateTime date, string time) {
+            return base.Channel.RemoveTutoringTime(teacherId, date, time);
+        }
+        
+        public System.Threading.Tasks.Task<int> RemoveTutoringTimeAsync(int teacherId, System.DateTime date, string time) {
+            return base.Channel.RemoveTutoringTimeAsync(teacherId, date, time);
+        }
+        
+        public int RegisterBooking(int childId, int tutoringTimeId) {
+            return base.Channel.RegisterBooking(childId, tutoringTimeId);
+        }
+        
+        public System.Threading.Tasks.Task<int> RegisterBookingAsync(int childId, int tutoringTimeId) {
+            return base.Channel.RegisterBookingAsync(childId, tutoringTimeId);
+        }
+        
+        public string GetHashedPassword(string password) {
+            return base.Channel.GetHashedPassword(password);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetHashedPasswordAsync(string password) {
+            return base.Channel.GetHashedPasswordAsync(password);
         }
     }
 }

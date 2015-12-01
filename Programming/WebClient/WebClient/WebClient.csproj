@@ -191,6 +191,15 @@
     <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.ListForObjects.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.Teacher.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.TutoringTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WCFWebReference\WebClient.WCFWebReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
