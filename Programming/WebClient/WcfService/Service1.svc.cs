@@ -14,7 +14,7 @@ namespace WcfService
    
     public class Service1 : IService1
     {
-        public Object Login(string User, string Password)
+        public Person Login(string User, string Password)
         {
          PersonCtrl userCtrl = new PersonCtrl();
 
@@ -115,6 +115,13 @@ namespace WcfService
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
 
             return ttCtrl.RegisterBooking(childId, tutoringTimeId);
+        }
+
+        public string GetHashedPassword(string password)
+        {
+            PassHash ph = new PassHash();
+
+            return ph.GetHashedPassword(password);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace WcfService.BLL
 {
     public class PersonCtrl
     {
-        public Object Login(string UserName, string Password)
+        public Person Login(string UserName, string Password)
         {
             Person p = new Person();
             p.UserName = UserName;

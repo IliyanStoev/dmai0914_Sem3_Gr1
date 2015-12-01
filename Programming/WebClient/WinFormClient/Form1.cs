@@ -50,12 +50,12 @@ namespace WinFormClient
 
         private void LogIn()
         {
-            string userName = tbUsername.Text;
-            string password = tbPass.Text.GetHashCode().ToString();
-
             Service1Client winService = new Service1Client();
 
-            Object obj = winService.Login(userName, password);
+            string userName = tbUsername.Text;
+            string password = winService.GetHashedPassword(tbPass.Text);
+            
+            Person obj = winService.Login(userName, password);
 
             if (obj != null)
             {

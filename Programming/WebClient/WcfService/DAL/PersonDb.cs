@@ -13,7 +13,7 @@ namespace WcfService.DAL
         private SqlCommand comm;
         private DbConnection dbCon;
 
-        public Object Login(Person p)
+        public Person Login(Person p)
         {
             comm = new SqlCommand();
             comm.CommandText = "SELECT * FROM Person WHERE userName=(@userName) AND password=(@password)";
