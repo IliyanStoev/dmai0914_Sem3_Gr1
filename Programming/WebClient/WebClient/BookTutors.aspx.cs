@@ -23,11 +23,13 @@ namespace WebClient
                 Response.Redirect("LogIn.aspx");
             }
 
+            //On every postback it retrieves data from DB, so every time it provides the 
+            //update of available tutoring times
             Service1Client service = new Service1Client();
             allTutoringTimes = service.GetAllAvailableTutoringTimes().OfType<TutoringTime>().ToList();
             SetAllTutorsAndSubjects(allTutoringTimes);
 
-
+            //Checking for postback so the chosen data in combo boxes does not dissapear
             if (!Page.IsPostBack)
             {
 
@@ -39,8 +41,14 @@ namespace WebClient
             }
 
         }
+        //This method happens every time when the page is reloaded or there was a postback
+        //And updates the calendar. Here you provide all the information about how does the 
+        //calendar should look in any situation
         protected void BookingCalendar_DayRender(object sender, DayRenderEventArgs e)
         {
+            DateTime daySelected = BookingCalendar.SelectedDate;
+            BookingCalendar.SelectedDates.Clear();
+            
             e.Day.IsSelectable = false;
             if (e.Day.Date < DateTime.Today)
             {
@@ -53,7 +61,15 @@ namespace WebClient
 
             if (e.Day.Date.DayOfWeek == DayOfWeek.Saturday || e.Day.Date.DayOfWeek == DayOfWeek.Sunday)
             {
-                e.Cell.ForeColor = System.Drawing.Color.Red;
+                if (e.Day.Date == daySelected)
+                {
+                    e.Cell.ForeColor = System.Drawing.Color.Yellow;
+                }
+                else
+                {
+                    e.Cell.ForeColor = System.Drawing.Color.Red;
+                }
+                
             }
 
             Service1Client service = new Service1Client();
@@ -84,7 +100,8 @@ namespace WebClient
                         }
                     }
                 }
-                //this part of code is repeating need to try to refactor
+                    //If the selection is Select subject it changes color to green to all available   
+                    //tutoring times dates no matter what subject it is 
                 else
                 {
                     foreach (DateTime d in GetAllAvailableTutoringDates(allTutoringTimes))
@@ -97,6 +114,8 @@ namespace WebClient
                     }
                 }
                 //Select available dates by teacher
+                //If the teacher is selected than it changes color to green to all 
+                //dates which have that speciffic teachers tuturing dates
                 if (TeacherDrL.SelectedValue != "Select teacher")
                 {
                     e.Day.IsSelectable = false;
@@ -120,14 +139,19 @@ namespace WebClient
                     }
                 }
             }
+            BookingCalendar.SelectedDate = daySelected;
+            BookingCalendar.SelectedDayStyle.ForeColor = System.Drawing.Color.Yellow;
 
         }
 
         protected void SubjectDrL_SelectedIndexChanged(object sender, EventArgs e)
         {
+            BookingCalendar.SelectedDates.Clear();
             List<Teacher> sortedTeacherList = new List<Teacher>();
             if (!SubjectDrL.SelectedValue.Equals("Select subject"))
             {
+                //Loops for all teachers who has tutoring dates available 
+                //for that subject
                 foreach (Teacher t in allTutoringTeachers)
                 {
                     if (t.Subject == SubjectDrL.SelectedValue)
@@ -135,6 +159,7 @@ namespace WebClient
                         sortedTeacherList.Add(t);
                     }
                 }
+                //sets the sorted list of teachers to combo box
                 SetTeachersToComboBox(sortedTeacherList);
             }
             else
@@ -142,20 +167,26 @@ namespace WebClient
                 SetTeachersToComboBox(allTutoringTeachers);
             }
             SetDataToTutorTable(new List<TutorTableView>());
-            BookingCalendar.SelectedDates.Clear();
         }
 
         protected void TeacherDrL_SelectedIndexChanged(object sender, EventArgs e)
         {
+            BookingCalendar.SelectedDates.Clear();
             string name = TeacherDrL.SelectedValue;
             List<Teacher> sortedTeacherList = new List<Teacher>();
             foreach (Teacher t in allTutoringTeachers)
             {
-                if (t.Name == TeacherDrL.SelectedValue)
+                if (t.Name == name)
                 {
+                    //When teacher is selected it selects the teachers subject in subject box
                     SubjectDrL.SelectedValue = t.Subject;
                 }
             }
+            //after subject was selected it also updates teacher combo box and sets 
+            //the co-workers with the same subject
+            //So to get all teachers it will be required to change the subject in subject
+            //combo box to "Select subject" or change the subject and get all tutors for 
+            //speciffic subject
             foreach (Teacher t in allTutoringTeachers)
             {
                 if (t.Subject == SubjectDrL.SelectedValue)
@@ -166,9 +197,9 @@ namespace WebClient
             SetTeachersToComboBox(sortedTeacherList);
             TeacherDrL.SelectedValue = name;
             SetDataToTutorTable(new List<TutorTableView>());
-            BookingCalendar.SelectedDates.Clear();
         }
-
+        //Handels calendar selection action and populates the BookingTabel accordingly
+        //to date considering all selections of combo boxes
         protected void BookingCalendar_SelectionChanged(object sender, EventArgs e)
         {
             List<TutorTableView> viewTable = new List<TutorTableView>();
@@ -332,7 +363,7 @@ namespace WebClient
             }
             return sorted;
         }
-
+        //Handels button press action
         protected void TutorTable_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Book")
@@ -349,6 +380,20 @@ namespace WebClient
                         if (service.GetTtTimesByTime(tt.Date, time, tt.Teacher.Id).Child == null)
                         {
                             service.RegisterBooking(LogIn.child.Id, tt.Id);
+
+                            //Reseting Data
+                            BookingCalendar.SelectedDates.Clear();
+                            allTutoringSubjects = new List<string>();
+                            allTutoringTeachers = new List<Teacher>();
+                            allTutoringTimes = service.GetAllAvailableTutoringTimes().OfType<TutoringTime>().ToList();
+                            SetAllTutorsAndSubjects(allTutoringTimes);
+                            SetSubjectsToComboBox(allTutoringSubjects);
+                            SetTeachersToComboBox(allTutoringTeachers);
+                            SetDataToTutorTable(new List<TutorTableView>());
+                            SubjectDrL.SelectedValue = "Select subject";
+                            TeacherDrL.SelectedValue = "Select teacher";
+                            //Reset ends
+                            //Gives message about successful transaction
                             Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", "<script>alert('Your booking was successful!')</script>");
                             
                         }
@@ -360,18 +405,6 @@ namespace WebClient
                     }
                 }
             }
-            Service1Client service1 = new Service1Client();
-            allTutoringTimes = service1.GetAllAvailableTutoringTimes().OfType<TutoringTime>().ToList();
-            SetAllTutorsAndSubjects(allTutoringTimes);
-            BookingCalendar.SelectedDates.Clear();
-
-            SetSubjectsToComboBox(allTutoringSubjects);
-
-            SetTeachersToComboBox(allTutoringTeachers);
-
-            SetDataToTutorTable(new List<TutorTableView>());
-            SubjectDrL.SelectedValue = "Select subject";
-            TeacherDrL.SelectedValue = "Select teacher";
         }
     }
 }
