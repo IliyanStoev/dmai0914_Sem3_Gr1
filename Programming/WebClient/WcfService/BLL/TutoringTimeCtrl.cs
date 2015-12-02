@@ -10,11 +10,10 @@ namespace WcfService.BLL
 {
     public class TutoringTimeCtrl
     {
-        public int CreateTutoringTime(DateTime date, bool availability, int teacherId, string time)
+        public int CreateTutoringTime(DateTime date, int teacherId, string time)
         {
             TutoringTime tt = new TutoringTime();
             tt.Date = date;
-            tt.Available = availability;
             tt.Teacher = new Teacher(teacherId);
             tt.Time = time;
 
@@ -27,21 +26,25 @@ namespace WcfService.BLL
         {
             TutoringTimeDb ttDb = new TutoringTimeDb();
 
-            return ttDb.GetTtTimesByTime(date, time, teacherId);
+            //Constructs and adds complete Teacher object to TutoringTime
+            //Returns improved object
+            PersonCtrl pCtrl = new PersonCtrl();
+            TutoringTime tt = ttDb.GetTtTimesByTime(date, time, teacherId);
+            TutoringTime completeTt = new TutoringTime();
+            completeTt.Teacher = (Teacher)pCtrl.GetPerson(tt.Teacher.Id);
+            return completeTt;
         }
 
         public List<TutoringTime> GetTtTimesByTeacherId(int teacherId)
         {
             TutoringTimeDb ttDb = new TutoringTimeDb();
-
-            return ttDb.GetTtTimesByTeacherId(teacherId);
+            return CompleteTeacherObjectsInList(ttDb.GetTtTimesByTeacherId(teacherId));
         }
 
         public List<TutoringTime> GetTtTimesByDate(DateTime date)
         {
             TutoringTimeDb ttDb = new TutoringTimeDb();
-
-            return ttDb.GetTtByDate(date);
+            return CompleteTeacherObjectsInList(ttDb.GetTtByDate(date));
         }
 
         public int RemoveTutoringTime(int teacherId, DateTime date, string time)
@@ -56,11 +59,48 @@ namespace WcfService.BLL
             TutoringTime tt = new TutoringTime();
             tt.Id = tutoringTimeId;
             tt.Child = new Child(childId);
-            tt.Available = false;
 
             TutoringTimeDb ttDb = new TutoringTimeDb();
 
             return ttDb.RegisterBooking(tt);
+        }
+        //Returns list of TutoringTimes which are available for booking
+        public List<TutoringTime> GetAllAvailableTutoringTimes()
+        {
+            TutoringTimeDb ttDb = new TutoringTimeDb();
+            return CompleteTeacherObjectsInList(ttDb.GetAllAvailableTutoringTimes());
+        }
+        //Uses the list from GetAllAvailableTutoringTimes(), sorts it according
+        //to subject given and returns the sorted list of TutorinTime
+        public List<TutoringTime> GetAllAvailableTutoringTimesBySubject(string subject)
+        {
+            List<TutoringTime> all = GetAllAvailableTutoringTimes();
+            List<TutoringTime> sorted = new List<TutoringTime>();
+            foreach (TutoringTime tt in all)
+            {
+                if (tt.Teacher.Subject == subject)
+                {
+                    sorted.Add(tt);
+                }
+            }
+            return sorted;
+        }
+
+        //Constructs and adds complete object of Teacher to every TutoringTime object in the list
+        //Returns improved list
+        public List<TutoringTime> CompleteTeacherObjectsInList(List<TutoringTime> list)
+        {
+            PersonCtrl pCtrl = new PersonCtrl();
+            List<TutoringTime> listWithPartialyBuiltObjects = list;
+            List<TutoringTime> listWithCompletelyBuitltObjects = new List<TutoringTime>();
+            foreach (TutoringTime tt in listWithPartialyBuiltObjects)
+            {
+                Teacher pt = (Teacher)pCtrl.GetPerson(tt.Teacher.Id);
+                tt.Teacher = pt;
+                listWithCompletelyBuitltObjects.Add(tt);
+
+            }
+            return listWithCompletelyBuitltObjects;
         }
     }
 }

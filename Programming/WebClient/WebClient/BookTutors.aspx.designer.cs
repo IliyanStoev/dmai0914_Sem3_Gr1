@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebClient {
-    
-    
-    public partial class BookTutors {
-        
+namespace WebClient
+{
+
+
+    public partial class BookTutors
+    {
+
         /// <summary>
         /// SubjectDrL control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace WebClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList SubjectDrL;
-        
+
         /// <summary>
         /// TeacherDrL control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace WebClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList TeacherDrL;
-        
+
         /// <summary>
         /// BookingCalendar control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace WebClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar BookingCalendar;
-        
+
         /// <summary>
         /// TutorTable control.
         /// </summary>

@@ -79,7 +79,7 @@ namespace WcfService
         {
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
 
-            return ttCtrl.CreateTutoringTime(date, availability, teacherId, time);
+            return ttCtrl.CreateTutoringTime(date, teacherId, time);
         }
 
         public TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId)
@@ -122,6 +122,16 @@ namespace WcfService
             PassHash ph = new PassHash();
 
             return ph.GetHashedPassword(password);
+        }
+        public List<TutoringTime> GetAllAvailableTutoringTimes()
+        {
+            TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
+            return ttCtrl.GetAllAvailableTutoringTimes();
+        }
+        public List<TutoringTime> GetAllAvailableTutoringTimesBySubject(string subject)
+        {
+            TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
+            return ttCtrl.GetAllAvailableTutoringTimesBySubject(subject);
         }
     }
 }

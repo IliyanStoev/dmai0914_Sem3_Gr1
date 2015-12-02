@@ -61,6 +61,12 @@ namespace WcfService
 
         [OperationContract]
         string GetHashedPassword(string password);
+
+        [OperationContract]
+        List<TutoringTime> GetAllAvailableTutoringTimes();
+
+        [OperationContract]
+        List<TutoringTime> GetAllAvailableTutoringTimesBySubject(string subject);
     }
 
 

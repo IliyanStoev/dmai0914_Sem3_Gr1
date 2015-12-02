@@ -20,9 +20,8 @@ namespace WcfService.DAL
             try
             {
                 comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO TutoringTime(date, availability, teacherId, time) VALUES(@date, @availability, @teacherId, @time)";
+                comm.CommandText = "INSERT INTO TutoringTime(date, teacherId, time) VALUES(@date, @teacherId, @time)";
                 comm.Parameters.AddWithValue("date", tt.Date);
-                comm.Parameters.AddWithValue("availability", tt.Available);
                 comm.Parameters.AddWithValue("teacherId", tt.Teacher.Id);
                 comm.Parameters.AddWithValue("time", tt.Time);
 
@@ -151,21 +150,21 @@ namespace WcfService.DAL
 
             }
 
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
 
             finally
-            { 
+            {
                 comm.Connection.Close();
-                
+
             }
 
             return result;
 
-            
-            }
+
+        }
 
         public List<TutoringTime> GetTtByDate(DateTime date)
         {
@@ -231,9 +230,8 @@ namespace WcfService.DAL
 
                     while (dr.Read())
                     {
-                        
+
                         tt.Id = Convert.ToInt32(dr["tid"]);
-                        tt.Available = Convert.ToBoolean(dr["available"]);
                     }
                     return tt;
                 }
@@ -248,7 +246,7 @@ namespace WcfService.DAL
             {
                 comm.Connection.Close();
             }
-            
+
         }
 
         public int RegisterBooking(TutoringTime tt)
@@ -266,10 +264,9 @@ namespace WcfService.DAL
 
                 using (comm)
                 {
-                    comm.CommandText = "UPDATE TutoringTime set childId=(@childId), availability=(@availability) WHERE tid =(@tutoringTimeId)";
+                    comm.CommandText = "UPDATE TutoringTime set childId=(@childId) WHERE tid =(@tutoringTimeId)";
 
                     comm.Parameters.AddWithValue("childId", tt.Child.Id);
-                    comm.Parameters.AddWithValue("availability", tt.Available);
                     comm.Parameters.AddWithValue("tutoringTimeId", tt.Id);
 
                     comm.CommandType = CommandType.Text;
@@ -296,5 +293,48 @@ namespace WcfService.DAL
             return result;
         }
 
+        //Gets all the TutoringTime objects that has childId = null (which means that it
+        //is available to book)
+        public List<TutoringTime> GetAllAvailableTutoringTimes()
+        {
+            List<TutoringTime> ttTimes = new List<TutoringTime>();
+            try
+            {
+                comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM TutoringTime WHERE childId is null";
+
+                dbCon = new DbConnection();
+                comm.Connection = dbCon.GetConnection();
+                comm.Connection.Open();
+
+                comm.CommandType = CommandType.Text;
+                SqlDataReader dr = comm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    TutoringTime tt = new TutoringTime();
+                    tt.Id = Convert.ToInt32(dr["tid"]);
+                    tt.Time = Convert.ToString(dr["time"]);
+                    tt.Date = Convert.ToDateTime(dr["date"]);
+                    Teacher teacher = new Teacher();
+                    teacher.Id = Convert.ToInt32(dr["teacherId"]);
+                    tt.Teacher = teacher;
+
+                    ttTimes.Add(tt);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                comm.Connection.Close();
+            }
+
+            return ttTimes;
         }
+
     }
+}

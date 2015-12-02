@@ -17,8 +17,6 @@ namespace WcfService.Model
         [DataMember]
         public string Time { get; set; }
         [DataMember]
-        public bool Available { get; set; }
-        [DataMember]
         public Teacher Teacher { get; set; }
         [DataMember]
         public Child Child { get; set; }

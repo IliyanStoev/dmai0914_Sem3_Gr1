@@ -13,16 +13,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" nillable="true" type="tns:Person" />
-  <xs:complexType name="Teacher">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Person">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Teacher" nillable="true" type="tns:Teacher" />
   <xs:complexType name="Child">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Person">
@@ -33,6 +23,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Child" nillable="true" type="tns:Child" />
+  <xs:complexType name="Teacher">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Person">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Teacher" nillable="true" type="tns:Teacher" />
   <xs:complexType name="ArrayOfTeacher">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Teacher" nillable="true" type="tns:Teacher" />
@@ -81,7 +81,6 @@
   <xs:element name="ArrayOfAssignment" nillable="true" type="tns:ArrayOfAssignment" />
   <xs:complexType name="TutoringTime">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Available" type="xs:boolean" />
       <xs:element minOccurs="0" name="Child" nillable="true" type="tns:Child" />
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
