@@ -10,27 +10,61 @@ namespace UnitTestProject
         [TestMethod]
         public void LoginTest()
         {
-            string userName = "Anna";
-            string password = "2222".GetHashCode().ToString(); 
-
             Service1Client client = new ServiceReference1.Service1Client();
 
-            Assert.IsNotNull(client.Login(userName, password));
+            Assert.IsNotNull(client.Login("Anna", "2222".GetHashCode().ToString()));
         }
 
         [TestMethod]
 
-        public void SubmitTest()
+        public void SubmitHomeworkTest()
         {
-            int childId = 1;
-            int assignmentId = 1;
-            DateTime date = DateTime.Now;
-            string diskName = "Test Assignment";
 
             ServiceReference1.Service1Client testService = new Service1Client();
 
-            Assert.AreEqual(1, testService.SubmitHomework(childId, assignmentId, date, diskName));
+            Assert.AreEqual(1, testService.SubmitHomework(3, 2, DateTime.Now, "Test Assignment"));
            
+        }
+
+        [TestMethod]
+
+        public void CreateAssignmentTest()
+        {
+           
+            ServiceReference1.Service1Client testService = new Service1Client();
+
+            Assert.AreEqual(1, testService.CreateAssignment(2, "Math", "TestAssignment", "2+2=?", DateTime.Now, DateTime.Now));
+
+        }
+
+        [TestMethod]
+        public void CreateTutoringTime()
+        {
+            ServiceReference1.Service1Client testService = new Service1Client();
+
+            Assert.AreEqual(1, testService.CreateTutoringTime(DateTime.Now, true, 1, "10:00"));
+        }
+
+        [TestMethod]
+        public void GetTtTimesByDate()
+        {
+            DateTime date = new DateTime(2016, 01, 20);
+
+            Service1Client client = new Service1Client();
+
+            TutoringTime[] tutoringTimes = client.GetTtTimesByDate(date);
+
+            int items = tutoringTimes.Length;
+
+            Assert.IsTrue(items > 0, "The returned list is empty.");
+        }
+
+        [TestMethod]
+        public void RegisterBooking()
+        {
+            Service1Client client = new Service1Client();
+
+            Assert.AreEqual(1, client.RegisterBooking(3, 4));
         }
     }
 }

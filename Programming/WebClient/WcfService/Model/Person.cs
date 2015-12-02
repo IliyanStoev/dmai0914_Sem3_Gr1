@@ -6,6 +6,8 @@ using System.Web;
 
 namespace WcfService.Model
 {
+    [KnownType(typeof(Teacher))]
+    [KnownType(typeof(Child))]
     [DataContract]
    // [Serializable]
     public class Person
@@ -24,9 +26,10 @@ namespace WcfService.Model
         public string Password { get; set; }
         [DataMember]
         public int UserType { get; set; }
-
-
-
+        public override string ToString()
+        {
+            return Convert.ToString(Name);
+        }
 
     }
 }

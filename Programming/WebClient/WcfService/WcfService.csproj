@@ -80,16 +80,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AssignmentCtrl.cs" />
     <Compile Include="BLL\HomeworkCtrl.cs" />
-    <Compile Include="BLL\UserCtrl.cs" />
+    <Compile Include="BLL\PassHash.cs" />
+    <Compile Include="BLL\TutoringTimeCtrl.cs" />
+    <Compile Include="BLL\PersonCtrl.cs" />
+    <Compile Include="DAL\AssignmentDb.cs" />
     <Compile Include="DAL\DbConnection.cs" />
     <Compile Include="DAL\HomeworkDb.cs" />
-    <Compile Include="DAL\LoginDb.cs" />
+    <Compile Include="DAL\PersonDb.cs" />
+    <Compile Include="DAL\TutoringTimeDb.cs" />
     <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\Child.cs" />
     <Compile Include="Model\Homework.cs" />
+    <Compile Include="Model\ListForObjects.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Teacher.cs" />
+    <Compile Include="Model\TutoringTime.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
