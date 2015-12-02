@@ -31,7 +31,11 @@ namespace WcfService.BLL
             PersonCtrl pCtrl = new PersonCtrl();
             TutoringTime tt = ttDb.GetTtTimesByTime(date, time, teacherId);
             TutoringTime completeTt = new TutoringTime();
-            completeTt.Teacher = (Teacher)pCtrl.GetPerson(tt.Teacher.Id);
+            completeTt = tt;
+            if (tt != null)
+            {
+                completeTt.Teacher = (Teacher)pCtrl.GetPerson(teacherId);
+            }
             return completeTt;
         }
 

@@ -360,6 +360,9 @@ namespace WebClient
                     }
                 }
             }
+            Service1Client service1 = new Service1Client();
+            allTutoringTimes = service1.GetAllAvailableTutoringTimes().OfType<TutoringTime>().ToList();
+            SetAllTutorsAndSubjects(allTutoringTimes);
             BookingCalendar.SelectedDates.Clear();
 
             SetSubjectsToComboBox(allTutoringSubjects);
