@@ -12,14 +12,13 @@
                 </div>
             </div>
        </div>
-
             <div class="row">
                 <div class="columns">
                     <div class="col-sm-2" style="width:300px">
                         <asp:Calendar ID="BookingCalendar" runat="server" OnDayRender="BookingCalendar_DayRender" OnSelectionChanged="BookingCalendar_SelectionChanged"></asp:Calendar>
                     </div>
                     <div class="col-sm-3" style="width: 440px; height: 185px; overflow: scroll">
-                            <asp:GridView ID="TutorTable" runat="server" Width="400px" AutoGenerateColumns ="false" ShowHeaderWhenEmpty="true"
+                            <asp:GridView ID="TutorTable" runat="server"  Width="400px" AutoGenerateColumns ="false" ShowHeaderWhenEmpty="true"
                                 BorderColor="#336699" BorderStyle="Solid" BorderWidth="2px"
                                 CellPadding="4" ForeColor="#333333" OnRowCommand="TutorTable_RowCommand">
                 
@@ -35,7 +34,7 @@
                              <asp:BoundField DataField="Time" HeaderText="Time" 
                                      SortExpression="SubjectID" ItemStyle-Width="100px" HeaderStyle-Width="100px" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center"/>
 
-                            <asp:ButtonField ButtonType="button" CommandName="Book" 
+                            <asp:ButtonField ButtonType="button" CommandName="Book"
                                     HeaderText="Book Tutor" Text="Book Tutor" ItemStyle-Width="100px" HeaderStyle-Width="100px" ItemStyle-HorizontalAlign="Center"/>
                         
 
