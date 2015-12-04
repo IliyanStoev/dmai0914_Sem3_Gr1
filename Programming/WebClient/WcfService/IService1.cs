@@ -42,7 +42,7 @@ namespace WcfService
         Homework GetHomeworkById(int id);
 
         [OperationContract]
-        int CreateTutoringTime(DateTime date, bool availability, int teacherId, string time);
+        int CreateTutoringTime(DateTime date, int teacherId, string time);
 
         [OperationContract]
         TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId);

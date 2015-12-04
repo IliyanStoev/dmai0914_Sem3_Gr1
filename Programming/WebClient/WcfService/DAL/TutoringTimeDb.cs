@@ -335,6 +335,5 @@ namespace WcfService.DAL
 
             return ttTimes;
         }
-
     }
 }

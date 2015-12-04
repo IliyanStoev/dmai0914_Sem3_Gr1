@@ -676,10 +676,10 @@ namespace WebClient.WCFWebReference {
         System.Threading.Tasks.Task<WebClient.WCFWebReference.Homework> GetHomeworkByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateTutoringTime", ReplyAction="http://tempuri.org/IService1/CreateTutoringTimeResponse")]
-        int CreateTutoringTime(System.DateTime date, bool availability, int teacherId, string time);
+        int CreateTutoringTime(System.DateTime date, int teacherId, string time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateTutoringTime", ReplyAction="http://tempuri.org/IService1/CreateTutoringTimeResponse")]
-        System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time);
+        System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, int teacherId, string time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTtTimesByTime", ReplyAction="http://tempuri.org/IService1/GetTtTimesByTimeResponse")]
         WebClient.WCFWebReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time, int teacherId);
@@ -829,12 +829,12 @@ namespace WebClient.WCFWebReference {
             return base.Channel.GetHomeworkByIdAsync(id);
         }
         
-        public int CreateTutoringTime(System.DateTime date, bool availability, int teacherId, string time) {
-            return base.Channel.CreateTutoringTime(date, availability, teacherId, time);
+        public int CreateTutoringTime(System.DateTime date, int teacherId, string time) {
+            return base.Channel.CreateTutoringTime(date, teacherId, time);
         }
         
-        public System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, bool availability, int teacherId, string time) {
-            return base.Channel.CreateTutoringTimeAsync(date, availability, teacherId, time);
+        public System.Threading.Tasks.Task<int> CreateTutoringTimeAsync(System.DateTime date, int teacherId, string time) {
+            return base.Channel.CreateTutoringTimeAsync(date, teacherId, time);
         }
         
         public WebClient.WCFWebReference.TutoringTime GetTtTimesByTime(System.DateTime date, string time, int teacherId) {

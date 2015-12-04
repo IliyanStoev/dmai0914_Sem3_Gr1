@@ -136,7 +136,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="availability" type="xs:boolean" />
         <xs:element minOccurs="0" name="teacherId" type="xs:int" />
         <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
       </xs:sequence>
