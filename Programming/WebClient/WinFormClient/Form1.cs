@@ -228,7 +228,6 @@ namespace WinFormClient
 
             DateTime date = calendar.SelectionRange.Start;
             string time = cbScTime.Text;
-            bool availability = true;
             int teacherId = teacher.Id;
             if (date < DateTime.Today)
             {
@@ -263,7 +262,7 @@ namespace WinFormClient
                             }
                             else
                             {
-                                winService.CreateTutoringTime(date, availability, teacherId, time);
+                                winService.CreateTutoringTime(date, teacherId, time);
                                 MessageBox.Show("Tutor time succesfully inserted");
                             }
                         }
@@ -272,7 +271,7 @@ namespace WinFormClient
                     else
                     {
 
-                        winService.CreateTutoringTime(date, availability, teacherId, time);
+                        winService.CreateTutoringTime(date, teacherId, time);
                         MessageBox.Show("Tutor time succesfully inserted");
 
                     }

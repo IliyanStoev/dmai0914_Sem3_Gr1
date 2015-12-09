@@ -43,6 +43,11 @@
                     </div>
                 </div>
             </div>
+        <div>
+            <asp:Label ID="calendarLabel" runat="server" Text="colo" BackColor="Green" ForeColor="Green"></asp:Label>
+            <asp:Label ID="calendarLabelText" runat="server" Text=": available dates for booking."></asp:Label>
+        </div>
+        <div>Click on the date to see all bookings for the date.</div>
     </div>
 
 </asp:Content>

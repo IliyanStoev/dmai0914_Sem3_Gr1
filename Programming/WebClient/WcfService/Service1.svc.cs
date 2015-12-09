@@ -75,7 +75,7 @@ namespace WcfService
             return hwCtrl.GetAllHomeworksByChildId(childId);
         }
 
-        public int CreateTutoringTime(DateTime date, bool availability, int teacherId, string time)
+        public int CreateTutoringTime(DateTime date, int teacherId, string time)
         {
             TutoringTimeCtrl ttCtrl = new TutoringTimeCtrl();
 
