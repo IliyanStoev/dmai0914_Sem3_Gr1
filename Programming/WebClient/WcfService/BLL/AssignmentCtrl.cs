@@ -15,12 +15,12 @@ namespace WcfService.BLL
             PersonCtrl usCtrl = new PersonCtrl();
 
             Assignment ass = new Assignment();
-            ass.teacher = (Teacher)usCtrl.GetPerson(teacherId);
-            ass.subject = subject;
-            ass.title = title;
-            ass.exercise = exercise;
-            ass.date = date;
-            ass.deadline = deadline;
+            ass.Teacher = (Teacher)usCtrl.GetPerson(teacherId);
+            ass.Subject = subject;
+            ass.Title = title;
+            ass.Exercise = exercise;
+            ass.Date = date;
+            ass.Deadline = deadline;
 
             AssignmentDb assDb = new AssignmentDb();
 
@@ -36,7 +36,7 @@ namespace WcfService.BLL
             foreach (Object o in l.Asl)
             {
                 Assignment a = (Assignment)o;
-                a.teacher = (Teacher)userCtrl.GetPerson(a.teacher.Id);
+                a.Teacher = (Teacher)userCtrl.GetPerson(a.Teacher.Id);
                 list.Asl.Add(a);
             }
             return list;

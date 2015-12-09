@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Web;
 using WcfService.Model;
 
 namespace WcfService.DAL
@@ -48,13 +45,12 @@ namespace WcfService.DAL
 
         public TutoringTime GetTtTimesByTime(DateTime date, string time, int teacherId)
         {
+            string testDate = date.ToString("yyyy/MM/dd");
 
             try
             {
                 comm = new SqlCommand();
-                string testDate = date.ToString("yyyy/MM/dd");
-                comm.CommandText = "SELECT * FROM TutoringTime WHERE date  = '" + testDate + "'" + "AND time= '" + time + "'" + "AND teacherId= '" + teacherId + "'";
-
+                comm.CommandText = "SELECT * FROM TutoringTime INNER JOIN Person ON teacherId=pid WHERE date  = '" + testDate + "'" + "AND time= '" + time + "'" + "AND teacherId= '" + teacherId + "'";
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();
                 comm.Connection.Open();
@@ -70,10 +66,11 @@ namespace WcfService.DAL
                     tt.Date = Convert.ToDateTime(dr["date"]);
                     Teacher teacher = new Teacher();
                     teacher.Id = Convert.ToInt32(dr["teacherId"]);
+                    teacher.Name = Convert.ToString(dr["name"]);
+                    teacher.Subject = Convert.ToString(dr["subject"]);
                     tt.Teacher = teacher;
 
                     return tt;
-
 
                 }
             }
@@ -88,47 +85,6 @@ namespace WcfService.DAL
             }
 
             return null;
-        }
-
-        public List<TutoringTime> GetTtTimesByTeacherId(int teacherId)
-        {
-            List<TutoringTime> ttTimes = new List<TutoringTime>();
-            try
-            {
-                comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM TutoringTime WHERE teacherId = '" + teacherId + "'";
-
-                dbCon = new DbConnection();
-                comm.Connection = dbCon.GetConnection();
-                comm.Connection.Open();
-
-                comm.CommandType = CommandType.Text;
-                SqlDataReader dr = comm.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    TutoringTime tt = new TutoringTime();
-                    tt.Id = Convert.ToInt32(dr["tid"]);
-                    tt.Time = Convert.ToString(dr["time"]);
-                    tt.Date = Convert.ToDateTime(dr["date"]);
-                    Teacher teacher = new Teacher();
-                    teacher.Id = Convert.ToInt32(dr["teacherId"]);
-                    tt.Teacher = teacher;
-
-                    ttTimes.Add(tt);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            finally
-            {
-                comm.Connection.Close();
-            }
-
-            return ttTimes;
         }
 
         public int RemoveTutoringTime(int teacherId, DateTime date, string time)
@@ -163,49 +119,6 @@ namespace WcfService.DAL
 
             return result;
 
-
-        }
-
-        public List<TutoringTime> GetTtByDate(DateTime date)
-        {
-            List<TutoringTime> ttTimes = new List<TutoringTime>();
-            string testDate = date.ToString("yyyy/MM/dd");
-            try
-            {
-                comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM TutoringTime WHERE date = '" + testDate + "'";
-
-                dbCon = new DbConnection();
-                comm.Connection = dbCon.GetConnection();
-                comm.Connection.Open();
-
-                comm.CommandType = CommandType.Text;
-                SqlDataReader dr = comm.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    TutoringTime tt = new TutoringTime();
-                    tt.Id = Convert.ToInt32(dr["tid"]);
-                    tt.Time = Convert.ToString(dr["time"]);
-                    tt.Date = Convert.ToDateTime(dr["date"]);
-                    Teacher teacher = new Teacher();
-                    teacher.Id = Convert.ToInt32(dr["teacherId"]);
-                    tt.Teacher = teacher;
-
-                    ttTimes.Add(tt);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            finally
-            {
-                comm.Connection.Close();
-            }
-
-            return ttTimes;
         }
 
         public TutoringTime GetTtByTtId(int ttId)
@@ -246,7 +159,6 @@ namespace WcfService.DAL
             {
                 comm.Connection.Close();
             }
-
         }
 
         public int RegisterBooking(TutoringTime tt)
@@ -297,12 +209,39 @@ namespace WcfService.DAL
         //is available to book)
         public List<TutoringTime> GetAllAvailableTutoringTimes()
         {
+            comm = new SqlCommand();
+            comm.CommandText = "SELECT * FROM TutoringTime INNER JOIN Person ON teacherId=pid WHERE childId is null";
+
+            return GetAllTtByCommandText();
+        }
+        public List<TutoringTime> GetAllTT()
+        {
+            comm = new SqlCommand();
+            comm.CommandText = "SELECT * FROM TutoringTime INNER JOIN Person ON teacherId=pid";
+
+            return GetAllTtByCommandText();
+        }
+        public List<TutoringTime> GetTtTimesByTeacherId(int teacherId)
+        {
+            comm = new SqlCommand();
+            comm.CommandText = "SELECT * FROM TutoringTime INNER JOIN Person ON teacherId=pid WHERE teacherId = '" + teacherId + "'";
+            return GetAllTtByCommandText();
+        }
+        public List<TutoringTime> GetTtByDate(DateTime date)
+        {
+            string testDate = date.ToString("yyyy/MM/dd");
+            comm = new SqlCommand();
+            comm.CommandText = "SELECT * FROM TutoringTime INNER JOIN Person ON teacherId=pid WHERE date = '" + testDate + "'";
+
+            return GetAllTtByCommandText();
+        }
+
+        public List<TutoringTime> GetAllTtByCommandText()
+        {
             List<TutoringTime> ttTimes = new List<TutoringTime>();
             try
             {
                 comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM TutoringTime WHERE childId is null";
-
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();
                 comm.Connection.Open();
@@ -318,6 +257,8 @@ namespace WcfService.DAL
                     tt.Date = Convert.ToDateTime(dr["date"]);
                     Teacher teacher = new Teacher();
                     teacher.Id = Convert.ToInt32(dr["teacherId"]);
+                    teacher.Name = Convert.ToString(dr["name"]);
+                    teacher.Subject = Convert.ToString(dr["subject"]);
                     tt.Teacher = teacher;
 
                     ttTimes.Add(tt);

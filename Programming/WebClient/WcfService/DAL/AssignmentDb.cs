@@ -25,12 +25,12 @@ namespace WcfService.DAL
             {
                 comm = new SqlCommand();
                 comm.CommandText = "INSERT INTO Assignment(subject, title, exercise, date, deadline, pid) VALUES(@subject, @title, @exercise, @date, @deadline, @pid)";
-                comm.Parameters.AddWithValue("subject", ass.subject);
-                comm.Parameters.AddWithValue("title", ass.title);
-                comm.Parameters.AddWithValue("exercise", ass.exercise);
-                comm.Parameters.AddWithValue("date", ass.date);
-                comm.Parameters.AddWithValue("deadline", ass.deadline);
-                comm.Parameters.AddWithValue("pid", ass.teacher.Id);
+                comm.Parameters.AddWithValue("subject", ass.Subject);
+                comm.Parameters.AddWithValue("title", ass.Title);
+                comm.Parameters.AddWithValue("exercise", ass.Exercise);
+                comm.Parameters.AddWithValue("date", ass.Date);
+                comm.Parameters.AddWithValue("deadline", ass.Deadline);
+                comm.Parameters.AddWithValue("pid", ass.Teacher.Id);
 
                 dbCon = new DbConnection();
                 comm.Connection = dbCon.GetConnection();
@@ -74,10 +74,10 @@ namespace WcfService.DAL
                 {
                     Assignment asg = new Assignment();
                     asg.Id = Convert.ToInt32(dr["aid"]);
-                    asg.subject = dr["subject"].ToString();
-                    asg.title = dr["title"].ToString();
-                    asg.exercise = dr["exercise"].ToString();
-                    asg.teacher = new Teacher(Convert.ToInt32(dr["pid"].ToString()));
+                    asg.Subject = dr["subject"].ToString();
+                    asg.Title = dr["title"].ToString();
+                    asg.Exercise = dr["exercise"].ToString();
+                    asg.Teacher = new Teacher(Convert.ToInt32(dr["pid"].ToString()));
 
                     asgs.Add(asg);
                 }
@@ -114,14 +114,14 @@ namespace WcfService.DAL
                 {
                     Assignment a = new Assignment();
                     a.Id = Convert.ToInt32(dr["aid"]);
-                    a.exercise = Convert.ToString(dr["exercise"]);
-                    a.date = Convert.ToDateTime(dr["date"]);
-                    a.deadline = Convert.ToDateTime(dr["deadLine"]);
-                    a.subject = Convert.ToString(dr["subject"]);
+                    a.Exercise = Convert.ToString(dr["exercise"]);
+                    a.Date = Convert.ToDateTime(dr["date"]);
+                    a.Deadline = Convert.ToDateTime(dr["deadLine"]);
+                    a.Subject = Convert.ToString(dr["subject"]);
                     Teacher t = new Teacher();
                     t.Id = Convert.ToInt32(dr["pid"]);
-                    a.teacher = t;
-                    a.title = Convert.ToString(dr["title"]);
+                    a.Teacher = t;
+                    a.Title = Convert.ToString(dr["title"]);
                     al.AddObj(a);
                 }
             }

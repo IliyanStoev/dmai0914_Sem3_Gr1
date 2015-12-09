@@ -86,10 +86,14 @@
     <Compile Include="BLL\TutoringTimeCtrl.cs" />
     <Compile Include="BLL\PersonCtrl.cs" />
     <Compile Include="DAL\AssignmentDb.cs" />
+    <Compile Include="DAL\AssignmentDb1.cs" />
     <Compile Include="DAL\DbConnection.cs" />
     <Compile Include="DAL\HomeworkDb.cs" />
+    <Compile Include="DAL\HomeworkDb1.cs" />
+    <Compile Include="DAL\PersonDb1.cs" />
     <Compile Include="DAL\PersonDb.cs" />
     <Compile Include="DAL\TutoringTimeDb.cs" />
+    <Compile Include="DAL\TutoringTimeDb1.cs" />
     <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\Child.cs" />
     <Compile Include="Model\Homework.cs" />

@@ -13,17 +13,17 @@ namespace WcfService.Model
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public string subject { get; set; }
+        public string Subject { get; set; }
         [DataMember]
-        public string title { get; set; }
+        public string Title { get; set; }
         [DataMember]
-        public string exercise { get; set; }
+        public string Exercise { get; set; }
         [DataMember]
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
         [DataMember]
-        public DateTime deadline { get; set; }
+        public DateTime Deadline { get; set; }
         [DataMember]
-        public Teacher teacher { get; set; }
+        public Teacher Teacher { get; set; }
 
 
         public Assignment(int id)
